@@ -103,6 +103,142 @@
     
     
     <article
+  id="post-2021/树莓派基础使用"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2021/02/21/2021/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/"
+    >树莓派基础使用</a> 
+</h2>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2021/02/21/2021/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/" class="article-date">
+  <time datetime="2021-02-21T14:29:00.000Z" itemprop="datePublished">2021-02-21</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
+  </div>
+ 
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <!-- TOC -->
+
+<ul>
+<li><a href="#%E9%95%9C%E5%83%8F%E4%B8%8B%E8%BD%BD%E4%B8%8E%E7%83%A7%E5%86%99">镜像下载与烧写</a></li>
+<li><a href="#%E5%AE%98%E6%96%B9%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97">官方系统使用指南</a><ul>
+<li><a href="#1%E5%AE%98%E6%96%B9%E9%95%9C%E5%83%8F%E4%BC%98%E7%82%B9">1.官方镜像优点</a></li>
+<li><a href="#2%E7%83%A7%E5%86%99%E9%95%9C%E5%83%8F%E6%B7%BB%E5%8A%A0ssh%E7%A9%BA%E7%99%BD%E6%96%87%E4%BB%B6%E5%88%B0boot%E7%9B%98%E9%A2%84%E5%9F%8Bwifi">2.烧写镜像，添加SSH空白文件到boot盘，预埋wifi</a></li>
+<li><a href="#3%E6%89%BE%E5%88%B0%E6%A0%91%E8%8E%93%E6%B4%BE%E7%9A%84wifi">3.找到树莓派的WiFi</a></li>
+<li><a href="#4%E8%BF%9B%E5%85%A5%E7%B3%BB%E7%BB%9F%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE">4.进入系统基本配置</a></li>
+<li><a href="#5%E5%85%B6%E4%BB%96%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97">5.其他使用指南</a><ul>
+<li><a href="#%E5%AE%89%E8%A3%85%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95">安装中文输入法</a></li>
+<li><a href="#%E7%A6%81%E7%94%A8%E4%BC%91%E7%9C%A0">禁用休眠</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+
+<h1 id="镜像下载与烧写"><a href="#镜像下载与烧写" class="headerlink" title="镜像下载与烧写"></a>镜像下载与烧写</h1><p><a target="_blank" rel="noopener" href="https://www.raspberrypi.org/downloads/">树莓派镜像烧写工具</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.raspberrypi.org/downloads/raspberry-pi-os/">树莓派官方系统镜像</a><br>镜像比较大，最好把种子下载下来然后再用下载工具下载</p>
+<p><a target="_blank" rel="noopener" href="https://ubuntu.com/download/raspberry-pi">树莓派的ubuntu</a><br>注意用的是desktop版本还是server版本</p>
+<h1 id="官方系统使用指南"><a href="#官方系统使用指南" class="headerlink" title="官方系统使用指南"></a>官方系统使用指南</h1><h2 id="1-官方镜像优点"><a href="#1-官方镜像优点" class="headerlink" title="1.官方镜像优点"></a>1.官方镜像优点</h2><p>内置SSH，VNC，Chrome（旧版），大量软件，桌面环境运行较流畅</p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1t64y1M7RA?t=150">一个很好的指导</a></p>
+<h2 id="2-烧写镜像，添加SSH空白文件到boot盘，预埋wifi"><a href="#2-烧写镜像，添加SSH空白文件到boot盘，预埋wifi" class="headerlink" title="2.烧写镜像，添加SSH空白文件到boot盘，预埋wifi"></a>2.烧写镜像，添加SSH空白文件到boot盘，预埋wifi</h2><p>新建wpa_supplicant.conf，priority越大优先级越高，放入boot盘</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">country&#x3D;CN</span><br><span class="line">ctrl_interface&#x3D;DIR&#x3D;&#x2F;var&#x2F;run&#x2F;wpa_supplicant GROUP&#x3D;netdev</span><br><span class="line">update_config&#x3D;1</span><br><span class="line"></span><br><span class="line">network&#x3D;&#123;</span><br><span class="line">    ssid&#x3D;&quot;RM701_LAN&quot;</span><br><span class="line">    psk&#x3D;&quot;XXXXX&quot;</span><br><span class="line">    key_mgmt&#x3D;WPA-PSK</span><br><span class="line">    priority&#x3D;2</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">network&#x3D;&#123;</span><br><span class="line">    ssid&#x3D;&quot;HomeAssistant&quot;</span><br><span class="line">    psk&#x3D;&quot;XXX&quot;</span><br><span class="line">    key_mgmt&#x3D;WPA-PSK</span><br><span class="line">    priority&#x3D;1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>有屏幕和键盘的可以不用预埋wifi，有网线的可以连接到电脑，开机之后通过ssh设置WiFi。</p>
+<h2 id="3-找到树莓派的WiFi"><a href="#3-找到树莓派的WiFi" class="headerlink" title="3.找到树莓派的WiFi"></a>3.找到树莓派的WiFi</h2><ol>
+<li><p>网线连接到电脑，使用再cmd使用命令</p>
+<p> arp -a</p>
+</li>
+</ol>
+<p>有线的端口的就是树莓派的，一般是192.168.137.1之类的</p>
+<p><a target="_blank" rel="noopener" href="https://shumeipai.nxez.com/2013/10/15/raspberry-pi-and-a-network-cable-directly-connected-laptop.html">树莓派+一根网线直连笔记本电脑</a></p>
+<ol start="2">
+<li><p>没有网线，进入路由器的管理界面</p>
+<pre><code> 192.168.1.1     //tp-link的管理界面
+ 192.168.31.1    //红米路由器
+ //具体看自己的路由器情况和所在网络的网段</code></pre>
+</li>
+<li><p> 其他工具，如安卓手机上面的fing，或者安卓手机使用终端模拟器执行<code>ip neigh</code>命令，与电脑的<code>arp - a</code>效果相同。树莓派连到手机热点的时候这样查看ip最方便。</p>
+</li>
+</ol>
+<h2 id="4-进入系统基本配置"><a href="#4-进入系统基本配置" class="headerlink" title="4.进入系统基本配置"></a>4.进入系统基本配置</h2><blockquote>
+<p>有屏幕：更改屏幕设置（大黑边问题）</p>
+</blockquote>
+<blockquote>
+<p>没有屏幕：ssh连接，默认pi，raspberry</p>
+</blockquote>
+<blockquote>
+<p>进入raspi-config，命令是</p>
+</blockquote>
+<pre><code>sudo raspi-config</code></pre>
+<blockquote>
+<p>设置VNC开启<br>在第五点5 interfacing options  —&gt;  VNC</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_42612147/article/details/100073650">vnc viewer 显示 cannot currently show the desktop 的解决方法</a></p>
+<blockquote>
+<p>进入图像化界面进行初始化配置，设置地区语言，登陆密码之类的。</p>
+</blockquote>
+<blockquote>
+<p>设置静态IP，在已经开启vnc的情况下可以连接vnc进行配置，注意经常设备不是固定使用的情况下不要设置静态ip，因为不同网络环境下网段会变。</p>
+</blockquote>
+<pre><code>sudo nano /etc/dhcpcd.conf
+# 添加以下内容
+interfac wlan0
+static ip_address=192.168.X.X
+static routers=192.168.X.X</code></pre>
+<h2 id="5-其他使用指南"><a href="#5-其他使用指南" class="headerlink" title="5.其他使用指南"></a>5.其他使用指南</h2><h3 id="安装中文输入法"><a href="#安装中文输入法" class="headerlink" title="安装中文输入法"></a>安装中文输入法</h3><p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/84cb45bbef63">显示中文和安装中文输入法</a></p>
+<pre><code># 字库
+sudo apt-get install ttf-way-zenhei
+
+#输入法
+sudo apt-get install scim-pinyin
+
+#配置
+sudo raspi-config</code></pre>
+<p>localisation Options –&gt; change Locale ，一直按方向下键，按空格选择 zh_CN GB2312 , zh_CN.GB18030 GB18030 , zh_CN.GBK GBK , zh_CN.UTF-8 UTF-8 四个选项，左边出现＊号即为选中，按回车确认。</p>
+<p>确认后，选择zh_CN.UTF-8,回车确认</p>
+<h3 id="禁用休眠"><a href="#禁用休眠" class="headerlink" title="禁用休眠"></a>禁用休眠</h3><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/xiaoqianbook/p/11945271.html">一个很好的博客</a></p>
+<pre><code>sudo nano /etc/lightdm/lightdm.conf</code></pre>
+<p>找到[Seat:*]这一项，在下面的‘#xserver-command=X’删除前面的注释符#，修改为以下</p>
+<pre><code>xserver-command=X -s 0-dpms</code></pre>
+<p>其中，-s 参数：设置屏幕保护不启动，0 数字零，-dpms 参数：关闭电源节能管理。</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li></ul>
+
+    </footer>
+  </div>
+
+    
+ 
+    
+</article>
+
+    
+    <article
   id="post-2021/hexo_introduction"
   class="article article-type-post"
   itemscope
