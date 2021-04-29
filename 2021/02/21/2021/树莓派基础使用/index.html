@@ -82,31 +82,39 @@
   <!-- TOC -->
 
 <ul>
-<li><a href="#%E9%95%9C%E5%83%8F%E4%B8%8B%E8%BD%BD%E4%B8%8E%E7%83%A7%E5%86%99">镜像下载与烧写</a></li>
-<li><a href="#%E5%AE%98%E6%96%B9%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97">官方系统使用指南</a><ul>
-<li><a href="#1%E5%AE%98%E6%96%B9%E9%95%9C%E5%83%8F%E4%BC%98%E7%82%B9">1.官方镜像优点</a></li>
-<li><a href="#2%E7%83%A7%E5%86%99%E9%95%9C%E5%83%8F%E6%B7%BB%E5%8A%A0ssh%E7%A9%BA%E7%99%BD%E6%96%87%E4%BB%B6%E5%88%B0boot%E7%9B%98%E9%A2%84%E5%9F%8Bwifi">2.烧写镜像，添加SSH空白文件到boot盘，预埋wifi</a></li>
-<li><a href="#3%E6%89%BE%E5%88%B0%E6%A0%91%E8%8E%93%E6%B4%BE%E7%9A%84wifi">3.找到树莓派的WiFi</a></li>
-<li><a href="#4%E8%BF%9B%E5%85%A5%E7%B3%BB%E7%BB%9F%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE">4.进入系统基本配置</a></li>
-<li><a href="#5%E5%85%B6%E4%BB%96%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97">5.其他使用指南</a><ul>
-<li><a href="#%E5%AE%89%E8%A3%85%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95">安装中文输入法</a></li>
-<li><a href="#%E7%A6%81%E7%94%A8%E4%BC%91%E7%9C%A0">禁用休眠</a></li>
+<li><a href="#1-%E9%95%9C%E5%83%8F%E4%B8%8B%E8%BD%BD%E4%B8%8E%E7%83%A7%E5%86%99">1. 镜像下载与烧写</a></li>
+<li><a href="#2-%E5%AE%98%E6%96%B9%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97">2. 官方系统使用指南</a><ul>
+<li><a href="#21-%E5%AE%98%E6%96%B9%E9%95%9C%E5%83%8F%E4%BC%98%E7%82%B9">2.1. 官方镜像优点</a></li>
+<li><a href="#22-%E7%83%A7%E5%86%99%E9%95%9C%E5%83%8F%E6%B7%BB%E5%8A%A0ssh%E7%A9%BA%E7%99%BD%E6%96%87%E4%BB%B6%E5%88%B0boot%E7%9B%98%E9%A2%84%E5%9F%8Bwifi">2.2. 烧写镜像，添加SSH空白文件到boot盘，预埋wifi</a></li>
+<li><a href="#23-%E6%89%BE%E5%88%B0%E6%A0%91%E8%8E%93%E6%B4%BE%E7%9A%84wifi">2.3. 找到树莓派的WiFi</a></li>
+<li><a href="#24-%E8%BF%9B%E5%85%A5%E7%B3%BB%E7%BB%9F%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE">2.4. 进入系统基本配置</a></li>
+<li><a href="#25-%E5%85%B6%E4%BB%96%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97">2.5. 其他使用指南</a><ul>
+<li><a href="#251-%E6%8D%A2%E9%98%BF%E9%87%8C%E6%BA%90">2.5.1. 换阿里源</a></li>
+<li><a href="#252-%E5%8F%AF%E8%A7%86%E5%8C%96%E7%9A%84%E8%B5%84%E6%BA%90%E6%98%BE%E7%A4%BA%E5%99%A8neofetch">2.5.2. 可视化的资源显示器neofetch</a></li>
+<li><a href="#253-%E5%AE%89%E8%A3%85%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95">2.5.3. 安装中文输入法</a></li>
+<li><a href="#254-%E7%A6%81%E7%94%A8%E4%BC%91%E7%9C%A0">2.5.4. 禁用休眠</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li><a href="#%E5%85%B6%E4%BB%96%E5%8A%9F%E8%83%BD">其他功能</a><ul>
+<li><a href="#pscp%E5%B7%A5%E5%85%B7">pscp工具</a></li>
+<li><a href="#samba%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9%E6%A0%91%E8%8E%93%E6%B4%BE%E5%88%86%E4%BA%AB%E7%BB%99windows">samba共享文件夹，树莓派分享给windows</a></li>
+<li><a href="#%E8%B5%84%E6%96%99%E6%B1%87%E6%80%BB">资料汇总</a></li>
 </ul>
 </li>
 </ul>
 <!-- /TOC -->
 
-<h1 id="镜像下载与烧写"><a href="#镜像下载与烧写" class="headerlink" title="镜像下载与烧写"></a>镜像下载与烧写</h1><p><a target="_blank" rel="noopener" href="https://www.raspberrypi.org/downloads/">树莓派镜像烧写工具</a></p>
+<h1 id="1-镜像下载与烧写"><a href="#1-镜像下载与烧写" class="headerlink" title="1. 镜像下载与烧写"></a>1. 镜像下载与烧写</h1><p><a target="_blank" rel="noopener" href="https://www.raspberrypi.org/downloads/">树莓派镜像烧写工具</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.raspberrypi.org/downloads/raspberry-pi-os/">树莓派官方系统镜像</a><br>镜像比较大，最好把种子下载下来然后再用下载工具下载</p>
 <p><a target="_blank" rel="noopener" href="https://ubuntu.com/download/raspberry-pi">树莓派的ubuntu</a><br>注意用的是desktop版本还是server版本</p>
-<h1 id="官方系统使用指南"><a href="#官方系统使用指南" class="headerlink" title="官方系统使用指南"></a>官方系统使用指南</h1><h2 id="1-官方镜像优点"><a href="#1-官方镜像优点" class="headerlink" title="1.官方镜像优点"></a>1.官方镜像优点</h2><p>内置SSH，VNC，Chrome（旧版），大量软件，桌面环境运行较流畅</p>
+<h1 id="2-官方系统使用指南"><a href="#2-官方系统使用指南" class="headerlink" title="2. 官方系统使用指南"></a>2. 官方系统使用指南</h1><h2 id="2-1-官方镜像优点"><a href="#2-1-官方镜像优点" class="headerlink" title="2.1. 官方镜像优点"></a>2.1. 官方镜像优点</h2><p>内置SSH，VNC，Chrome（旧版），大量软件，桌面环境运行较流畅</p>
 <p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1t64y1M7RA?t=150">一个很好的指导</a></p>
-<h2 id="2-烧写镜像，添加SSH空白文件到boot盘，预埋wifi"><a href="#2-烧写镜像，添加SSH空白文件到boot盘，预埋wifi" class="headerlink" title="2.烧写镜像，添加SSH空白文件到boot盘，预埋wifi"></a>2.烧写镜像，添加SSH空白文件到boot盘，预埋wifi</h2><p>新建wpa_supplicant.conf，priority越大优先级越高，放入boot盘</p>
+<h2 id="2-2-烧写镜像，添加SSH空白文件到boot盘，预埋wifi"><a href="#2-2-烧写镜像，添加SSH空白文件到boot盘，预埋wifi" class="headerlink" title="2.2. 烧写镜像，添加SSH空白文件到boot盘，预埋wifi"></a>2.2. 烧写镜像，添加SSH空白文件到boot盘，预埋wifi</h2><p>新建wpa_supplicant.conf，priority越大优先级越高，放入boot盘</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">country&#x3D;CN</span><br><span class="line">ctrl_interface&#x3D;DIR&#x3D;&#x2F;var&#x2F;run&#x2F;wpa_supplicant GROUP&#x3D;netdev</span><br><span class="line">update_config&#x3D;1</span><br><span class="line"></span><br><span class="line">network&#x3D;&#123;</span><br><span class="line">    ssid&#x3D;&quot;RM701_LAN&quot;</span><br><span class="line">    psk&#x3D;&quot;XXXXX&quot;</span><br><span class="line">    key_mgmt&#x3D;WPA-PSK</span><br><span class="line">    priority&#x3D;2</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">network&#x3D;&#123;</span><br><span class="line">    ssid&#x3D;&quot;HomeAssistant&quot;</span><br><span class="line">    psk&#x3D;&quot;XXX&quot;</span><br><span class="line">    key_mgmt&#x3D;WPA-PSK</span><br><span class="line">    priority&#x3D;1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>有屏幕和键盘的可以不用预埋wifi，有网线的可以连接到电脑，开机之后通过ssh设置WiFi。</p>
-<h2 id="3-找到树莓派的WiFi"><a href="#3-找到树莓派的WiFi" class="headerlink" title="3.找到树莓派的WiFi"></a>3.找到树莓派的WiFi</h2><ol>
+<h2 id="2-3-找到树莓派的WiFi"><a href="#2-3-找到树莓派的WiFi" class="headerlink" title="2.3. 找到树莓派的WiFi"></a>2.3. 找到树莓派的WiFi</h2><ol>
 <li><p>网线连接到电脑，使用再cmd使用命令</p>
 <p> arp -a</p>
 </li>
@@ -122,7 +130,7 @@
 <li><p> 其他工具，如安卓手机上面的fing，或者安卓手机使用终端模拟器执行<code>ip neigh</code>命令，与电脑的<code>arp - a</code>效果相同。树莓派连到手机热点的时候这样查看ip最方便。</p>
 </li>
 </ol>
-<h2 id="4-进入系统基本配置"><a href="#4-进入系统基本配置" class="headerlink" title="4.进入系统基本配置"></a>4.进入系统基本配置</h2><blockquote>
+<h2 id="2-4-进入系统基本配置"><a href="#2-4-进入系统基本配置" class="headerlink" title="2.4. 进入系统基本配置"></a>2.4. 进入系统基本配置</h2><blockquote>
 <p>有屏幕：更改屏幕设置（大黑边问题）</p>
 </blockquote>
 <blockquote>
@@ -147,10 +155,15 @@
 interfac wlan0
 static ip_address=192.168.X.X
 static routers=192.168.X.X</code></pre>
-<h2 id="5-其他使用指南"><a href="#5-其他使用指南" class="headerlink" title="5.其他使用指南"></a>5.其他使用指南</h2><h3 id="安装中文输入法"><a href="#安装中文输入法" class="headerlink" title="安装中文输入法"></a>安装中文输入法</h3><p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/84cb45bbef63">显示中文和安装中文输入法</a></p>
-<pre><code># 字库
-sudo apt-get install ttf-way-zenhei
+<h2 id="2-5-其他使用指南"><a href="#2-5-其他使用指南" class="headerlink" title="2.5. 其他使用指南"></a>2.5. 其他使用指南</h2><h3 id="2-5-1-换阿里源"><a href="#2-5-1-换阿里源" class="headerlink" title="2.5.1. 换阿里源"></a>2.5.1. 换阿里源</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 第一个文件</span></span><br><span class="line">sudo nano /etc/apt/sources.list</span><br><span class="line"><span class="comment"># 将原有内容用#注释掉</span></span><br><span class="line">deb http://mirrors.aliyun.com/raspbian/raspbian/ buster main contrib non-free rpi</span><br><span class="line">deb-src http://mirrors.aliyun.com/raspbian/raspbian/ buster main contrib non-free rpi</span><br><span class="line"></span><br><span class="line"><span class="comment"># 第二个文件</span></span><br><span class="line">sudo nano /etc/apt/sources.list.d/raspi.list</span><br><span class="line"><span class="comment"># 将原有内容用#注释掉</span></span><br><span class="line">deb http://mirrors.aliyun.com/raspbian/raspbian/ buster main</span><br><span class="line">deb-src http://mirrors.aliyun.com/raspbian/raspbian/ buster main</span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行更新</span></span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get upgrade</span><br></pre></td></tr></table></figure>
+<p>提示重复配置可以把 <code>/etc/apt/sources.list.d/raspi.list</code> 里面的源删掉，只留一个文件有源就可以。</p>
+<h3 id="2-5-2-可视化的资源显示器neofetch"><a href="#2-5-2-可视化的资源显示器neofetch" class="headerlink" title="2.5.2. 可视化的资源显示器neofetch"></a>2.5.2. 可视化的资源显示器neofetch</h3><p>在换完源，执行完更新的情况下执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装neotetch</span></span><br><span class="line">sudo aptitude install neofetch</span><br><span class="line"><span class="comment"># 配置neotetch，需要显示的东西取消注释即可</span></span><br><span class="line">sudo nano .config/neofetch/config.conf</span><br></pre></td></tr></table></figure>
 
+<h3 id="2-5-3-安装中文输入法"><a href="#2-5-3-安装中文输入法" class="headerlink" title="2.5.3. 安装中文输入法"></a>2.5.3. 安装中文输入法</h3><p><a target="_blank" rel="noopener" href="https://shumeipai.nxez.com/2016/03/13/how-to-make-raspberry-pi-display-chinese.html">树莓派实验室关于安装中文输入法</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/84cb45bbef63">显示中文和安装中文输入法</a></p>
+<pre><code># 字库
+sudo apt-get install ttf-wqy-zenhei
 #输入法
 sudo apt-get install scim-pinyin
 
@@ -158,11 +171,27 @@ sudo apt-get install scim-pinyin
 sudo raspi-config</code></pre>
 <p>localisation Options –&gt; change Locale ，一直按方向下键，按空格选择 zh_CN GB2312 , zh_CN.GB18030 GB18030 , zh_CN.GBK GBK , zh_CN.UTF-8 UTF-8 四个选项，左边出现＊号即为选中，按回车确认。</p>
 <p>确认后，选择zh_CN.UTF-8,回车确认</p>
-<h3 id="禁用休眠"><a href="#禁用休眠" class="headerlink" title="禁用休眠"></a>禁用休眠</h3><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/xiaoqianbook/p/11945271.html">一个很好的博客</a></p>
+<h3 id="2-5-4-禁用休眠"><a href="#2-5-4-禁用休眠" class="headerlink" title="2.5.4. 禁用休眠"></a>2.5.4. 禁用休眠</h3><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/xiaoqianbook/p/11945271.html">一个很好的博客</a></p>
 <pre><code>sudo nano /etc/lightdm/lightdm.conf</code></pre>
 <p>找到[Seat:*]这一项，在下面的‘#xserver-command=X’删除前面的注释符#，修改为以下</p>
 <pre><code>xserver-command=X -s 0-dpms</code></pre>
 <p>其中，-s 参数：设置屏幕保护不启动，0 数字零，-dpms 参数：关闭电源节能管理。</p>
+<h1 id="其他功能"><a href="#其他功能" class="headerlink" title="其他功能"></a>其他功能</h1><h2 id="pscp工具"><a href="#pscp工具" class="headerlink" title="pscp工具"></a>pscp工具</h2><p>windows发送文件到树莓派上面，注意斜杠和反斜杠</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pscp -P 22 c:\文件完整路径 pi@IP地址:/home/git/</span><br></pre></td></tr></table></figure>
+<h2 id="samba共享文件夹，树莓派分享给windows"><a href="#samba共享文件夹，树莓派分享给windows" class="headerlink" title="samba共享文件夹，树莓派分享给windows"></a>samba共享文件夹，树莓派分享给windows</h2><p>搜索关键词<code>局域网内Windows和linux系统如何共享文件</code>，<code>SAMBA共享文件</code></p>
+<p>安装samba 和 samba-common-bin</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install samba samba-common-bin</span><br></pre></td></tr></table></figure>
+<p>配置samba服务 ：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano &#x2F;etc&#x2F;samba&#x2F;smb.conf</span><br></pre></td></tr></table></figure>
+<p>跳到最后一行，加入如下语句：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">[MyNAS]</span><br><span class="line">    # 说明信息</span><br><span class="line">    comment &#x3D; NAS Storage</span><br><span class="line">    # 可以访问的用户</span><br><span class="line">    valid users &#x3D; pi,root</span><br><span class="line">    # 共享文件的路径,raspberry pi 会自动将连接到其上的外接存储设备挂载到&#x2F;media&#x2F;pi&#x2F;目录下。</span><br><span class="line">    path &#x3D; &#x2F;media&#x2F;pi&#x2F;</span><br><span class="line">    # 可被其他人看到资源名称（非内容）</span><br><span class="line">    browseable &#x3D; yes</span><br><span class="line">    # 可写</span><br><span class="line">    writable &#x3D; yes</span><br><span class="line">    # 新建文件的权限为 664</span><br><span class="line">    create mask &#x3D; 0664</span><br><span class="line">    # 新建目录的权限为 775</span><br><span class="line">    directory mask &#x3D; 0775</span><br></pre></td></tr></table></figure>
+<p>samba用户权限配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo sambapasswd -a pi</span><br></pre></td></tr></table></figure>
+<p>输入新设置samba密码，为了安全性尽量不要和已经存在的pi密码重复。</p>
+<p>重启服务: <code>sudo /etc/init.d/smbd restart</code></p>
+<p>设置开机自启动，编辑<code>sudo nano /etc/rc.local</code>，在exit0前加上<code>sudo /etc/init.d/smbd restart</code></p>
+<p>在windows打开“计算机”——&gt;在网络位置””空白处右键“添加一个网络位置”，按向导做即可。</p>
+<h2 id="资料汇总"><a href="#资料汇总" class="headerlink" title="资料汇总"></a>资料汇总</h2><p><a target="_blank" rel="noopener" href="https://github.com/xinxingli/Raspberry-Pi">一个树莓派学习资料汇总的网页</a></p>
  
       <!-- reward -->
       
@@ -245,6 +274,15 @@ sudo raspi-config</code></pre>
 
    
   <nav class="article-nav">
+    
+      <a href="/2021/04/29/2021/RDclient%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            RDclient远程连接
+          
+        </div>
+      </a>
     
     
       <a href="/2021/01/17/2021/hexo_introduction/" class="article-nav-link">
