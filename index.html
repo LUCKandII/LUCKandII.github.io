@@ -1,850 +1,614 @@
+
+
 <!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
 
-
-<html lang="zh-CN">
 
 
 <head>
-  <meta charset="utf-8" />
-    
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  <title>
-     Daming Blog
-  </title>
-  <meta name="generator" content="hexo-theme-ayer">
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
   
-  <link rel="shortcut icon" href="/favicon.ico" />
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="Zhang Daming">
+  <meta name="keywords" content="">
   
-  
-<link rel="stylesheet" href="/dist/main.css">
+  <title>Daming Blog</title>
 
-  
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css">
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
-  
-<link rel="stylesheet" href="/css/custom.css">
 
-  
-  
-<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
 
-  
-  
+<!-- 主题依赖的图标库，不要自行修改 -->
 
-  
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
 
-</head>
 
-</html>
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"luckandii.github.io","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+
 
 <body>
-  <div id="app">
-    
-      
-    <main class="content on">
-      
-<section class="cover">
-    
-      
-      <a class="forkMe" href="https://github.com/LUCKandII"
-        target="_blank"><img width="149" height="149" src="/images/forkme.png"
-          class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
-    
-  <div class="cover-frame">
-    <div class="bg-box">
-      <img src="/images/storm.jpg" alt="image frame" />
-    </div>
-    <div class="cover-inner text-center text-white">
-      <h1><a href="/">Daming Blog</a></h1>
-      <div id="subtitle-box">
+  <header style="height: 100vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Fluid</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
         
-        <span id="subtitle"></span>
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="An elegant Material-Design theme for Hexo">
+              
+            </span>
+
+            
+          </div>
+
+          
+            <div class="scroll-down-bar">
+              <i class="iconfont icon-arrowdown"></i>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div class="py-5" id="board"
+          style=margin-top:0>
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/07/04/2021/%E6%A0%91%E8%8E%93%E6%B4%BE&python%E6%80%BB%E7%BB%93/" target="_self">
+          树莓派&amp;python总结
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/07/04/2021/%E6%A0%91%E8%8E%93%E6%B4%BE&python%E6%80%BB%E7%BB%93/" target="_self">
+          
+          
+            
+          
+          加密内容, 请输入密码查看.
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-07-04 21:00" pubdate>
+              2021-07-04
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>
+            
+          </div>
         
       </div>
-      <div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
         
+        <a href="/2021/04/29/2021/RDclient%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/" target="_self">
+          RDclient远程连接
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/04/29/2021/RDclient%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/" target="_self">
+          
+          
+            
+          
+          
+
+
+1. 实现局域网内访问自己的电脑（远程桌面）
+1.1. 引导
+1.2. win10家庭版开远程桌面
+1.3. ipad端RD client配置
+
+
+远程开机
+Wake On LAN
+Wake On WLAN
+
+
+
+
+
+1. 实现局域网内访问自己的电脑（远程桌面）1.1. 引导frp+远程桌面+RDclient
+frp+远程桌面+RDclient
+1.2. win10家庭版开远程桌面githu
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-04-29 00:00" pubdate>
+              2021-04-29
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/02/21/2021/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/" target="_self">
+          树莓派基础使用
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/02/21/2021/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/" target="_self">
+          
+          
+            
+          
+          
+
+
+1. 镜像下载与烧写
+2. 官方系统使用指南
+2.1. 官方镜像优点
+2.2. 烧写镜像，添加SSH空白文件到boot盘，预埋wifi
+2.3. 找到树莓派的WiFi
+2.4. 进入系统基本配置
+2.5. 其他使用指南
+2.5.1. 换阿里源
+2.5.2. 可视化的资源显示器neofetch
+2.5.3. 安装中文输入法
+2.5.4. 禁用休眠
+
+
+
+
+其他功能
+pscp工具
+samba共享
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-02-21 22:29" pubdate>
+              2021-02-21
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/01/17/2021/hexo_introduction/" target="_self">
+          hexo配置与使用
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/01/17/2021/hexo_introduction/" target="_self">
+          
+          
+            
+          
+          
+
+
+1. hexo的配置和使用
+1.1. 参考链接
+1.2. 插入图片：
+1.2.1. 网络教程
+1.2.2. 安装插件
+1.2.3. 改设置
+1.2.4. 代码替换
+1.2.5. 引用方式
+1.2.6. 确定的规范的图片引用方法：
+
+
+加密文档
+
+
+2. 最常用的命令
+
+
+
+1. hexo的配置和使用1.1. 参考链接hexo官方网站
+B站的不错的视频教程
+next主题的中文文档
+next主题
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-01-17 14:43" pubdate>
+              2021-01-17
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/01/17/2021/hello_world/" target="_self">
+          Hello World.This is my blog test!push to github and gitee
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/01/17/2021/hello_world/" target="_self">
+          
+          
+            
+          
+          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Quick
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-01-17 11:13" pubdate>
+              2021-01-17
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
       </div>
     </div>
   </div>
-  <div class="cover-learn-more">
-    <a href="javascript:void(0)" class="anchor"><i class="ri-arrow-down-line"></i></a>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
   </div>
-</section>
+  
+
+  
+
+  
+</footer>
 
 
-
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js"></script>
-
-
-<!-- Subtitle -->
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
 
   <script>
-    try {
-      var typed = new Typed("#subtitle", {
-        strings: ['规格严格，功夫到家', '愿你一生努力，一生被爱', ''],
-        startDelay: 0,
-        typeSpeed: 200,
-        loop: true,
-        backSpeed: 100,
-        showCursor: true
-      });
-    } catch (err) {
-      console.log(err)
-    }
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
   </script>
-  
-<div id="main">
-  <section class="outer">
-  
-  
-  <article class="articles">
-    
-    
-    
-    
-    <article
-  id="post-2021/RDclient远程连接"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2021/04/29/2021/RDclient%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/"
-    >RDclient远程连接</a> 
-</h2>
- 
 
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2021/04/29/2021/RDclient%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/" class="article-date">
-  <time datetime="2021-04-28T16:00:00.000Z" itemprop="datePublished">2021-04-29</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
-  </div>
- 
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <!-- TOC -->
 
-<ul>
-<li><a href="#1-%E5%AE%9E%E7%8E%B0%E5%B1%80%E5%9F%9F%E7%BD%91%E5%86%85%E8%AE%BF%E9%97%AE%E8%87%AA%E5%B7%B1%E7%9A%84%E7%94%B5%E8%84%91%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2">1. 实现局域网内访问自己的电脑（远程桌面）</a><ul>
-<li><a href="#11-%E5%BC%95%E5%AF%BC">1.1. 引导</a></li>
-<li><a href="#12-win10%E5%AE%B6%E5%BA%AD%E7%89%88%E5%BC%80%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2">1.2. win10家庭版开远程桌面</a></li>
-<li><a href="#13-ipad%E7%AB%AFrd-client%E9%85%8D%E7%BD%AE">1.3. ipad端RD client配置</a></li>
-</ul>
-</li>
-</ul>
-<!-- /TOC -->
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
 
-<h1 id="1-实现局域网内访问自己的电脑（远程桌面）"><a href="#1-实现局域网内访问自己的电脑（远程桌面）" class="headerlink" title="1. 实现局域网内访问自己的电脑（远程桌面）"></a>1. 实现局域网内访问自己的电脑（远程桌面）</h1><h2 id="1-1-引导"><a href="#1-1-引导" class="headerlink" title="1.1. 引导"></a>1.1. 引导</h2><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/266109987">frp+远程桌面+RDclient</a></p>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/266109987">frp+远程桌面+RDclient</a></p>
-<h2 id="1-2-win10家庭版开远程桌面"><a href="#1-2-win10家庭版开远程桌面" class="headerlink" title="1.2. win10家庭版开远程桌面"></a>1.2. win10家庭版开远程桌面</h2><p><a target="_blank" rel="noopener" href="https://github.com/stascorp/rdpwrap">github:rdpwrap</a></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/stascorp/rdpwrap/releases">github:rdpwrap:releases</a></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/stascorp/rdpwrap/issues/860">github:rdpwrap:issue</a></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/LCW0NJUPT/rdpwrap-autoupdate">github:rdpwrap-autoupdate</a></p>
-<ol>
-<li><p> 我下载了“ RDPWrap-v1.6.2.zip ”，并将文件放在C：\ Program Files \ RDP Wrapper中</p>
-</li>
-<li><p> 然后我下载了“ autoupdate-v07.09.2019.zip ”，将内容放在C：\ Program Files \ RDP Wrapper中</p>
-</li>
-<li><p> 然后，我以管理员身份运行cmd并运行“ autoupdate.bat ”</p>
-</li>
-<li><p> RDPConf全绿即可</p>
-</li>
-</ol>
-<h2 id="1-3-ipad端RD-client配置"><a href="#1-3-ipad端RD-client配置" class="headerlink" title="1.3. ipad端RD client配置"></a>1.3. ipad端RD client配置</h2><img src="/2021/04/29/2021/RDclient%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/RDclient远程连接_端口转发配置.png" width="100%">
+<!-- Plugins -->
 
-<img src="/2021/04/29/2021/RDclient%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/RDclient远程连接_同一局域网连接.png" width="50%">
-
-<img src="/2021/04/29/2021/RDclient%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/RDclient远程连接_校园网内连接.png" width="50%">
-
- 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li></ul>
-
-    </footer>
-  </div>
-
-    
- 
-    
-</article>
-
-    
-    <article
-  id="post-2021/树莓派基础使用"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2021/02/21/2021/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/"
-    >树莓派基础使用</a> 
-</h2>
- 
-
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2021/02/21/2021/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/" class="article-date">
-  <time datetime="2021-02-21T14:29:00.000Z" itemprop="datePublished">2021-02-21</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
-  </div>
- 
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <!-- TOC -->
-
-<ul>
-<li><a href="#1-%E9%95%9C%E5%83%8F%E4%B8%8B%E8%BD%BD%E4%B8%8E%E7%83%A7%E5%86%99">1. 镜像下载与烧写</a></li>
-<li><a href="#2-%E5%AE%98%E6%96%B9%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97">2. 官方系统使用指南</a><ul>
-<li><a href="#21-%E5%AE%98%E6%96%B9%E9%95%9C%E5%83%8F%E4%BC%98%E7%82%B9">2.1. 官方镜像优点</a></li>
-<li><a href="#22-%E7%83%A7%E5%86%99%E9%95%9C%E5%83%8F%E6%B7%BB%E5%8A%A0ssh%E7%A9%BA%E7%99%BD%E6%96%87%E4%BB%B6%E5%88%B0boot%E7%9B%98%E9%A2%84%E5%9F%8Bwifi">2.2. 烧写镜像，添加SSH空白文件到boot盘，预埋wifi</a></li>
-<li><a href="#23-%E6%89%BE%E5%88%B0%E6%A0%91%E8%8E%93%E6%B4%BE%E7%9A%84wifi">2.3. 找到树莓派的WiFi</a></li>
-<li><a href="#24-%E8%BF%9B%E5%85%A5%E7%B3%BB%E7%BB%9F%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE">2.4. 进入系统基本配置</a></li>
-<li><a href="#25-%E5%85%B6%E4%BB%96%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97">2.5. 其他使用指南</a><ul>
-<li><a href="#251-%E6%8D%A2%E9%98%BF%E9%87%8C%E6%BA%90">2.5.1. 换阿里源</a></li>
-<li><a href="#252-%E5%8F%AF%E8%A7%86%E5%8C%96%E7%9A%84%E8%B5%84%E6%BA%90%E6%98%BE%E7%A4%BA%E5%99%A8neofetch">2.5.2. 可视化的资源显示器neofetch</a></li>
-<li><a href="#253-%E5%AE%89%E8%A3%85%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95">2.5.3. 安装中文输入法</a></li>
-<li><a href="#254-%E7%A6%81%E7%94%A8%E4%BC%91%E7%9C%A0">2.5.4. 禁用休眠</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#%E5%85%B6%E4%BB%96%E5%8A%9F%E8%83%BD">其他功能</a><ul>
-<li><a href="#pscp%E5%B7%A5%E5%85%B7">pscp工具</a></li>
-<li><a href="#samba%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9%E6%A0%91%E8%8E%93%E6%B4%BE%E5%88%86%E4%BA%AB%E7%BB%99windows">samba共享文件夹，树莓派分享给windows</a></li>
-<li><a href="#%E8%B5%84%E6%96%99%E6%B1%87%E6%80%BB">资料汇总</a></li>
-</ul>
-</li>
-</ul>
-<!-- /TOC -->
-
-<h1 id="1-镜像下载与烧写"><a href="#1-镜像下载与烧写" class="headerlink" title="1. 镜像下载与烧写"></a>1. 镜像下载与烧写</h1><p><a target="_blank" rel="noopener" href="https://www.raspberrypi.org/downloads/">树莓派镜像烧写工具</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.raspberrypi.org/downloads/raspberry-pi-os/">树莓派官方系统镜像</a><br>镜像比较大，最好把种子下载下来然后再用下载工具下载</p>
-<p><a target="_blank" rel="noopener" href="https://ubuntu.com/download/raspberry-pi">树莓派的ubuntu</a><br>注意用的是desktop版本还是server版本</p>
-<h1 id="2-官方系统使用指南"><a href="#2-官方系统使用指南" class="headerlink" title="2. 官方系统使用指南"></a>2. 官方系统使用指南</h1><h2 id="2-1-官方镜像优点"><a href="#2-1-官方镜像优点" class="headerlink" title="2.1. 官方镜像优点"></a>2.1. 官方镜像优点</h2><p>内置SSH，VNC，Chrome（旧版），大量软件，桌面环境运行较流畅</p>
-<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1t64y1M7RA?t=150">一个很好的指导</a></p>
-<h2 id="2-2-烧写镜像，添加SSH空白文件到boot盘，预埋wifi"><a href="#2-2-烧写镜像，添加SSH空白文件到boot盘，预埋wifi" class="headerlink" title="2.2. 烧写镜像，添加SSH空白文件到boot盘，预埋wifi"></a>2.2. 烧写镜像，添加SSH空白文件到boot盘，预埋wifi</h2><p>新建wpa_supplicant.conf，priority越大优先级越高，放入boot盘</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">country&#x3D;CN</span><br><span class="line">ctrl_interface&#x3D;DIR&#x3D;&#x2F;var&#x2F;run&#x2F;wpa_supplicant GROUP&#x3D;netdev</span><br><span class="line">update_config&#x3D;1</span><br><span class="line"></span><br><span class="line">network&#x3D;&#123;</span><br><span class="line">    ssid&#x3D;&quot;RM701_LAN&quot;</span><br><span class="line">    psk&#x3D;&quot;XXXXX&quot;</span><br><span class="line">    key_mgmt&#x3D;WPA-PSK</span><br><span class="line">    priority&#x3D;2</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">network&#x3D;&#123;</span><br><span class="line">    ssid&#x3D;&quot;HomeAssistant&quot;</span><br><span class="line">    psk&#x3D;&quot;XXX&quot;</span><br><span class="line">    key_mgmt&#x3D;WPA-PSK</span><br><span class="line">    priority&#x3D;1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>有屏幕和键盘的可以不用预埋wifi，有网线的可以连接到电脑，开机之后通过ssh设置WiFi。</p>
-<h2 id="2-3-找到树莓派的WiFi"><a href="#2-3-找到树莓派的WiFi" class="headerlink" title="2.3. 找到树莓派的WiFi"></a>2.3. 找到树莓派的WiFi</h2><ol>
-<li><p>网线连接到电脑，使用再cmd使用命令</p>
-<p> arp -a</p>
-</li>
-</ol>
-<p>有线的端口的就是树莓派的，一般是192.168.137.1之类的</p>
-<p><a target="_blank" rel="noopener" href="https://shumeipai.nxez.com/2013/10/15/raspberry-pi-and-a-network-cable-directly-connected-laptop.html">树莓派+一根网线直连笔记本电脑</a></p>
-<ol start="2">
-<li><p>没有网线，进入路由器的管理界面</p>
-<pre><code> 192.168.1.1     //tp-link的管理界面
- 192.168.31.1    //红米路由器
- //具体看自己的路由器情况和所在网络的网段</code></pre>
-</li>
-<li><p> 其他工具，如安卓手机上面的fing，或者安卓手机使用终端模拟器执行<code>ip neigh</code>命令，与电脑的<code>arp - a</code>效果相同。树莓派连到手机热点的时候这样查看ip最方便。</p>
-</li>
-</ol>
-<h2 id="2-4-进入系统基本配置"><a href="#2-4-进入系统基本配置" class="headerlink" title="2.4. 进入系统基本配置"></a>2.4. 进入系统基本配置</h2><blockquote>
-<p>有屏幕：更改屏幕设置（大黑边问题）</p>
-</blockquote>
-<blockquote>
-<p>没有屏幕：ssh连接，默认pi，raspberry</p>
-</blockquote>
-<blockquote>
-<p>进入raspi-config，命令是</p>
-</blockquote>
-<pre><code>sudo raspi-config</code></pre>
-<blockquote>
-<p>设置VNC开启<br>在第五点5 interfacing options  —&gt;  VNC</p>
-</blockquote>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_42612147/article/details/100073650">vnc viewer 显示 cannot currently show the desktop 的解决方法</a></p>
-<blockquote>
-<p>进入图像化界面进行初始化配置，设置地区语言，登陆密码之类的。</p>
-</blockquote>
-<blockquote>
-<p>设置静态IP，在已经开启vnc的情况下可以连接vnc进行配置，注意经常设备不是固定使用的情况下不要设置静态ip，因为不同网络环境下网段会变。</p>
-</blockquote>
-<pre><code>sudo nano /etc/dhcpcd.conf
-# 添加以下内容
-interfac wlan0
-static ip_address=192.168.X.X
-static routers=192.168.X.X</code></pre>
-<h2 id="2-5-其他使用指南"><a href="#2-5-其他使用指南" class="headerlink" title="2.5. 其他使用指南"></a>2.5. 其他使用指南</h2><h3 id="2-5-1-换阿里源"><a href="#2-5-1-换阿里源" class="headerlink" title="2.5.1. 换阿里源"></a>2.5.1. 换阿里源</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 第一个文件</span></span><br><span class="line">sudo nano /etc/apt/sources.list</span><br><span class="line"><span class="comment"># 将原有内容用#注释掉</span></span><br><span class="line">deb http://mirrors.aliyun.com/raspbian/raspbian/ buster main contrib non-free rpi</span><br><span class="line">deb-src http://mirrors.aliyun.com/raspbian/raspbian/ buster main contrib non-free rpi</span><br><span class="line"></span><br><span class="line"><span class="comment"># 第二个文件</span></span><br><span class="line">sudo nano /etc/apt/sources.list.d/raspi.list</span><br><span class="line"><span class="comment"># 将原有内容用#注释掉</span></span><br><span class="line">deb http://mirrors.aliyun.com/raspbian/raspbian/ buster main</span><br><span class="line">deb-src http://mirrors.aliyun.com/raspbian/raspbian/ buster main</span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行更新</span></span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get upgrade</span><br></pre></td></tr></table></figure>
-<p>提示重复配置可以把 <code>/etc/apt/sources.list.d/raspi.list</code> 里面的源删掉，只留一个文件有源就可以。</p>
-<h3 id="2-5-2-可视化的资源显示器neofetch"><a href="#2-5-2-可视化的资源显示器neofetch" class="headerlink" title="2.5.2. 可视化的资源显示器neofetch"></a>2.5.2. 可视化的资源显示器neofetch</h3><p>在换完源，执行完更新的情况下执行</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装neotetch</span></span><br><span class="line">sudo aptitude install neofetch</span><br><span class="line"><span class="comment"># 配置neotetch，需要显示的东西取消注释即可</span></span><br><span class="line">sudo nano .config/neofetch/config.conf</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-5-3-安装中文输入法"><a href="#2-5-3-安装中文输入法" class="headerlink" title="2.5.3. 安装中文输入法"></a>2.5.3. 安装中文输入法</h3><p><a target="_blank" rel="noopener" href="https://shumeipai.nxez.com/2016/03/13/how-to-make-raspberry-pi-display-chinese.html">树莓派实验室关于安装中文输入法</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/84cb45bbef63">显示中文和安装中文输入法</a></p>
-<pre><code># 字库
-sudo apt-get install ttf-wqy-zenhei
-#输入法
-sudo apt-get install scim-pinyin
-
-#配置
-sudo raspi-config</code></pre>
-<p>localisation Options –&gt; change Locale ，一直按方向下键，按空格选择 zh_CN GB2312 , zh_CN.GB18030 GB18030 , zh_CN.GBK GBK , zh_CN.UTF-8 UTF-8 四个选项，左边出现＊号即为选中，按回车确认。</p>
-<p>确认后，选择zh_CN.UTF-8,回车确认</p>
-<h3 id="2-5-4-禁用休眠"><a href="#2-5-4-禁用休眠" class="headerlink" title="2.5.4. 禁用休眠"></a>2.5.4. 禁用休眠</h3><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/xiaoqianbook/p/11945271.html">一个很好的博客</a></p>
-<pre><code>sudo nano /etc/lightdm/lightdm.conf</code></pre>
-<p>找到[Seat:*]这一项，在下面的‘#xserver-command=X’删除前面的注释符#，修改为以下</p>
-<pre><code>xserver-command=X -s 0-dpms</code></pre>
-<p>其中，-s 参数：设置屏幕保护不启动，0 数字零，-dpms 参数：关闭电源节能管理。</p>
-<h1 id="其他功能"><a href="#其他功能" class="headerlink" title="其他功能"></a>其他功能</h1><h2 id="pscp工具"><a href="#pscp工具" class="headerlink" title="pscp工具"></a>pscp工具</h2><p>windows发送文件到树莓派上面，注意斜杠和反斜杠</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pscp -P 22 c:\文件完整路径 pi@IP地址:/home/git/</span><br></pre></td></tr></table></figure>
-<h2 id="samba共享文件夹，树莓派分享给windows"><a href="#samba共享文件夹，树莓派分享给windows" class="headerlink" title="samba共享文件夹，树莓派分享给windows"></a>samba共享文件夹，树莓派分享给windows</h2><p>搜索关键词<code>局域网内Windows和linux系统如何共享文件</code>，<code>SAMBA共享文件</code></p>
-<p>安装samba 和 samba-common-bin</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install samba samba-common-bin</span><br></pre></td></tr></table></figure>
-<p>配置samba服务 ：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano &#x2F;etc&#x2F;samba&#x2F;smb.conf</span><br></pre></td></tr></table></figure>
-<p>跳到最后一行，加入如下语句：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">[MyNAS]</span><br><span class="line">    # 说明信息</span><br><span class="line">    comment &#x3D; NAS Storage</span><br><span class="line">    # 可以访问的用户</span><br><span class="line">    valid users &#x3D; pi,root</span><br><span class="line">    # 共享文件的路径,raspberry pi 会自动将连接到其上的外接存储设备挂载到&#x2F;media&#x2F;pi&#x2F;目录下。</span><br><span class="line">    path &#x3D; &#x2F;media&#x2F;pi&#x2F;</span><br><span class="line">    # 可被其他人看到资源名称（非内容）</span><br><span class="line">    browseable &#x3D; yes</span><br><span class="line">    # 可写</span><br><span class="line">    writable &#x3D; yes</span><br><span class="line">    # 新建文件的权限为 664</span><br><span class="line">    create mask &#x3D; 0664</span><br><span class="line">    # 新建目录的权限为 775</span><br><span class="line">    directory mask &#x3D; 0775</span><br></pre></td></tr></table></figure>
-<p>samba用户权限配置</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo sambapasswd -a pi</span><br></pre></td></tr></table></figure>
-<p>输入新设置samba密码，为了安全性尽量不要和已经存在的pi密码重复。</p>
-<p>重启服务: <code>sudo /etc/init.d/smbd restart</code></p>
-<p>设置开机自启动，编辑<code>sudo nano /etc/rc.local</code>，在exit0前加上<code>sudo /etc/init.d/smbd restart</code></p>
-<p>在windows打开“计算机”——&gt;在网络位置””空白处右键“添加一个网络位置”，按向导做即可。</p>
-<h2 id="资料汇总"><a href="#资料汇总" class="headerlink" title="资料汇总"></a>资料汇总</h2><p><a target="_blank" rel="noopener" href="https://github.com/xinxingli/Raspberry-Pi">一个树莓派学习资料汇总的网页</a></p>
- 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li></ul>
-
-    </footer>
-  </div>
-
-    
- 
-    
-</article>
-
-    
-    <article
-  id="post-2021/hexo_introduction"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2021/01/17/2021/hexo_introduction/"
-    >hexo配置与使用</a> 
-</h2>
- 
-
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2021/01/17/2021/hexo_introduction/" class="article-date">
-  <time datetime="2021-01-17T06:43:14.000Z" itemprop="datePublished">2021-01-17</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
-  </div>
- 
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <!-- TOC -->
-
-<ul>
-<li><a href="#1-hexo%E7%9A%84%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8">1. hexo的配置和使用</a><ul>
-<li><a href="#11-%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5">1.1. 参考链接</a></li>
-<li><a href="#12-%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87">1.2. 插入图片：</a><ul>
-<li><a href="#121-%E7%BD%91%E7%BB%9C%E6%95%99%E7%A8%8B">1.2.1. 网络教程</a></li>
-<li><a href="#122-%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6">1.2.2. 安装插件</a></li>
-<li><a href="#123-%E6%94%B9%E8%AE%BE%E7%BD%AE">1.2.3. 改设置</a></li>
-<li><a href="#124-%E4%BB%A3%E7%A0%81%E6%9B%BF%E6%8D%A2">1.2.4. 代码替换</a></li>
-<li><a href="#125-%E5%BC%95%E7%94%A8%E6%96%B9%E5%BC%8F">1.2.5. 引用方式</a></li>
-<li><a href="#126-%E7%A1%AE%E5%AE%9A%E7%9A%84%E8%A7%84%E8%8C%83%E7%9A%84%E5%9B%BE%E7%89%87%E5%BC%95%E7%94%A8%E6%96%B9%E6%B3%95">1.2.6. 确定的规范的图片引用方法：</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#2-%E6%9C%80%E5%B8%B8%E7%94%A8%E7%9A%84%E5%91%BD%E4%BB%A4">2. 最常用的命令</a></li>
-</ul>
-<!-- /TOC -->
-
-<h1 id="1-hexo的配置和使用"><a href="#1-hexo的配置和使用" class="headerlink" title="1. hexo的配置和使用"></a>1. hexo的配置和使用</h1><h2 id="1-1-参考链接"><a href="#1-1-参考链接" class="headerlink" title="1.1. 参考链接"></a>1.1. 参考链接</h2><p><a target="_blank" rel="noopener" href="https://hexo.io/">hexo官方网站</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1cW411A7Jx?p=1">B站的不错的视频教程</a></p>
-<p><a target="_blank" rel="noopener" href="http://theme-next.iissnan.com/">next主题的中文文档</a></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/theme-next/hexo-theme-next">next主题的Github</a></p>
-<p><a target="_blank" rel="noopener" href="https://gitee.com/help/articles/4136#article-header0">Gitee Pages的指导</a></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/litten/hexo-theme-yilia">Yilia主题的Github及说明</a></p>
-<p><a target="_blank" rel="noopener" href="https://shen-yu.gitee.io/2019/ayer/">Ayer主题的使用说明</a></p>
-<p><a target="_blank" rel="noopener" href="https://hexo.io/themes/">hexo官网给出的模板</a></p>
-<h2 id="1-2-插入图片："><a href="#1-2-插入图片：" class="headerlink" title="1.2. 插入图片："></a>1.2. 插入图片：</h2> 
-      <a class="article-more-link" href="/2021/01/17/2021/hexo_introduction/"
-        >阅读更多...</a
-      >
-       
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li></ul>
-
-    </footer>
-  </div>
-
-    
- 
-    
-</article>
-
-    
-    <article
-  id="post-2021/hello_world"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2021/01/17/2021/hello_world/"
-    >Hello World.This is my blog test!push to github and gitee</a> 
-</h2>
- 
-
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2021/01/17/2021/hello_world/" class="article-date">
-  <time datetime="2021-01-17T03:13:32.434Z" itemprop="datePublished">2021-01-17</time>
-</a>  
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2> 
-      <a class="article-more-link" href="/2021/01/17/2021/hello_world/"
-        >阅读更多...</a
-      >
-       
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-    </footer>
-  </div>
-
-    
- 
-    
-</article>
-
-    
-  </article>
-  
 
   
-</section>
-</div>
-
-      <footer class="footer">
-  <div class="outer">
-    <ul>
-      <li>
-        Copyrights &copy;
-        2021
-        <i class="ri-heart-fill heart_icon"></i> Zhang Daming
-      </li>
-    </ul>
-    <ul>
-      <li>
-        
-        
-        
-        由 <a href="https://hexo.io" target="_blank">Hexo</a> 强力驱动
-        <span class="division">|</span>
-        主题 - <a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank">Ayer</a>
-        
-      </li>
-    </ul>
-    <ul>
-      <li>
-        
-      </li>
-    </ul>
-    <ul>
-      
-    </ul>
-    <ul>
-      
-    </ul>
-    <ul>
-      <li>
-        <!-- cnzz统计 -->
-        
-      </li>
-    </ul>
-  </div>
-</footer>
-      <div class="float_btns">
-        <div class="totop" id="totop">
-  <i class="ri-arrow-up-line"></i>
-</div>
-
-<div class="todark" id="todark">
-  <i class="ri-moon-line"></i>
-</div>
-
-      </div>
-    </main>
-    <aside class="sidebar on">
-      <button class="navbar-toggle"></button>
-<nav class="navbar">
+    <script  src="/js/img-lazyload.js" ></script>
   
-  <div class="logo">
-    <a href="/"><img src="/images/ayer-side.svg" alt="Daming Blog"></a>
-  </div>
+
+
+
   
-  <ul class="nav nav-main">
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/">主页</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/archives">归档</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/categories">分类</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/tags">标签</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/friends">友链</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/2021/about">关于我</a>
-    </li>
-    
-  </ul>
-</nav>
-<nav class="navbar navbar-bottom">
-  <ul class="nav">
-    <li class="nav-item">
+
+
+
+
+
+
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
       
-      <a class="nav-item-link nav-item-search"  title="搜索">
-        <i class="ri-search-line"></i>
-      </a>
+      typing(title)
       
-      
-    </li>
-  </ul>
-</nav>
-<div class="search-form-wrap">
-  <div class="local-search local-search-plugin">
-  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
-  <div id="local-search-result" class="local-search-result"></div>
-</div>
-</div>
-    </aside>
-    <script>
-      if (window.matchMedia("(max-width: 768px)").matches) {
-        document.querySelector('.content').classList.remove('on');
-        document.querySelector('.sidebar').classList.remove('on');
-      }
-    </script>
-    <div id="mask"></div>
-
-<!-- #reward -->
-<div id="reward">
-  <span class="close"><i class="ri-close-line"></i></span>
-  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
-  <div class="reward-box">
-    
-    <div class="reward-item">
-      <img class="reward-img" src="/images/alipay.png">
-      <span class="reward-type">支付宝</span>
-    </div>
-    
-    
-    <div class="reward-item">
-      <img class="reward-img" src="/images/wechat.png">
-      <span class="reward-type">微信</span>
-    </div>
-    
-  </div>
-</div>
-    
-<script src="/js/jquery-2.0.3.min.js"></script>
+    })(window, document);
+  </script>
 
 
-<script src="/js/lazyload.min.js"></script>
-
-<!-- Tocbot -->
-
-<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
-<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
-
-<script src="/dist/main.js"></script>
-
-<!-- ImageViewer -->
-
-<!-- Root element of PhotoSwipe. Must have class pswp. -->
-<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-
-    <!-- Background of PhotoSwipe. 
-         It's a separate element as animating opacity is faster than rgba(). -->
-    <div class="pswp__bg"></div>
-
-    <!-- Slides wrapper with overflow:hidden. -->
-    <div class="pswp__scroll-wrap">
-
-        <!-- Container that holds slides. 
-            PhotoSwipe keeps only 3 of them in the DOM to save memory.
-            Don't modify these 3 pswp__item elements, data is added later on. -->
-        <div class="pswp__container">
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-        </div>
-
-        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
-        <div class="pswp__ui pswp__ui--hidden">
-
-            <div class="pswp__top-bar">
-
-                <!--  Controls are self-explanatory. Order can be changed. -->
-
-                <div class="pswp__counter"></div>
-
-                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-
-                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
-
-                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-
-                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-
-                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
-                <!-- element will get class pswp__preloader--active when preloader is running -->
-                <div class="pswp__preloader">
-                    <div class="pswp__preloader__icn">
-                        <div class="pswp__preloader__cut">
-                            <div class="pswp__preloader__donut"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                <div class="pswp__share-tooltip"></div>
-            </div>
-
-            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-            </button>
-
-            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-            </button>
-
-            <div class="pswp__caption">
-                <div class="pswp__caption__center"></div>
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
-<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
-
-<script>
-    function viewer_init() {
-        let pswpElement = document.querySelectorAll('.pswp')[0];
-        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
-
-        $imgArr.forEach(($em, i) => {
-            $em.onclick = () => {
-                // slider展开状态
-                // todo: 这样不好，后面改成状态
-                if (document.querySelector('.left-col.show')) return
-                let items = []
-                $imgArr.forEach(($em2, i2) => {
-                    let img = $em2.getAttribute('data-idx', i2)
-                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
-                    let title = $em2.getAttribute('alt')
-                    // 获得原图尺寸
-                    const image = new Image()
-                    image.src = src
-                    items.push({
-                        src: src,
-                        w: image.width || $em2.width,
-                        h: image.height || $em2.height,
-                        title: title
-                    })
-                })
-                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
-                    index: parseInt(i)
-                });
-                gallery.init()
-            }
-        })
-    }
-    viewer_init()
-</script>
-
-<!-- MathJax -->
-
-<!-- Katex -->
-
-<!-- busuanzi  -->
-
-<!-- ClickLove -->
-
-<!-- ClickBoom1 -->
-
-<!-- ClickBoom2 -->
-
-<!-- CodeCopy -->
 
 
-<link rel="stylesheet" href="/css/clipboard.css">
-
-<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
-<script>
-  function wait(callback, seconds) {
-    var timelag = null;
-    timelag = window.setTimeout(callback, seconds);
-  }
-  !function (e, t, a) {
-    var initCopyCode = function(){
-      var copyHtml = '';
-      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
-      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
-      copyHtml += '</button>';
-      $(".highlight .code pre").before(copyHtml);
-      $(".article pre code").before(copyHtml);
-      var clipboard = new ClipboardJS('.btn-copy', {
-        target: function(trigger) {
-          return trigger.nextElementSibling;
-        }
-      });
-      clipboard.on('success', function(e) {
-        let $btn = $(e.trigger);
-        $btn.addClass('copied');
-        let $icon = $($btn.find('i'));
-        $icon.removeClass('ri-file-copy-2-line');
-        $icon.addClass('ri-checkbox-circle-line');
-        let $span = $($btn.find('span'));
-        $span[0].innerText = 'COPIED';
-        
-        wait(function () { // 等待两秒钟后恢复
-          $icon.removeClass('ri-checkbox-circle-line');
-          $icon.addClass('ri-file-copy-2-line');
-          $span[0].innerText = 'COPY';
-        }, 2000);
-      });
-      clipboard.on('error', function(e) {
-        e.clearSelection();
-        let $btn = $(e.trigger);
-        $btn.addClass('copy-failed');
-        let $icon = $($btn.find('i'));
-        $icon.removeClass('ri-file-copy-2-line');
-        $icon.addClass('ri-time-line');
-        let $span = $($btn.find('span'));
-        $span[0].innerText = 'COPY FAILED';
-        
-        wait(function () { // 等待两秒钟后恢复
-          $icon.removeClass('ri-time-line');
-          $icon.addClass('ri-file-copy-2-line');
-          $span[0].innerText = 'COPY';
-        }, 2000);
-      });
-    }
-    initCopyCode();
-  }(window, document);
-</script>
 
 
-<!-- CanvasBackground -->
 
 
-    
-    <div id="music">
-    
-    
-    
-    <iframe frameborder="no" border="1" marginwidth="0" marginheight="0" width="200" height="52"
-        src="//music.163.com/outchain/player?type=2&id=22707008&auto=0&height=32"></iframe>
-</div>
 
-<style>
-    #music {
-        position: fixed;
-        right: 15px;
-        bottom: 0;
-        z-index: 998;
-    }
-</style>
-    
-  </div>
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"superSample":2,"width":200,"height":400,"position":"right","hOffset":50,"vOffset":-40},"mobile":{"show":false,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false});</script></body>
-
 </html>
