@@ -226,7 +226,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2021年7月5日 下午
+                  本文最后更新于：2021年7月5日 晚上
                 
               </p>
             
@@ -264,7 +264,7 @@
 <h1 id="2-官方系统使用指南"><a href="#2-官方系统使用指南" class="headerlink" title="2. 官方系统使用指南"></a>2. 官方系统使用指南</h1><h2 id="2-1-官方镜像优点"><a href="#2-1-官方镜像优点" class="headerlink" title="2.1. 官方镜像优点"></a>2.1. 官方镜像优点</h2><p>内置SSH，VNC，Chrome（旧版），大量软件，桌面环境运行较流畅</p>
 <p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1t64y1M7RA?t=150">一个很好的指导</a></p>
 <h2 id="2-2-烧写镜像，添加SSH空白文件到boot盘，预埋wifi"><a href="#2-2-烧写镜像，添加SSH空白文件到boot盘，预埋wifi" class="headerlink" title="2.2. 烧写镜像，添加SSH空白文件到boot盘，预埋wifi"></a>2.2. 烧写镜像，添加SSH空白文件到boot盘，预埋wifi</h2><p>新建wpa_supplicant.conf，priority越大优先级越高，放入boot盘</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs conf">country&#x3D;CN<br>ctrl_interface&#x3D;DIR&#x3D;&#x2F;var&#x2F;run&#x2F;wpa_supplicant GROUP&#x3D;netdev<br>update_config&#x3D;1<br><br>network&#x3D;&#123;<br>    ssid&#x3D;&quot;RM701_LAN&quot;<br>    psk&#x3D;&quot;XXXXX&quot;<br>    key_mgmt&#x3D;WPA-PSK<br>    priority&#x3D;2<br>&#125;<br><br>network&#x3D;&#123;<br>    ssid&#x3D;&quot;HomeAssistant&quot;<br>    psk&#x3D;&quot;XXX&quot;<br>    key_mgmt&#x3D;WPA-PSK<br>    priority&#x3D;1<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs conf">country&#x3D;CN<br>ctrl_interface&#x3D;DIR&#x3D;&#x2F;var&#x2F;run&#x2F;wpa_supplicant GROUP&#x3D;netdev<br>update_config&#x3D;1<br><br>network&#x3D;&#123;<br>    ssid&#x3D;&quot;RM701_LAN&quot;<br>    psk&#x3D;&quot;XXXXX&quot;<br>    key_mgmt&#x3D;WPA-PSK<br>    priority&#x3D;2<br>&#125;<br><br>network&#x3D;&#123;<br>    ssid&#x3D;&quot;HomeAssistant&quot;<br>    psk&#x3D;&quot;XXX&quot;<br>    key_mgmt&#x3D;WPA-PSK<br>    priority&#x3D;1<br>&#125;<br></code></pre></div></td></tr></table></figure>
 <p>有屏幕和键盘的可以不用预埋wifi，有网线的可以连接到电脑，开机之后通过ssh设置WiFi。</p>
 <h2 id="2-3-找到树莓派的WiFi"><a href="#2-3-找到树莓派的WiFi" class="headerlink" title="2.3. 找到树莓派的WiFi"></a>2.3. 找到树莓派的WiFi</h2><ol>
 <li><p>网线连接到电脑，使用再cmd使用命令</p>
@@ -275,9 +275,9 @@
 <p><a target="_blank" rel="noopener" href="https://shumeipai.nxez.com/2013/10/15/raspberry-pi-and-a-network-cable-directly-connected-laptop.html">树莓派+一根网线直连笔记本电脑</a></p>
 <ol start="2">
 <li><p>没有网线，进入路由器的管理界面</p>
-<pre><code> 192.168.1.1     //tp-link的管理界面
+<div class="hljs code-wrapper"><pre><code> 192.168.1.1     //tp-link的管理界面
  192.168.31.1    //红米路由器
- //具体看自己的路由器情况和所在网络的网段</code></pre>
+ //具体看自己的路由器情况和所在网络的网段</code></pre></div>
 </li>
 <li><p> 其他工具，如安卓手机上面的fing，或者安卓手机使用终端模拟器执行<code>ip neigh</code>命令，与电脑的<code>arp - a</code>效果相同。树莓派连到手机热点的时候这样查看ip最方便。</p>
 </li>
@@ -291,7 +291,7 @@
 <blockquote>
 <p>进入raspi-config，命令是</p>
 </blockquote>
-<pre><code>sudo raspi-config</code></pre>
+<div class="hljs code-wrapper"><pre><code>sudo raspi-config</code></pre></div>
 <blockquote>
 <p>设置VNC开启<br>在第五点5 interfacing options  —&gt;  VNC</p>
 </blockquote>
@@ -302,43 +302,43 @@
 <blockquote>
 <p>设置静态IP，在已经开启vnc的情况下可以连接vnc进行配置，注意经常设备不是固定使用的情况下不要设置静态ip，因为不同网络环境下网段会变。</p>
 </blockquote>
-<pre><code>sudo nano /etc/dhcpcd.conf
+<div class="hljs code-wrapper"><pre><code>sudo nano /etc/dhcpcd.conf
 # 添加以下内容
 interfac wlan0
 static ip_address=192.168.X.X
-static routers=192.168.X.X</code></pre>
-<h2 id="2-5-其他使用指南"><a href="#2-5-其他使用指南" class="headerlink" title="2.5. 其他使用指南"></a>2.5. 其他使用指南</h2><h3 id="2-5-1-换阿里源"><a href="#2-5-1-换阿里源" class="headerlink" title="2.5.1. 换阿里源"></a>2.5.1. 换阿里源</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 第一个文件</span><br>sudo nano /etc/apt/sources.list<br><span class="hljs-comment"># 将原有内容用#注释掉</span><br>deb http://mirrors.aliyun.com/raspbian/raspbian/ buster main contrib non-free rpi<br>deb-src http://mirrors.aliyun.com/raspbian/raspbian/ buster main contrib non-free rpi<br><br><span class="hljs-comment"># 第二个文件</span><br>sudo nano /etc/apt/sources.list.d/raspi.list<br><span class="hljs-comment"># 将原有内容用#注释掉</span><br>deb http://mirrors.aliyun.com/raspbian/raspbian/ buster main<br>deb-src http://mirrors.aliyun.com/raspbian/raspbian/ buster main<br><br><span class="hljs-comment"># 执行更新</span><br>sudo apt-get update<br>sudo apt-get upgrade<br></code></pre></td></tr></table></figure>
+static routers=192.168.X.X</code></pre></div>
+<h2 id="2-5-其他使用指南"><a href="#2-5-其他使用指南" class="headerlink" title="2.5. 其他使用指南"></a>2.5. 其他使用指南</h2><h3 id="2-5-1-换阿里源"><a href="#2-5-1-换阿里源" class="headerlink" title="2.5.1. 换阿里源"></a>2.5.1. 换阿里源</h3><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-comment"># 第一个文件</span><br>sudo nano /etc/apt/sources.list<br><span class="hljs-comment"># 将原有内容用#注释掉</span><br>deb http://mirrors.aliyun.com/raspbian/raspbian/ buster main contrib non-free rpi<br>deb-src http://mirrors.aliyun.com/raspbian/raspbian/ buster main contrib non-free rpi<br><br><span class="hljs-comment"># 第二个文件</span><br>sudo nano /etc/apt/sources.list.d/raspi.list<br><span class="hljs-comment"># 将原有内容用#注释掉</span><br>deb http://mirrors.aliyun.com/raspbian/raspbian/ buster main<br>deb-src http://mirrors.aliyun.com/raspbian/raspbian/ buster main<br><br><span class="hljs-comment"># 执行更新</span><br>sudo apt-get update<br>sudo apt-get upgrade<br></code></pre></div></td></tr></table></figure>
 <p>提示重复配置可以把 <code>/etc/apt/sources.list.d/raspi.list</code> 里面的源删掉，只留一个文件有源就可以。</p>
 <h3 id="2-5-2-可视化的资源显示器neofetch"><a href="#2-5-2-可视化的资源显示器neofetch" class="headerlink" title="2.5.2. 可视化的资源显示器neofetch"></a>2.5.2. 可视化的资源显示器neofetch</h3><p>在换完源，执行完更新的情况下执行</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 安装neotetch</span><br>sudo aptitude install neofetch<br><span class="hljs-comment"># 配置neotetch，需要显示的东西取消注释即可</span><br>sudo nano .config/neofetch/config.conf<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-comment"># 安装neotetch</span><br>sudo aptitude install neofetch<br><span class="hljs-comment"># 配置neotetch，需要显示的东西取消注释即可</span><br>sudo nano .config/neofetch/config.conf<br></code></pre></div></td></tr></table></figure>
 
 <h3 id="2-5-3-安装中文输入法"><a href="#2-5-3-安装中文输入法" class="headerlink" title="2.5.3. 安装中文输入法"></a>2.5.3. 安装中文输入法</h3><p><a target="_blank" rel="noopener" href="https://shumeipai.nxez.com/2016/03/13/how-to-make-raspberry-pi-display-chinese.html">树莓派实验室关于安装中文输入法</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/84cb45bbef63">显示中文和安装中文输入法</a></p>
-<pre><code># 字库
+<div class="hljs code-wrapper"><pre><code># 字库
 sudo apt-get install ttf-wqy-zenhei
 #输入法
 sudo apt-get install scim-pinyin
 
 #配置
-sudo raspi-config</code></pre>
+sudo raspi-config</code></pre></div>
 <p>localisation Options –&gt; change Locale ，一直按方向下键，按空格选择 zh_CN GB2312 , zh_CN.GB18030 GB18030 , zh_CN.GBK GBK , zh_CN.UTF-8 UTF-8 四个选项，左边出现＊号即为选中，按回车确认。</p>
 <p>确认后，选择zh_CN.UTF-8,回车确认</p>
 <h3 id="2-5-4-禁用休眠"><a href="#2-5-4-禁用休眠" class="headerlink" title="2.5.4. 禁用休眠"></a>2.5.4. 禁用休眠</h3><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/xiaoqianbook/p/11945271.html">一个很好的博客</a></p>
-<pre><code>sudo nano /etc/lightdm/lightdm.conf</code></pre>
+<div class="hljs code-wrapper"><pre><code>sudo nano /etc/lightdm/lightdm.conf</code></pre></div>
 <p>找到[Seat:*]这一项，在下面的‘#xserver-command=X’删除前面的注释符#，修改为以下</p>
-<pre><code>xserver-command=X -s 0-dpms</code></pre>
+<div class="hljs code-wrapper"><pre><code>xserver-command=X -s 0-dpms</code></pre></div>
 <p>其中，-s 参数：设置屏幕保护不启动，0 数字零，-dpms 参数：关闭电源节能管理。</p>
 <h1 id="3-其他功能"><a href="#3-其他功能" class="headerlink" title="3. 其他功能"></a>3. 其他功能</h1><h2 id="3-1-pscp工具"><a href="#3-1-pscp工具" class="headerlink" title="3.1. pscp工具"></a>3.1. pscp工具</h2><p>windows发送文件到树莓派上面，注意斜杠和反斜杠</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pscp -P 22 c:\文件完整路径 pi@IP地址:/home/git/<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">pscp -P 22 c:\文件完整路径 pi@IP地址:/home/git/<br></code></pre></div></td></tr></table></figure>
 <h2 id="3-2-samba共享文件夹，树莓派分享给windows"><a href="#3-2-samba共享文件夹，树莓派分享给windows" class="headerlink" title="3.2. samba共享文件夹，树莓派分享给windows"></a>3.2. samba共享文件夹，树莓派分享给windows</h2><p>搜索关键词<code>局域网内Windows和linux系统如何共享文件</code>，<code>SAMBA共享文件</code></p>
 <p>安装samba 和 samba-common-bin</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs routeros">sudo apt-<span class="hljs-builtin-name">get</span> update<br>sudo apt-<span class="hljs-builtin-name">get</span> install samba samba-common-bin<br></code></pre></td></tr></table></figure>
+<figure class="highlight routeros"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs routeros">sudo apt-<span class="hljs-builtin-name">get</span> update<br>sudo apt-<span class="hljs-builtin-name">get</span> install samba samba-common-bin<br></code></pre></div></td></tr></table></figure>
 <p>配置samba服务 ：</p>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">sudo nano <span class="hljs-regexp">/etc/</span>samba/smb.conf<br></code></pre></td></tr></table></figure>
+<figure class="highlight awk"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs awk">sudo nano <span class="hljs-regexp">/etc/</span>samba/smb.conf<br></code></pre></div></td></tr></table></figure>
 <p>跳到最后一行，加入如下语句：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs conf">[MyNAS]<br>    # 说明信息<br>    comment &#x3D; NAS Storage<br>    # 可以访问的用户<br>    valid users &#x3D; pi,root<br>    # 共享文件的路径,raspberry pi 会自动将连接到其上的外接存储设备挂载到&#x2F;media&#x2F;pi&#x2F;目录下。注意这个目录要存在才可访问<br>    path &#x3D; &#x2F;media&#x2F;pi&#x2F;<br>    # 可被其他人看到资源名称（非内容）<br>    browseable &#x3D; yes<br>    # 可写<br>    writable &#x3D; yes<br>    readonly &#x3D; no<br>    # 新建文件的权限为 664<br>    create mask &#x3D; 0664<br>    # 新建目录的权限为 775<br>    directory mask &#x3D; 0775<br></code></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs conf">[MyNAS]<br>    # 说明信息<br>    comment &#x3D; NAS Storage<br>    # 可以访问的用户<br>    valid users &#x3D; pi,root<br>    # 共享文件的路径,raspberry pi 会自动将连接到其上的外接存储设备挂载到&#x2F;media&#x2F;pi&#x2F;目录下。注意这个目录要存在才可访问<br>    path &#x3D; &#x2F;media&#x2F;pi&#x2F;<br>    # 可被其他人看到资源名称（非内容）<br>    browseable &#x3D; yes<br>    # 可写<br>    writable &#x3D; yes<br>    readonly &#x3D; no<br>    # 新建文件的权限为 664<br>    create mask &#x3D; 0664<br>    # 新建目录的权限为 775<br>    directory mask &#x3D; 0775<br></code></pre></div></td></tr></table></figure>
 <p>samba用户权限配置，如果失败，先把<code>sudo apt-get remove samba </code>，然后再考虑<code>sudo apt-get autoremove</code>，再重装一遍</p>
-<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs livecodeserver">sudo sambapasswd -<span class="hljs-keyword">a</span> <span class="hljs-literal">pi</span><br><span class="hljs-comment"># 提示找不到命令则试试</span><br>sudo smbpasswd -<span class="hljs-keyword">a</span> <span class="hljs-literal">pi</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs livecodeserver">sudo sambapasswd -<span class="hljs-keyword">a</span> <span class="hljs-literal">pi</span><br><span class="hljs-comment"># 提示找不到命令则试试</span><br>sudo smbpasswd -<span class="hljs-keyword">a</span> <span class="hljs-literal">pi</span><br></code></pre></div></td></tr></table></figure>
 <p>输入新设置samba密码，为了安全性尽量不要和已经存在的pi密码重复。</p>
 <p>重启服务: <code>sudo /etc/init.d/smbd restart</code></p>
 <p>设置开机自启动，编辑<code>sudo nano /etc/rc.local</code>，在exit0前加上<code>sudo /etc/init.d/smbd restart</code></p>
@@ -379,7 +379,7 @@ sudo raspi-config</code></pre>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/04/29/2021/RDclient%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/">
+                      <a href="/2021/04/29/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0/RDclient%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">RDclient远程连接</span>
                         <span class="visible-mobile">上一篇</span>
@@ -389,7 +389,7 @@ sudo raspi-config</code></pre>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/01/17/2021/hexo_introduction/">
+                      <a href="/2021/01/17/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0/hexo_introduction/">
                         <span class="hidden-mobile">hexo配置与使用</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>

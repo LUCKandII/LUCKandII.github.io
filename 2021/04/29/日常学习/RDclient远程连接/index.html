@@ -14,12 +14,11 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+  <meta name="description" content="">
   <meta name="author" content="Zhang Daming">
   <meta name="keywords" content="">
   
-  <title>Hello World.This is my blog test!push to github and gitee - Daming</title>
+  <title>RDclient远程连接 - Daming</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -176,7 +175,7 @@ Quick">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.2)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Hello World.This is my blog test!push to github and gitee">
+            <span class="h2" id="subtitle" title="RDclient远程连接">
               
             </span>
 
@@ -186,8 +185,8 @@ Quick">
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-01-17 11:13" pubdate>
-        2021年1月17日 上午
+      <time datetime="2021-04-29 00:00" pubdate>
+        2021年4月29日 凌晨
       </time>
     </span>
   
@@ -223,32 +222,89 @@ Quick">
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Hello World.This is my blog test!push to github and gitee</h1>
+            <h1 style="display: none">RDclient远程连接</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：2021年1月17日 晚上
+                  本文最后更新于：2021年7月5日 晚上
                 
               </p>
             
             <div class="markdown-body">
-              <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><a id="more"></a>
+              <!-- TOC -->
 
-<h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<ul>
+<li><a href="#1-%E5%AE%9E%E7%8E%B0%E5%B1%80%E5%9F%9F%E7%BD%91%E5%86%85%E8%AE%BF%E9%97%AE%E8%87%AA%E5%B7%B1%E7%9A%84%E7%94%B5%E8%84%91%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2">1. 实现局域网内访问自己的电脑（远程桌面）</a><ul>
+<li><a href="#11-%E5%BC%95%E5%AF%BC">1.1. 引导</a></li>
+<li><a href="#12-win10%E5%AE%B6%E5%BA%AD%E7%89%88%E5%BC%80%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2">1.2. win10家庭版开远程桌面</a></li>
+<li><a href="#13-ipad%E7%AB%AFrd-client%E9%85%8D%E7%BD%AE">1.3. ipad端RD client配置</a></li>
+</ul>
+</li>
+<li><a href="#2-%E8%BF%9C%E7%A8%8B%E5%BC%80%E6%9C%BA">2. 远程开机</a><ul>
+<li><a href="#21-wake-on-lan">2.1. Wake On LAN</a></li>
+<li><a href="#22-wake-on-wlan">2.2. Wake On WLAN</a></li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+
+<h1 id="1-实现局域网内访问自己的电脑（远程桌面）"><a href="#1-实现局域网内访问自己的电脑（远程桌面）" class="headerlink" title="1. 实现局域网内访问自己的电脑（远程桌面）"></a>1. 实现局域网内访问自己的电脑（远程桌面）</h1><h2 id="1-1-引导"><a href="#1-1-引导" class="headerlink" title="1.1. 引导"></a>1.1. 引导</h2><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/266109987">frp+远程桌面+RDclient</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/266109987">frp+远程桌面+RDclient</a></p>
+<h2 id="1-2-win10家庭版开远程桌面"><a href="#1-2-win10家庭版开远程桌面" class="headerlink" title="1.2. win10家庭版开远程桌面"></a>1.2. win10家庭版开远程桌面</h2><p><a target="_blank" rel="noopener" href="https://github.com/stascorp/rdpwrap">github:rdpwrap</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/stascorp/rdpwrap/releases">github:rdpwrap:releases</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/stascorp/rdpwrap/issues/860">github:rdpwrap:issue</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/LCW0NJUPT/rdpwrap-autoupdate">github:rdpwrap-autoupdate</a></p>
+<ol>
+<li><p> 我下载了“ RDPWrap-v1.6.2.zip ”，并将文件放在C：\ Program Files \ RDP Wrapper中</p>
+</li>
+<li><p> 然后我下载了“ autoupdate-v07.09.2019.zip ”，将内容放在C：\ Program Files \ RDP Wrapper中</p>
+</li>
+<li><p> 然后，我以管理员身份运行cmd并运行“ autoupdate.bat ”</p>
+</li>
+<li><p> RDPConf全绿即可</p>
+</li>
+</ol>
+<h2 id="1-3-ipad端RD-client配置"><a href="#1-3-ipad端RD-client配置" class="headerlink" title="1.3. ipad端RD client配置"></a>1.3. ipad端RD client配置</h2><img src="/2021/04/29/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0/RDclient%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/RDclient远程连接_端口转发配置.png" srcset="/img/loading.gif" lazyload width="100%">
+
+<img src="/2021/04/29/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0/RDclient%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/RDclient远程连接_同一局域网连接.png" srcset="/img/loading.gif" lazyload width="50%">
+
+<img src="/2021/04/29/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0/RDclient%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/RDclient远程连接_校园网内连接.png" srcset="/img/loading.gif" lazyload width="50%">
+
+
+<h1 id="2-远程开机"><a href="#2-远程开机" class="headerlink" title="2. 远程开机"></a>2. 远程开机</h1><h2 id="2-1-Wake-On-LAN"><a href="#2-1-Wake-On-LAN" class="headerlink" title="2.1. Wake On LAN"></a>2.1. Wake On LAN</h2><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/107387999?ivk_sa=1024320u">知乎参考教程</a></p>
+<p>文末的参考链接非常齐全</p>
+<ul>
+<li><p>  pc 进入 BIOS 模式，找到 wake on lan 选项，选择“ensable”或者其他开启选项。e570 的默认选项为“AC only”（只有充电时开启）。你也可以设置成“AC and Battery”（充电和使用电池都开启）。</p>
+</li>
+<li><p>  pc 开机，进入“设备管理器”，点击“网络适配器”，双击工作中的网卡，点击“电源管理”，勾选“此设备唤醒计算机”，点击“高级”，点击“魔术封包唤醒”，选择“启用”。</p>
+</li>
+<li><p>  进入“防火墙”，点击右侧的“新建规则”，选择“端口”，选择“udp”，在“特定端口”一栏输入“9”。“配置文件”选择“公用”。确定即可。</p>
+</li>
+<li><p>  在其他设备唤醒主机</p>
+</li>
+</ul>
+<h2 id="2-2-Wake-On-WLAN"><a href="#2-2-Wake-On-WLAN" class="headerlink" title="2.2. Wake On WLAN"></a>2.2. Wake On WLAN</h2><p><a target="_blank" rel="noopener" href="https://www.binss.me/blog/wake-windows-10-laptop-by-WLAN/">关于Wake-on-WLAN的一些讨论</a></p>
+<p>无线网卡的远程唤醒，资料太少，不知如何实现。暂时就让电脑不要关机好了。</p>
 
             </div>
             <hr>
             <div>
               <div class="post-metas mb-3">
                 
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>
+                    
+                  </div>
                 
               </div>
               
@@ -263,15 +319,21 @@ Quick">
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/01/17/2021/hexo_introduction/">
+                      <a href="/2021/07/04/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0/%E6%A0%91%E8%8E%93%E6%B4%BE&amp;python%E6%80%BB%E7%BB%93/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">hexo配置与使用</span>
+                        <span class="hidden-mobile">树莓派&python总结</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/2021/02/21/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/">
+                        <span class="hidden-mobile">树莓派基础使用</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>

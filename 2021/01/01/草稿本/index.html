@@ -14,11 +14,11 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="">
+  <meta name="description" content="Here&#39;s something encrypted, password is required to continue reading.">
   <meta name="author" content="Zhang Daming">
   <meta name="keywords" content="">
   
-  <title>RDclient远程连接 - Daming</title>
+  <title>草稿本 - Daming</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -175,7 +175,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.2)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="RDclient远程连接">
+            <span class="h2" id="subtitle" title="草稿本">
               
             </span>
 
@@ -185,8 +185,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-04-29 00:00" pubdate>
-        2021年4月29日 凌晨
+      <time datetime="2021-01-01 12:00" pubdate>
+        2021年1月1日 中午
       </time>
     </span>
   
@@ -222,70 +222,27 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">RDclient远程连接</h1>
+            <h1 style="display: none">草稿本</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：2021年7月5日 下午
+                  本文最后更新于：2021年7月5日 晚上
                 
               </p>
             
             <div class="markdown-body">
-              <!-- TOC -->
-
-<ul>
-<li><a href="#1-%E5%AE%9E%E7%8E%B0%E5%B1%80%E5%9F%9F%E7%BD%91%E5%86%85%E8%AE%BF%E9%97%AE%E8%87%AA%E5%B7%B1%E7%9A%84%E7%94%B5%E8%84%91%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2">1. 实现局域网内访问自己的电脑（远程桌面）</a><ul>
-<li><a href="#11-%E5%BC%95%E5%AF%BC">1.1. 引导</a></li>
-<li><a href="#12-win10%E5%AE%B6%E5%BA%AD%E7%89%88%E5%BC%80%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2">1.2. win10家庭版开远程桌面</a></li>
-<li><a href="#13-ipad%E7%AB%AFrd-client%E9%85%8D%E7%BD%AE">1.3. ipad端RD client配置</a></li>
-</ul>
-</li>
-<li><a href="#2-%E8%BF%9C%E7%A8%8B%E5%BC%80%E6%9C%BA">2. 远程开机</a><ul>
-<li><a href="#21-wake-on-lan">2.1. Wake On LAN</a></li>
-<li><a href="#22-wake-on-wlan">2.2. Wake On WLAN</a></li>
-</ul>
-</li>
-</ul>
-<!-- /TOC -->
-
-<h1 id="1-实现局域网内访问自己的电脑（远程桌面）"><a href="#1-实现局域网内访问自己的电脑（远程桌面）" class="headerlink" title="1. 实现局域网内访问自己的电脑（远程桌面）"></a>1. 实现局域网内访问自己的电脑（远程桌面）</h1><h2 id="1-1-引导"><a href="#1-1-引导" class="headerlink" title="1.1. 引导"></a>1.1. 引导</h2><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/266109987">frp+远程桌面+RDclient</a></p>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/266109987">frp+远程桌面+RDclient</a></p>
-<h2 id="1-2-win10家庭版开远程桌面"><a href="#1-2-win10家庭版开远程桌面" class="headerlink" title="1.2. win10家庭版开远程桌面"></a>1.2. win10家庭版开远程桌面</h2><p><a target="_blank" rel="noopener" href="https://github.com/stascorp/rdpwrap">github:rdpwrap</a></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/stascorp/rdpwrap/releases">github:rdpwrap:releases</a></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/stascorp/rdpwrap/issues/860">github:rdpwrap:issue</a></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/LCW0NJUPT/rdpwrap-autoupdate">github:rdpwrap-autoupdate</a></p>
-<ol>
-<li><p> 我下载了“ RDPWrap-v1.6.2.zip ”，并将文件放在C：\ Program Files \ RDP Wrapper中</p>
-</li>
-<li><p> 然后我下载了“ autoupdate-v07.09.2019.zip ”，将内容放在C：\ Program Files \ RDP Wrapper中</p>
-</li>
-<li><p> 然后，我以管理员身份运行cmd并运行“ autoupdate.bat ”</p>
-</li>
-<li><p> RDPConf全绿即可</p>
-</li>
-</ol>
-<h2 id="1-3-ipad端RD-client配置"><a href="#1-3-ipad端RD-client配置" class="headerlink" title="1.3. ipad端RD client配置"></a>1.3. ipad端RD client配置</h2><img src="/2021/04/29/2021/RDclient%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/RDclient远程连接_端口转发配置.png" srcset="/img/loading.gif" lazyload width="100%">
-
-<img src="/2021/04/29/2021/RDclient%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/RDclient远程连接_同一局域网连接.png" srcset="/img/loading.gif" lazyload width="50%">
-
-<img src="/2021/04/29/2021/RDclient%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/RDclient远程连接_校园网内连接.png" srcset="/img/loading.gif" lazyload width="50%">
-
-
-<h1 id="2-远程开机"><a href="#2-远程开机" class="headerlink" title="2. 远程开机"></a>2. 远程开机</h1><h2 id="2-1-Wake-On-LAN"><a href="#2-1-Wake-On-LAN" class="headerlink" title="2.1. Wake On LAN"></a>2.1. Wake On LAN</h2><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/107387999?ivk_sa=1024320u">知乎参考教程</a></p>
-<p>文末的参考链接非常齐全</p>
-<ul>
-<li><p>  pc 进入 BIOS 模式，找到 wake on lan 选项，选择“ensable”或者其他开启选项。e570 的默认选项为“AC only”（只有充电时开启）。你也可以设置成“AC and Battery”（充电和使用电池都开启）。</p>
-</li>
-<li><p>  pc 开机，进入“设备管理器”，点击“网络适配器”，双击工作中的网卡，点击“电源管理”，勾选“此设备唤醒计算机”，点击“高级”，点击“魔术封包唤醒”，选择“启用”。</p>
-</li>
-<li><p>  进入“防火墙”，点击右侧的“新建规则”，选择“端口”，选择“udp”，在“特定端口”一栏输入“9”。“配置文件”选择“公用”。确定即可。</p>
-</li>
-<li><p>  在其他设备唤醒主机</p>
-</li>
-</ul>
-<h2 id="2-2-Wake-On-WLAN"><a href="#2-2-Wake-On-WLAN" class="headerlink" title="2.2. Wake On WLAN"></a>2.2. Wake On WLAN</h2><p><a target="_blank" rel="noopener" href="https://www.binss.me/blog/wake-windows-10-laptop-by-WLAN/">关于Wake-on-WLAN的一些讨论</a></p>
-<p>无线网卡的远程唤醒，资料太少，不知如何实现。暂时就让电脑不要关机好了。</p>
-
+              <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="63ee66e203dc1dbf4ae33bdc1b948f49f26bfe9958471dae3156fb52ad39c363">795c337ba13ffc3b1017967baf4b296261a4fbb78cf00e356db7fb42c3ad0a2aebe028f32b661d1980951eaa61362965cf8d0e12b983ca979f6230a015ae3124dbf1674527491bbbfd263d57210c04810fd17f8a5a4d04412c50536091417c36279b775b0f7e4989a2749c639e80cb903d30797444832029539c9aad095ded951bd8e299f028c4e3b308365e89ac5976380ba2e92415e8027eb70e8c31dc65d83a000cbd72c9303aed1c21b074fbf2cbe495b3a485afdc65e61db25d349c36bc069eae8fdc4f06979fe76b9fb8762578480e4820d755a8547e204ddc69a8a77fcde6ea9a86d533fa9373ced92d903ab5f9a42914fb01cae3372599e491a3478e655415134dd1ed9c282fa4f7be75a87ade347c136fde24ffee26660733af62cff5486164e158c5fb3daef22126c7e14a22ed91642ec3d606d8d13f19d248ec0b2e64456bc57b14d7ad2d82d763ed256ea0c212d64322fd0f1a91150d170110cb241e8b79fe9898efd281cda041450f267e02b3b54b8d87b801013f3b760981a925b584d1dfe18e1d4ee294e04097b52af21d44a1348567f4a66bf8bcee3e525ea09b81e66a802eccaefe3af6dded13acc0efca5d623e601cc00ef5ea024e031c59e33d606d55e9df66b03bc8719146e843081bd3821bd88e692dd6ab189072813ca30ecc598e96f5851bee85aaf0ae533c0e3edd05cfd15cd79043e57acb40d2a65eba0146821bd7e7afff900c1e0b4cfb0173f0fbf8fc4cfba7c397443103372724a1693a13308d4e4a00ef7c38fb8c487556862adb25b9efd85f49c110956998a8ec883fae7dd89b0c14590ed45803eb83bb4612b32e709b770f358e06791382e64fe20c628645d70886864cce159f76c0bb89ba1da84e23e16b0fe16f7983</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-flip">
+      <input class="hbe hbe-input-field hbe-input-field-flip" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-flip" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-flip" data-content="您好, 这里需要密码.">您好, 这里需要密码.</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
             </div>
             <hr>
             <div>
@@ -299,13 +256,6 @@
                   </div>
                 
                 
-                  <div class="post-meta">
-                    <i class="iconfont icon-tags"></i>
-                    
-                      <a class="hover-with-bg" href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>
-                    
-                  </div>
-                
               </div>
               
                 <p class="note note-warning">
@@ -314,29 +264,6 @@
                   
                 </p>
               
-              
-                <div class="post-prevnext">
-                  <article class="post-prev col-6">
-                    
-                    
-                      <a href="/2021/07/04/2021/%E6%A0%91%E8%8E%93%E6%B4%BE&amp;python%E6%80%BB%E7%BB%93/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">树莓派&python总结</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
-                  </article>
-                  <article class="post-next col-6">
-                    
-                    
-                      <a href="/2021/02/21/2021/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/">
-                        <span class="hidden-mobile">树莓派基础使用</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
-                    
-                  </article>
-                </div>
               
             </div>
 

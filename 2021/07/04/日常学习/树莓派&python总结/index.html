@@ -226,7 +226,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2021年7月5日 下午
+                  本文最后更新于：2021年7月5日 晚上
                 
               </p>
             
@@ -272,7 +272,7 @@
 <h1 id="1-图形界面开发"><a href="#1-图形界面开发" class="headerlink" title="1. 图形界面开发"></a>1. 图形界面开发</h1><h2 id="1-1-官方教材"><a href="#1-1-官方教材" class="headerlink" title="1.1. 官方教材"></a>1.1. 官方教材</h2><p><a target="_blank" rel="noopener" href="https://gpiozero.readthedocs.io/en/stable/index.html">GPIO zero</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.raspberrypi.org/documentation/">Raspberry Pi Documentation</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.raspberrypi.org/documentation/usage/">usage guide</a></p>
-<img src="/2021/07/04/2021/%E6%A0%91%E8%8E%93%E6%B4%BE&python%E6%80%BB%E7%BB%93/树莓派&python总结_2021-05-03-18-43-22.png" srcset="/img/loading.gif" lazyload width="100%">
+<img src="/2021/07/04/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0/%E6%A0%91%E8%8E%93%E6%B4%BE&python%E6%80%BB%E7%BB%93/树莓派&python总结_2021-05-03-18-43-22.png" srcset="/img/loading.gif" lazyload width="100%">
 
 <h2 id="1-2-参考"><a href="#1-2-参考" class="headerlink" title="1.2. 参考"></a>1.2. 参考</h2><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/55826891">Python-matplotlib绘图（示波器及动态函数模拟专题）</a></p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_25948717/article/details/82724686">Python–Matlibplot画图功能演示</a></p>
@@ -291,57 +291,57 @@
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43467588/article/details/109225890">win10与ios</a></p>
 <p><a target="_blank" rel="noopener" href="https://support.microsoft.com/zh-cn/windows/%E5%9C%A8-windows-10-%E4%B8%AD%E9%80%9A%E8%BF%87%E7%BD%91%E7%BB%9C%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6-b58704b2-f53a-4b82-7bc1-80f9994725bf">win10与ES文件浏览器</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.baidu.com/s?ie=UTF-8&wd=ES%E6%96%87%E4%BB%B6%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B7%BB%E5%8A%A0win10%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6">win10与ES文件浏览器</a></p>
-<p>就是登陆的时候试试微软账户（<a href="mailto:&#x58;&#88;&#x58;&#64;&#x6f;&#117;&#x74;&#108;&#x6f;&#111;&#107;&#x2e;&#99;&#x6f;&#109;">&#x58;&#88;&#x58;&#64;&#x6f;&#117;&#x74;&#108;&#x6f;&#111;&#107;&#x2e;&#99;&#x6f;&#109;</a>）和PIN（LUCK）及其密码的组合。</p>
+<p>就是登陆的时候试试微软账户（<a href="mailto:&#x58;&#x58;&#x58;&#x40;&#x6f;&#117;&#x74;&#108;&#111;&#x6f;&#x6b;&#x2e;&#99;&#111;&#109;">&#x58;&#x58;&#x58;&#x40;&#x6f;&#117;&#x74;&#108;&#111;&#x6f;&#x6b;&#x2e;&#99;&#111;&#109;</a>）和PIN（LUCK）及其密码的组合。</p>
 <h1 id="2-串口使用"><a href="#2-串口使用" class="headerlink" title="2. 串口使用"></a>2. 串口使用</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43944175/article/details/100152317">参考教程</a></p>
 <h2 id="2-1-开启串口功能"><a href="#2-1-开启串口功能" class="headerlink" title="2.1. 开启串口功能"></a>2.1. 开启串口功能</h2><p>菜单–&gt;首选项–&gt;Raspberry Pi Configure 将Serial Port改为Enable，然后重启。</p>
-<h2 id="2-2-删除一些文件的语句"><a href="#2-2-删除一些文件的语句" class="headerlink" title="2.2. 删除一些文件的语句"></a>2.2. 删除一些文件的语句</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo vim /boot/cmdline.txt<br></code></pre></td></tr></table></figure>
+<h2 id="2-2-删除一些文件的语句"><a href="#2-2-删除一些文件的语句" class="headerlink" title="2.2. 删除一些文件的语句"></a>2.2. 删除一些文件的语句</h2><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">sudo vim /boot/cmdline.txt<br></code></pre></div></td></tr></table></figure>
 <p>将/boot目录下的cmdline.txt里面的 “console=ttyAMA0, 115200”这句话删掉。（内容可能有差异，将第一个console至第二个console前的内容删除。）</p>
 <p><a target="_blank" rel="noopener" href="https://shumeipai.nxez.com/2017/01/31/raspberry-serial-programming-python-example.html">树莓派实验室的指导</a><br>注释下述文件的一些内容。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo nano /etc/inittab<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">sudo nano /etc/inittab<br></code></pre></div></td></tr></table></figure>
 <h2 id="2-3-观察是否正常挂载串口"><a href="#2-3-观察是否正常挂载串口" class="headerlink" title="2.3. 观察是否正常挂载串口"></a>2.3. 观察是否正常挂载串口</h2><p>插拔一下，看看时间比较新的就是所需的端口</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ls -l /dev/tty*<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">ls -l /dev/tty*<br></code></pre></div></td></tr></table></figure>
 <h2 id="2-4-要更改串口映射关系"><a href="#2-4-要更改串口映射关系" class="headerlink" title="2.4. 要更改串口映射关系"></a>2.4. 要更改串口映射关系</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/zz531987464/article/details/83188189">串口映射参考</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.maixj.net/ict/raspberry-4b-serial-23733">修改树莓派4B串口映射</a></p>
 <h3 id="2-4-1-sudo-raspi-config"><a href="#2-4-1-sudo-raspi-config" class="headerlink" title="2.4.1. sudo raspi-config"></a>2.4.1. sudo raspi-config</h3><p>Interfacing Options -&gt; P6 Serial, 第一个选项（would you like a login shell to be accessible? over serial?）选择NO，第二个选项（would you like the serial port hardware to be enabled?）选择 YES</p>
 <h3 id="2-4-2-sudo-nano-boot-config-txt"><a href="#2-4-2-sudo-nano-boot-config-txt" class="headerlink" title="2.4.2. sudo nano /boot/config.txt"></a>2.4.2. sudo nano /boot/config.txt</h3><p>添加一行<code>dtoverlay=miniuart-bt</code></p>
 <h3 id="2-4-3-使用-ls-l-dev-serial-查看映射"><a href="#2-4-3-使用-ls-l-dev-serial-查看映射" class="headerlink" title="2.4.3. 使用 ls -l /dev/serial* 查看映射"></a>2.4.3. 使用 ls -l /dev/serial* 查看映射</h3><p>serial0映射到ttyAMA0才是可靠的</p>
-<h2 id="2-5-测试安装是否成功"><a href="#2-5-测试安装是否成功" class="headerlink" title="2.5. 测试安装是否成功"></a>2.5. 测试安装是否成功</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo python<br><br>import serial<br>ser = serial.Serial(<span class="hljs-string">&quot;/dev/ttyAMA0&quot;</span>, 115200, timeout=0.5)<br>ser.isOpen()<br></code></pre></td></tr></table></figure>
+<h2 id="2-5-测试安装是否成功"><a href="#2-5-测试安装是否成功" class="headerlink" title="2.5. 测试安装是否成功"></a>2.5. 测试安装是否成功</h2><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">sudo python<br><br>import serial<br>ser = serial.Serial(<span class="hljs-string">&quot;/dev/ttyAMA0&quot;</span>, 115200, timeout=0.5)<br>ser.isOpen()<br></code></pre></div></td></tr></table></figure>
 <p>返回true就对了</p>
 <h2 id="2-6-使用串口工具测试是否正常读取"><a href="#2-6-使用串口工具测试是否正常读取" class="headerlink" title="2.6. 使用串口工具测试是否正常读取"></a>2.6. 使用串口工具测试是否正常读取</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_39371711/article/details/79432848">使用minicom</a><br>注意要用管理员身份打开</p>
 <h2 id="2-7-在python里面使用代码读取"><a href="#2-7-在python里面使用代码读取" class="headerlink" title="2.7. 在python里面使用代码读取"></a>2.7. 在python里面使用代码读取</h2><p><strong>注意在thonny里面运行代码默认不是sudo的，右键thonny更改：属性-》桌面项-》命令，添加sudo</strong></p>
 <h1 id="3-树莓派安装PYQT5"><a href="#3-树莓派安装PYQT5" class="headerlink" title="3. 树莓派安装PYQT5"></a>3. 树莓派安装PYQT5</h1><h2 id="3-1-安装过程"><a href="#3-1-安装过程" class="headerlink" title="3.1. 安装过程"></a>3.1. 安装过程</h2><ol>
 <li> 如果原有的QT不满足版本要求，则卸载原有的QT；如果原有的QT在程序允许时无法导入<code>SIP</code>包，则也卸载原有QT重新安装</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#   安装官方包的qt</span><br>sudo apt install python3-pyqt5<br><span class="hljs-comment">#   卸载原有qt</span><br>sudo apt remove python3-pyqt5<br><span class="hljs-comment">#   卸载之后再安装QT相关的包，卸载完全干净之后才不会报PATH错误</span><br><span class="hljs-comment">#   如果卸载不干净则</span><br>sudo apt autoremove<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-comment">#   安装官方包的qt</span><br>sudo apt install python3-pyqt5<br><span class="hljs-comment">#   卸载原有qt</span><br>sudo apt remove python3-pyqt5<br><span class="hljs-comment">#   卸载之后再安装QT相关的包，卸载完全干净之后才不会报PATH错误</span><br><span class="hljs-comment">#   如果卸载不干净则</span><br>sudo apt autoremove<br></code></pre></div></td></tr></table></figure>
 <ol start="2">
 <li> pip更新</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">python3 -m pip install --upgrade pip<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">python3 -m pip install --upgrade pip<br></code></pre></div></td></tr></table></figure>
 <ol start="3">
 <li> 安装一些必要的包</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">pip3 install sip<br>pip3 install PtQt5-sip<br>pip3 install setuptools<br>pip3 install Pyinstaller<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">pip3 install sip<br>pip3 install PtQt5-sip<br>pip3 install setuptools<br>pip3 install Pyinstaller<br></code></pre></div></td></tr></table></figure>
 <ol start="4">
 <li> 最重要的部分</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">pip3 install PyQt5-builder<br>sudo apt install qt5-default<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">pip3 install PyQt5-builder<br>sudo apt install qt5-default<br></code></pre></div></td></tr></table></figure>
 <ol start="5">
 <li> 于是可以进行安装了</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">pip3 install PyQt5<br><span class="hljs-comment">#   或者安装当前最新版本</span><br>pip3 install PyQt5==5.15.4<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">pip3 install PyQt5<br><span class="hljs-comment">#   或者安装当前最新版本</span><br>pip3 install PyQt5==5.15.4<br></code></pre></div></td></tr></table></figure>
 <p>通过<code>top</code>命令看到cc1plus占用了主要资源，就说明在编译QT5了，经过一段时间之后就安装上了。</p>
 <h2 id="3-2-注意事项"><a href="#3-2-注意事项" class="headerlink" title="3.2. 注意事项"></a>3.2. 注意事项</h2><h3 id="3-2-1-PATH问题"><a href="#3-2-1-PATH问题" class="headerlink" title="3.2.1. PATH问题"></a>3.2.1. PATH问题</h3><p>正常安装的时候不会遇到PATH错误，如果有，解决方法是添加提示的PATH</p>
 <p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/youyoui/p/10680329.html">教程</a></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo ~/.bashrc<br><span class="hljs-comment"># 在最后一行加上</span><br><span class="hljs-built_in">export</span> PATH=<span class="hljs-variable">$PATH</span>:/home/pi/.<span class="hljs-built_in">local</span>/bin   <span class="hljs-comment">#根据需要</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">sudo ~/.bashrc<br><span class="hljs-comment"># 在最后一行加上</span><br><span class="hljs-built_in">export</span> PATH=<span class="hljs-variable">$PATH</span>:/home/pi/.<span class="hljs-built_in">local</span>/bin   <span class="hljs-comment">#根据需要</span><br></code></pre></div></td></tr></table></figure>
 <ul>
 <li>  生效时间：使用相同的用户打开新的终端时生效，或者手动<code>source ~/.bashrc</code>生效</li>
 <li>  生效期限：永久有效</li>
 <li>  生效范围：仅对当前用户有效</li>
 <li>  如果有后续的环境变量加载文件覆盖了PATH定义，则可能不生效</li>
 </ul>
-<h3 id="3-2-2-pyQt的版本号"><a href="#3-2-2-pyQt的版本号" class="headerlink" title="3.2.2. pyQt的版本号"></a>3.2.2. pyQt的版本号</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> PyQt5.QtCore <span class="hljs-keyword">import</span> QT_VERSION_STR<br>print(QT_VERSION_STR)   <span class="hljs-comment">#   QT版本号</span><br><br><span class="hljs-keyword">from</span> PyQt5.Qt <span class="hljs-keyword">import</span> PYQT_VERSION_STR<br>print(PYQT_VERSION_STR) <span class="hljs-comment">#   PYQT版本号</span><br><br><span class="hljs-keyword">from</span> sip <span class="hljs-keyword">import</span> SIP_VERSION_STR<br>print(SIP_VERSION_STR)  <span class="hljs-comment">#   SIP版本号</span><br></code></pre></td></tr></table></figure>
+<h3 id="3-2-2-pyQt的版本号"><a href="#3-2-2-pyQt的版本号" class="headerlink" title="3.2.2. pyQt的版本号"></a>3.2.2. pyQt的版本号</h3><figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">from</span> PyQt5.QtCore <span class="hljs-keyword">import</span> QT_VERSION_STR<br>print(QT_VERSION_STR)   <span class="hljs-comment">#   QT版本号</span><br><br><span class="hljs-keyword">from</span> PyQt5.Qt <span class="hljs-keyword">import</span> PYQT_VERSION_STR<br>print(PYQT_VERSION_STR) <span class="hljs-comment">#   PYQT版本号</span><br><br><span class="hljs-keyword">from</span> sip <span class="hljs-keyword">import</span> SIP_VERSION_STR<br>print(SIP_VERSION_STR)  <span class="hljs-comment">#   SIP版本号</span><br></code></pre></div></td></tr></table></figure>
 <h3 id="3-2-3-安装pyqtgraph"><a href="#3-2-3-安装pyqtgraph" class="headerlink" title="3.2.3. 安装pyqtgraph"></a>3.2.3. 安装pyqtgraph</h3><p>pyqtgraph对QT版本有要求，不满足要求时就安装旧版本安装pyqtgraph</p>
-<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">pip3</span> install pyqtgraph==<span class="hljs-number">0</span>.<span class="hljs-number">11</span>.<span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight apache"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs apache"><span class="hljs-attribute">pip3</span> install pyqtgraph==<span class="hljs-number">0</span>.<span class="hljs-number">11</span>.<span class="hljs-number">1</span><br></code></pre></div></td></tr></table></figure>
 <h3 id="3-2-4-参考资料"><a href="#3-2-4-参考资料" class="headerlink" title="3.2.4. 参考资料"></a>3.2.4. 参考资料</h3><p><a target="_blank" rel="noopener" href="https://raspberrypi.stackexchange.com/questions/124278/raspberry-p-3b-pyqtgraph-import-error-sip">pyqtgraph Import error sip</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.raspberrypi.org/forums/viewtopic.php?t=309014">Raspberry 4, PyQt5 has always an error</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.riverbankcomputing.com/static/Docs/PyQt5/installation.html">Installing PyQt5</a></p>
@@ -387,11 +387,17 @@
                   <article class="post-prev col-6">
                     
                     
+                      <a href="/2021/07/05/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0/%E6%A0%91%E8%8E%93%E6%B4%BEgit%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">树莓派git服务器</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/04/29/2021/RDclient%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/">
+                      <a href="/2021/04/29/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0/RDclient%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/">
                         <span class="hidden-mobile">RDclient远程连接</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>

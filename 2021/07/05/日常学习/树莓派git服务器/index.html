@@ -1,0 +1,681 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/cat_head.jpg">
+  <link rel="icon" href="/img/cat_head.jpg">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="Zhang Daming">
+  <meta name="keywords" content="">
+  
+  <title>树莓派git服务器 - Daming</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"luckandii.github.io","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":2},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+
+<body>
+  <header style="height: 60vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Daming</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/three_body_1.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.2)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="树莓派git服务器">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-07-05 16:00" pubdate>
+        2021年7月5日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">树莓派git服务器</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2021年7月5日 晚上
+                
+              </p>
+            
+            <div class="markdown-body">
+              <!-- TOC -->
+
+<ul>
+<li><a href="#1-%E5%B8%B8%E8%A7%84%E6%96%B9%E6%B3%95">1. 常规方法</a><ul>
+<li><a href="#11-%E6%8D%A2%E9%98%BF%E9%87%8C%E6%BA%90">1.1. 换阿里源</a></li>
+<li><a href="#12-%E6%A0%91%E8%8E%93%E6%B4%BE%E7%AB%AF%E9%85%8D%E7%BD%AEgit">1.2. 树莓派端配置git</a><ul>
+<li><a href="#121-%E5%AE%8C%E6%95%B4%E6%93%8D%E4%BD%9C">1.2.1. 完整操作</a></li>
+</ul>
+</li>
+<li><a href="#13-pc%E7%AB%AF%E7%9A%84%E9%85%8D%E7%BD%AE">1.3. PC端的配置</a><ul>
+<li><a href="#131-%E5%AE%8C%E5%85%A8%E4%BD%BF%E7%94%A8git%E5%91%BD%E4%BB%A4%E7%9A%84%E6%96%B9%E5%BC%8F">1.3.1. 完全使用git命令的方式</a></li>
+<li><a href="#132-%E4%BD%BF%E7%94%A8vscode%E7%9A%84%E5%9B%BE%E5%BD%A2%E7%95%8C%E9%9D%A2">1.3.2. 使用vscode的图形界面</a></li>
+</ul>
+</li>
+<li><a href="#14-%E5%85%B6%E4%BB%96">1.4. 其他</a><ul>
+<li><a href="#141-%E7%A6%81%E7%94%A8%E4%BC%91%E7%9C%A0">1.4.1. 禁用休眠</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#2-%E6%A0%91%E8%8E%93%E6%B4%BEgogs%E6%9C%8D%E5%8A%A1%E5%99%A8">2. 树莓派gogs服务器</a><ul>
+<li><a href="#21-%E5%8F%82%E8%80%83%E7%BD%91%E5%9D%80">2.1. 参考网址</a></li>
+<li><a href="#22-%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B">2.2. 安装过程</a></li>
+<li><a href="#23-%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86">2.3. 用户管理</a></li>
+<li><a href="#24-%E6%9C%AC%E5%9C%B0%E7%9A%84%E4%BD%BF%E7%94%A8">2.4. 本地的使用</a></li>
+<li><a href="#25-ngnix%E4%BB%A3%E7%90%86">2.5. Ngnix代理</a><ul>
+<li><a href="#251-%E5%AE%98%E6%96%B9%E6%8C%87%E5%AF%BC">2.5.1. 官方指导</a></li>
+<li><a href="#252-%E4%B8%80%E4%BA%9B%E5%8F%82%E8%80%83">2.5.2. 一些参考</a></li>
+</ul>
+</li>
+<li><a href="#26-%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F">2.6. 内网穿透</a></li>
+<li><a href="#27-bugs">2.7. BUGS</a></li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+
+<h1 id="1-常规方法"><a href="#1-常规方法" class="headerlink" title="1. 常规方法"></a>1. 常规方法</h1><h2 id="1-1-换阿里源"><a href="#1-1-换阿里源" class="headerlink" title="1.1. 换阿里源"></a>1.1. 换阿里源</h2><div class="hljs code-wrapper"><pre><code>sudo nano /etc/apt/sources.list
+#将原有内容用#注释掉
+deb http://mirrors.aliyun.com/raspbian/raspbian/ buster main contrib non-free rpi
+deb-src http://mirrors.aliyun.com/raspbian/raspbian/ buster main contrib non-free rpi</code></pre></div>
+<hr>
+<div class="hljs code-wrapper"><pre><code>sudo nano /etc/apt/sources.list.d/raspi.list
+#将原有内容用#注释掉
+deb http://mirrors.aliyun.com/raspbian/raspbian/ buster main
+deb-src http://mirrors.aliyun.com/raspbian/raspbian/ buster main</code></pre></div>
+<hr>
+<div class="hljs code-wrapper"><pre><code>sudo apt-get update
+sudo apt-get upgrade</code></pre></div>
+<hr>
+<p>提示重复配置可以把 <code>/etc/apt/sources.list.d/raspi.list</code> 里面的源删掉，只留一个文件有源就可以，目前还没遇到什么问题。</p>
+<hr>
+<hr>
+<h2 id="1-2-树莓派端配置git"><a href="#1-2-树莓派端配置git" class="headerlink" title="1.2. 树莓派端配置git"></a>1.2. 树莓派端配置git</h2><div class="hljs code-wrapper"><pre><code>sudo apt-get install git-core</code></pre></div>
+<p>树莓派本身的系统应该是有git的，接下来添加git用户，需要sudo命令</p>
+<p>添加用户:git，其中最后的 <code>/home/git</code> 指的是这个git用户组在文件目录的位置，最后的 <code>git</code> 是创建的用户的名字</p>
+<div class="hljs code-wrapper"><pre><code>sudo adduser --system --shell /bin/bash --gecos &#39;git version control by pi&#39; --group --home /home/git git</code></pre></div>
+<p>设置密码</p>
+<div class="hljs code-wrapper"><pre><code>sudo passwd git</code></pre></div>
+<p>切换用户，注意接下来的操作都是“git”用户的操作，“git”用户对这些文件有控制权</p>
+<div class="hljs code-wrapper"><pre><code>su git</code></pre></div>
+<p>首先更改目录到要存储git的路径下</p>
+<div class="hljs code-wrapper"><pre><code>cd /home/git</code></pre></div>
+<p>为仓库创建一个文件夹，并移动进去，然后初始化并清空仓库</p>
+<div class="hljs code-wrapper"><pre><code>mkdir test.git
+cd test.git
+git --bare init</code></pre></div>
+<hr>
+<h3 id="1-2-1-完整操作"><a href="#1-2-1-完整操作" class="headerlink" title="1.2.1. 完整操作"></a>1.2.1. 完整操作</h3><div class="hljs code-wrapper"><pre><code>sudo adduser --system --shell /bin/bash --gecos &#39;git version control by pi&#39; --group --home /home/git luckgit
+sudo passwd luckgit
+su luckgit
+cd /home/git
+mkdir git_learning.git
+cd git_learning.git
+git --bare init</code></pre></div>
+<hr>
+<h2 id="1-3-PC端的配置"><a href="#1-3-PC端的配置" class="headerlink" title="1.3. PC端的配置"></a>1.3. PC端的配置</h2><h3 id="1-3-1-完全使用git命令的方式"><a href="#1-3-1-完全使用git命令的方式" class="headerlink" title="1.3.1. 完全使用git命令的方式"></a>1.3.1. 完全使用git命令的方式</h3><ul>
+<li><p>添加新的远程主机</p>
+<div class="hljs code-wrapper"><pre><code>  # 示例：git remote add pi git@[your IP]:/home/git/test.git
+  git remote add pi_git_learning luckgit@192.168.1.123:/home/git/git_learning.git</code></pre></div>
+<p>  <code>pi_git_learning</code> 是这个远程存储器显示在本PC的名字，只是方便区分我添加的不同的一些远程git存储，<code>@</code>之前的是我在树莓派上创建的用户的名称，<code>@</code>之后是树莓派的IP，即相当于以<code>luckgit</code>的用户名访问<code>192.168.1.123</code>的IP，<code>:</code>之后的是树莓派上为这个仓库创建的git文件夹</p>
+</li>
+<li><p>push代码</p>
+<div class="hljs code-wrapper"><pre><code>  git add .
+  git commit -am &quot;Initial&quot;    # 本次提交代码的说明
+  # 示例：git push pi master
+  git push pi_git_learning master</code></pre></div>
+<p>  push之后的第一个参数是远程存储器在本地的名字，第二个参数是分支名称，push是要输入对应用户的密码的。</p>
+<p>  因为没有配置ssh，所以只能通过命令行提交（而且每次都要输入密码，如果直接用vscode的“推送到”会报错“no permission”）</p>
+</li>
+<li><p>clone代码</p>
+<div class="hljs code-wrapper"><pre><code>  git clone luckgit@192.168.1.123:/home/git/git_learning.git</code></pre></div>
+<p>  以<code>luckgit</code>访问<code>192.168.1.123</code>服务器下的<code>/home/git/git_learning.git</code>并clone，但是这样子存到本地，这个远程仓库的名称是默认的<code>origin</code></p>
+</li>
+<li><p>pull代码</p>
+<p>  <strong>先切换到对应仓库的目录下</strong>，然后</p>
+<div class="hljs code-wrapper"><pre><code>  git pull origin master</code></pre></div>
+<p>  从远程仓库<code>origin</code>的<code>master</code>分支拉取，因为从网站上clone下的项目也默认为<code>origin</code>的名字，所以pull其他项目也是这条命令</p>
+</li>
+</ul>
+<hr>
+<h3 id="1-3-2-使用vscode的图形界面"><a href="#1-3-2-使用vscode的图形界面" class="headerlink" title="1.3.2. 使用vscode的图形界面"></a>1.3.2. 使用vscode的图形界面</h3><p>首先要配置树莓派上git服务的ssh</p>
+<hr>
+<hr>
+<h2 id="1-4-其他"><a href="#1-4-其他" class="headerlink" title="1.4. 其他"></a>1.4. 其他</h2><h3 id="1-4-1-禁用休眠"><a href="#1-4-1-禁用休眠" class="headerlink" title="1.4.1. 禁用休眠"></a>1.4.1. 禁用休眠</h3><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/xiaoqianbook/p/11945271.html">一个很好的博客</a></p>
+<div class="hljs code-wrapper"><pre><code>sudo nano /etc/lightdm/lightdm.conf</code></pre></div>
+<p>找到[Seat:*]这一项，在下面的‘#xserver-command=X’删除前面的注释符#，修改为以下</p>
+<div class="hljs code-wrapper"><pre><code>xserver-command=X -s 0-dpms</code></pre></div>
+<p>其中，-s 参数：设置屏幕保护不启动，0 数字零，-dpms 参数：关闭电源节能管理。</p>
+<h1 id="2-树莓派gogs服务器"><a href="#2-树莓派gogs服务器" class="headerlink" title="2. 树莓派gogs服务器"></a>2. 树莓派gogs服务器</h1><h2 id="2-1-参考网址"><a href="#2-1-参考网址" class="headerlink" title="2.1. 参考网址"></a>2.1. 参考网址</h2><ul>
+<li><p>官网参考</p>
+<p>  <a target="_blank" rel="noopener" href="https://gogs.io/">官网</a><br>  <a target="_blank" rel="noopener" href="https://github.com/gogs/gogs">gogs github</a><br>  <a target="_blank" rel="noopener" href="https://github.com/gogs/gogs/blob/main/README_ZH.md">gogs github readme</a>  </p>
+</li>
+<li><p>安装参考</p>
+<p>  <a target="_blank" rel="noopener" href="https://gogs.io/docs/installation/install_from_binary">二进制安装</a><br>  官网的参考，言简意赅，树莓派就是使用二进制的安装方式<br>  <a target="_blank" rel="noopener" href="https://gogs.io/docs/installation/configuration_and_run">安装完成之后配置运行</a></p>
+</li>
+</ul>
+<ul>
+<li><p>其他教程</p>
+<p>  <a target="_blank" rel="noopener" href="http://bbs.eeworld.com.cn/thread-504985-1-1.html">亲测可用</a><br>  <a target="_blank" rel="noopener" href="https://my.oschina.net/520wsl/blog/3155444">和上面内容相同</a><br>  <a target="_blank" rel="noopener" href="https://www.lxx1.com/4779">写得很丰富，但是实测总有问题</a></p>
+</li>
+</ul>
+<h2 id="2-2-安装过程"><a href="#2-2-安装过程" class="headerlink" title="2.2. 安装过程"></a>2.2. 安装过程</h2><ul>
+<li><p>准备工作</p>
+<ol>
+<li><p>树莓派新建一个用户，注意名字一定是git，不需要禁止用户登录</p>
+ <figure class="highlight mipsasm"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mipsasm">sudo <span class="hljs-keyword">adduser </span>git<br><span class="hljs-comment"># 有需要的话用下面的命令删除原有的用户</span><br>sudo userdel -r username<br></code></pre></div></td></tr></table></figure></li>
+<li><p>下载gogs的安装包</p>
+<p> <a target="_blank" rel="noopener" href="https://gogs.io/docs/installation/install_from_binary">下载页</a>，翻到下面选择树莓派的版本<br> <a target="_blank" rel="noopener" href="https://dl.gogs.io/0.11.91/gogs_0.11.91_raspi_armv7.zip">下载链接</a>，链接带版本号，应该是会更新的<br> 下载到电脑上，把文件名和路径改的简单一点<code>c:\gogs.zip</code>，然后通过pscp发到树莓派git用户的home上</p>
+<div class="hljs code-wrapper"><pre><code> pscp -P 22 c:\文件完整路径 pi@IP地址:/home/git/</code></pre></div>
+<p> 上面的操作只是下载比较快，不然也可以在树莓派上切换到<code>/home/git/</code>，注意下载链接自己在网址上找新的</p>
+<div class="hljs code-wrapper"><pre><code> sudo wget https://dl.gogs.io/0.11.91/gogs_0.11.91_raspi_armv7.zip -O gogs.zip</code></pre></div>
+<p> 如果文件保存的路径不是<code>/home/git/</code>，把它复制到目标路径</p>
+<div class="hljs code-wrapper"><pre><code> sudo cp gogs.zip /home/git/</code></pre></div>
+</li>
+</ol>
+</li>
+<li><p>安装</p>
+<ol>
+<li><p>切换到<code>/home/git/</code>，解压gogs.zip</p>
+<div class="hljs code-wrapper"><pre><code> cd /home/git
+ sudo unzip gogs.zip
+ # 还可以顺便删掉原压缩包
+ sudo rm gogs.zip</code></pre></div>
+</li>
+<li><p>使用命令 <code>cd</code> 进入到刚刚创建的目录</p>
+<div class="hljs code-wrapper"><pre><code> cd gogs</code></pre></div>
+</li>
+<li><p>执行命令 <code>./gogs web</code></p>
+</li>
+<li><p>Gogs 默认会在端口 3000 启动 HTTP 服务，访问 /install 以进行初始配置（例如 <code>http://树莓派的IP地址:3000/install</code> ）</p>
+</li>
+<li><p>安装的网页界面</p>
+<ul>
+<li><p>  数据库类型选SQLite3，可以免去复杂的配置</p>
+</li>
+<li><p>  应用名称，就是之后网页的名称</p>
+</li>
+<li><p>  仓库根目录，系统用户默认为git就没有问题，否则之后需要更改配置文件</p>
+</li>
+<li><p>  域名，URL输入树莓派确定的IP地址，不要选择localhost，否则之后通过ssh添加远程储存库的时候也显示为localhost，就添加不上</p>
+</li>
+<li><p>  一定要添加一个管理员</p>
+</li>
+<li><p>  立即安装，很快就完成</p>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>设置自启动</p>
+<ol>
+<li><p>把服务脚本复制到系统目录</p>
+<div class="hljs code-wrapper"><pre><code> sudo cp /home/git/gogs/scripts/systemd/gogs.service /etc/systemd/system</code></pre></div>
+<p> 如果复制失败的话，可以尝试把<code>/etc/systemd/system</code>下已有的<code>gogs.service</code>删除然后再操作</p>
+</li>
+<li><p>设置开机自启动gogs</p>
+<div class="hljs code-wrapper"><pre><code> sudo systemctl enable gogs</code></pre></div>
+</li>
+<li><p>立即启动gogs</p>
+<div class="hljs code-wrapper"><pre><code> sudo systemctl start gogs</code></pre></div>
+</li>
+<li><p>查看实时日志输出</p>
+<div class="hljs code-wrapper"><pre><code> sudo systemctl status gogs</code></pre></div>
+<p> 如果状态命令显示<code>Active：活动（运行中）</code>，则说明一切正常</p>
+</li>
+</ol>
+</li>
+<li><p>更改系统设置和配置</p>
+<div class="hljs code-wrapper"><pre><code>  sudo nano /home/git/gogs/custom/conf/app.ini</code></pre></div>
+<p>  可以更改用，IP，域名，数据库类型，等等很多设置，改完之后再完整执行一次上面自启动的5点。</p>
+</li>
+</ul>
+<h2 id="2-3-用户管理"><a href="#2-3-用户管理" class="headerlink" title="2.3. 用户管理"></a>2.3. 用户管理</h2><ul>
+<li>  在网页非常直观，不写了。</li>
+</ul>
+<h2 id="2-4-本地的使用"><a href="#2-4-本地的使用" class="headerlink" title="2.4. 本地的使用"></a>2.4. 本地的使用</h2><ul>
+<li><p>添加ssh公钥到用户，首先查看ssh公钥，打开<code>git bash</code></p>
+<div class="hljs code-wrapper"><pre><code>  cd ~/.ssh
+  ls
+  cat id_rsa.pub</code></pre></div>
+</li>
+<li><p>  clone，push，pull的使用相同</p>
+</li>
+</ul>
+<h2 id="2-5-Ngnix代理"><a href="#2-5-Ngnix代理" class="headerlink" title="2.5. Ngnix代理"></a>2.5. Ngnix代理</h2><h3 id="2-5-1-官方指导"><a href="#2-5-1-官方指导" class="headerlink" title="2.5.1. 官方指导"></a>2.5.1. 官方指导</h3><p><a target="_blank" rel="noopener" href="https://gogs.io/docs/intro/faqs">官网说明</a></p>
+<ul>
+<li><p>如何使用 NGINX 的反向代理？<br>  在 <code>nginx.conf</code> 文件中，将下面的 <code>server</code> 部分增加至 <code>http</code> 分区内并重载配置：</p>
+<div class="hljs code-wrapper"><pre><code>  server &#123;
+  listen 80;
+  server_name git.crystalnetwork.us;
+
+      location / &#123;
+          proxy_pass http://localhost:3000;
+      &#125;
+  &#125;</code></pre></div>
+</li>
+<li><p>配置子路径<br>  如果您想要通过域名的子路径来访问 Gogs 实例，可以将 NGINX 的配置修改为以下形式（特别注意后缀 <code>/</code>）:</p>
+<div class="hljs code-wrapper"><pre><code>      server &#123;
+      listen 80;
+      server_name git.crystalnetwork.us;
+
+      location /gogs/ &#123;
+          proxy_pass http://localhost:3000/;
+      &#125;
+  &#125;</code></pre></div>
+<p>  然后在配置文件中设置<code>[server] EXTERNAL_URL = http://git.crystalnetwork.us/gogs/</code>。</p>
+</li>
+</ul>
+<h3 id="2-5-2-一些参考"><a href="#2-5-2-一些参考" class="headerlink" title="2.5.2. 一些参考"></a>2.5.2. 一些参考</h3><p><a target="_blank" rel="noopener" href="https://blog.mynook.info/post/host-your-own-git-server-using-gogs/">官方github给的第三方教程</a></p>
+<p><a target="_blank" rel="noopener" href="http://yangyingming.com/article/383/">感觉比较好的教程</a></p>
+<p>搜索gogs ngnix</p>
+<h2 id="2-6-内网穿透"><a href="#2-6-内网穿透" class="headerlink" title="2.6. 内网穿透"></a>2.6. 内网穿透</h2><p>看来使用frp的方式比较好</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/fatedier/frp/blob/dev/README_zh.md">frp github</a></p>
+<p><a target="_blank" rel="noopener" href="https://gofrp.org/docs/">frp doc</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/a921e85280ed">参考教程</a></p>
+<p><a target="_blank" rel="noopener" href="http://ife.baidu.com/note/detail/id/1059">原来gitpage使用这么简单？？？</a></p>
+<h2 id="2-7-BUGS"><a href="#2-7-BUGS" class="headerlink" title="2.7. BUGS"></a>2.7. BUGS</h2><ul>
+<li>  树莓派联网不上的问题，路由器5G的模式改为<code>11 a/n mixed</code>，如果是<code>11 a/n/ac mixed</code>可能有问题（已经排除信道的问题）</li>
+</ul>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/07/04/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0/%E6%A0%91%E8%8E%93%E6%B4%BE&amp;python%E6%80%BB%E7%BB%93/">
+                        <span class="hidden-mobile">树莓派&python总结</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+  <div class="col-lg-7 mx-auto nopadding-x-md">
+    <div class="container custom post-custom mx-auto">
+      <img src="/img/alipay.png" srcset="/img/loading.gif" lazyload class="rounded mx-auto d-block mt-5" style="width:150px; height:150px;"> <img src="/img/wechat.png" srcset="/img/loading.gif" lazyload class="rounded mx-auto d-block mt-5" style="width:150px; height:150px;">
+    </div>
+  </div>
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"superSample":2,"width":200,"height":400,"position":"right","hOffset":50,"vOffset":-40},"mobile":{"show":false,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false});</script></body>
+</html>
