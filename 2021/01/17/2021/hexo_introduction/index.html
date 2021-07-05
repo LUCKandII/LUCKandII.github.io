@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
-  <link rel="icon" href="/img/favicon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/cat_head.jpg">
+  <link rel="icon" href="/img/cat_head.jpg">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -42,7 +42,7 @@ n">
   <meta name="author" content="Zhang Daming">
   <meta name="keywords" content="">
   
-  <title>hexo配置与使用 - Daming Blog</title>
+  <title>hexo配置与使用 - Daming</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -80,7 +80,7 @@ n">
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"luckandii.github.io","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"luckandii.github.io","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":2},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -88,11 +88,11 @@ n">
 
 
 <body>
-  <header style="height: 70vh;">
+  <header style="height: 60vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
-       href="/">&nbsp;<strong>Fluid</strong>&nbsp;</a>
+       href="/">&nbsp;<strong>Daming</strong>&nbsp;</a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"
@@ -164,6 +164,18 @@ n">
             </li>
           
         
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
         
           <li class="nav-item" id="search-btn">
             <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
@@ -182,10 +194,10 @@ n">
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('/img/default.png') no-repeat center center;
+         style="background: url('/img/three_body_1.png') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
-        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.2)">
           <div class="page-header text-center fade-in-up">
             <span class="h2" id="subtitle" title="hexo配置与使用">
               
@@ -206,22 +218,7 @@ n">
 
 <div class="mt-1">
   
-    
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-chart"></i>
-      1.1k 字
-    </span>
-  
 
-  
-    
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-clock-fill"></i>
-      
-      
-      16
-       分钟
-    </span>
   
 
   
@@ -250,6 +247,12 @@ n">
           <article class="post-content mx-auto">
             <!-- SEO header -->
             <h1 style="display: none">hexo配置与使用</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2021年7月5日 下午
+                
+              </p>
             
             <div class="markdown-body">
               <!-- TOC -->
@@ -314,6 +317,7 @@ n">
 <h2 id="1-3-加密文档"><a href="#1-3-加密文档" class="headerlink" title="1.3. 加密文档"></a>1.3. 加密文档</h2><p>使用<a target="_blank" rel="noopener" href="https://github.com/D0n9X1n/hexo-blog-encrypt#about-callback">hexo-blog-encrypt</a></p>
 <p>已知的问题：导致目录显示不正确，<a target="_blank" rel="noopener" href="https://github.com/fluid-dev/hexo-theme-fluid/issues/339">Fluid主题里面的issue</a>，我的暂时还没有解决。</p>
 <p><a target="_blank" rel="noopener" href="https://yuyuforest.com/2018/10/18/encrypt-toc/">可以学习一下的解决方式</a></p>
+<p>使用了加密功能后，全站的代码一键复制功能失效。</p>
 <h1 id="2-最常用的命令"><a href="#2-最常用的命令" class="headerlink" title="2. 最常用的命令"></a>2. 最常用的命令</h1><p>生成：</p>
 <pre><code>hexo g</code></pre>
 <p>本地预览：在浏览器输入<code>localhost:5000</code></p>
@@ -321,7 +325,7 @@ n">
 <p>部署</p>
 <pre><code>hexo d</code></pre>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">align</span>=<span class="hljs-string">&quot;left&quot;</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">https://XXXX.png</span> /&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;XXXX.png&quot;</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;100%&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;100%&quot;</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs md">---<br>title: 文章标题<br>date: 2021-01-17 14:43:14   # 时间<br>tags: <br><span class="hljs-code">    [&#x27;技术&#x27;]</span><br><span class="hljs-code">categories: </span><br><span class="hljs-code">    - 学习</span><br><span class="hljs-code">    # - 国内</span><br><span class="hljs-code">---</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs md">---<br>title: 文章标题<br>date: 2021-01-17 16:00:00<br>toc: true<br>tags: <br><span class="hljs-code">    # [&#x27;技术&#x27;]</span><br><span class="hljs-code">categories: </span><br><span class="hljs-code">    - 学习</span><br><span class="hljs-code">hide: false</span><br><span class="hljs-code"></span><br><span class="hljs-code">excerpt: 这是摘要</span><br><span class="hljs-code">index_img: /img/example.jpg # 文章在首页的封面图</span><br><span class="hljs-code">banner_img: /img/post_banner.jpg # 文章页顶部大图</span><br><span class="hljs-code"></span><br><span class="hljs-code">abstract: 加密内容在解密前的摘要.</span><br><span class="hljs-code">password: hello</span><br><span class="hljs-code">---</span><br></code></pre></td></tr></table></figure>
             </div>
             <hr>
             <div>
@@ -394,6 +398,12 @@ n">
 </div>
 
 <!-- Custom -->
+
+  <div class="col-lg-7 mx-auto nopadding-x-md">
+    <div class="container custom post-custom mx-auto">
+      <img src="/img/alipay.png" srcset="/img/loading.gif" lazyload class="rounded mx-auto d-block mt-5" style="width:150px; height:150px;"> <img src="/img/wechat.png" srcset="/img/loading.gif" lazyload class="rounded mx-auto d-block mt-5" style="width:150px; height:150px;">
+    </div>
+  </div>
 
 
     
