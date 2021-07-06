@@ -268,66 +268,66 @@
 </ul>
 <!-- /TOC -->
 
-<h1 id="1-常规方法"><a href="#1-常规方法" class="headerlink" title="1. 常规方法"></a>1. 常规方法</h1><h2 id="1-1-换阿里源"><a href="#1-1-换阿里源" class="headerlink" title="1.1. 换阿里源"></a>1.1. 换阿里源</h2><div class="hljs code-wrapper"><pre><code>sudo nano /etc/apt/sources.list
+<h1 id="1-常规方法"><a href="#1-常规方法" class="headerlink" title="1. 常规方法"></a>1. 常规方法</h1><h2 id="1-1-换阿里源"><a href="#1-1-换阿里源" class="headerlink" title="1.1. 换阿里源"></a>1.1. 换阿里源</h2><pre><code>sudo nano /etc/apt/sources.list
 #将原有内容用#注释掉
 deb http://mirrors.aliyun.com/raspbian/raspbian/ buster main contrib non-free rpi
-deb-src http://mirrors.aliyun.com/raspbian/raspbian/ buster main contrib non-free rpi</code></pre></div>
+deb-src http://mirrors.aliyun.com/raspbian/raspbian/ buster main contrib non-free rpi</code></pre>
 <hr>
-<div class="hljs code-wrapper"><pre><code>sudo nano /etc/apt/sources.list.d/raspi.list
+<pre><code>sudo nano /etc/apt/sources.list.d/raspi.list
 #将原有内容用#注释掉
 deb http://mirrors.aliyun.com/raspbian/raspbian/ buster main
-deb-src http://mirrors.aliyun.com/raspbian/raspbian/ buster main</code></pre></div>
+deb-src http://mirrors.aliyun.com/raspbian/raspbian/ buster main</code></pre>
 <hr>
-<div class="hljs code-wrapper"><pre><code>sudo apt-get update
-sudo apt-get upgrade</code></pre></div>
+<pre><code>sudo apt-get update
+sudo apt-get upgrade</code></pre>
 <hr>
 <p>提示重复配置可以把 <code>/etc/apt/sources.list.d/raspi.list</code> 里面的源删掉，只留一个文件有源就可以，目前还没遇到什么问题。</p>
 <hr>
 <hr>
-<h2 id="1-2-树莓派端配置git"><a href="#1-2-树莓派端配置git" class="headerlink" title="1.2. 树莓派端配置git"></a>1.2. 树莓派端配置git</h2><div class="hljs code-wrapper"><pre><code>sudo apt-get install git-core</code></pre></div>
+<h2 id="1-2-树莓派端配置git"><a href="#1-2-树莓派端配置git" class="headerlink" title="1.2. 树莓派端配置git"></a>1.2. 树莓派端配置git</h2><pre><code>sudo apt-get install git-core</code></pre>
 <p>树莓派本身的系统应该是有git的，接下来添加git用户，需要sudo命令</p>
 <p>添加用户:git，其中最后的 <code>/home/git</code> 指的是这个git用户组在文件目录的位置，最后的 <code>git</code> 是创建的用户的名字</p>
-<div class="hljs code-wrapper"><pre><code>sudo adduser --system --shell /bin/bash --gecos &#39;git version control by pi&#39; --group --home /home/git git</code></pre></div>
+<pre><code>sudo adduser --system --shell /bin/bash --gecos &#39;git version control by pi&#39; --group --home /home/git git</code></pre>
 <p>设置密码</p>
-<div class="hljs code-wrapper"><pre><code>sudo passwd git</code></pre></div>
+<pre><code>sudo passwd git</code></pre>
 <p>切换用户，注意接下来的操作都是“git”用户的操作，“git”用户对这些文件有控制权</p>
-<div class="hljs code-wrapper"><pre><code>su git</code></pre></div>
+<pre><code>su git</code></pre>
 <p>首先更改目录到要存储git的路径下</p>
-<div class="hljs code-wrapper"><pre><code>cd /home/git</code></pre></div>
+<pre><code>cd /home/git</code></pre>
 <p>为仓库创建一个文件夹，并移动进去，然后初始化并清空仓库</p>
-<div class="hljs code-wrapper"><pre><code>mkdir test.git
+<pre><code>mkdir test.git
 cd test.git
-git --bare init</code></pre></div>
+git --bare init</code></pre>
 <hr>
-<h3 id="1-2-1-完整操作"><a href="#1-2-1-完整操作" class="headerlink" title="1.2.1. 完整操作"></a>1.2.1. 完整操作</h3><div class="hljs code-wrapper"><pre><code>sudo adduser --system --shell /bin/bash --gecos &#39;git version control by pi&#39; --group --home /home/git luckgit
+<h3 id="1-2-1-完整操作"><a href="#1-2-1-完整操作" class="headerlink" title="1.2.1. 完整操作"></a>1.2.1. 完整操作</h3><pre><code>sudo adduser --system --shell /bin/bash --gecos &#39;git version control by pi&#39; --group --home /home/git luckgit
 sudo passwd luckgit
 su luckgit
 cd /home/git
 mkdir git_learning.git
 cd git_learning.git
-git --bare init</code></pre></div>
+git --bare init</code></pre>
 <hr>
 <h2 id="1-3-PC端的配置"><a href="#1-3-PC端的配置" class="headerlink" title="1.3. PC端的配置"></a>1.3. PC端的配置</h2><h3 id="1-3-1-完全使用git命令的方式"><a href="#1-3-1-完全使用git命令的方式" class="headerlink" title="1.3.1. 完全使用git命令的方式"></a>1.3.1. 完全使用git命令的方式</h3><ul>
 <li><p>添加新的远程主机</p>
-<div class="hljs code-wrapper"><pre><code>  # 示例：git remote add pi git@[your IP]:/home/git/test.git
-  git remote add pi_git_learning luckgit@192.168.1.123:/home/git/git_learning.git</code></pre></div>
+<pre><code>  # 示例：git remote add pi git@[your IP]:/home/git/test.git
+  git remote add pi_git_learning luckgit@192.168.1.123:/home/git/git_learning.git</code></pre>
 <p>  <code>pi_git_learning</code> 是这个远程存储器显示在本PC的名字，只是方便区分我添加的不同的一些远程git存储，<code>@</code>之前的是我在树莓派上创建的用户的名称，<code>@</code>之后是树莓派的IP，即相当于以<code>luckgit</code>的用户名访问<code>192.168.1.123</code>的IP，<code>:</code>之后的是树莓派上为这个仓库创建的git文件夹</p>
 </li>
 <li><p>push代码</p>
-<div class="hljs code-wrapper"><pre><code>  git add .
+<pre><code>  git add .
   git commit -am &quot;Initial&quot;    # 本次提交代码的说明
   # 示例：git push pi master
-  git push pi_git_learning master</code></pre></div>
+  git push pi_git_learning master</code></pre>
 <p>  push之后的第一个参数是远程存储器在本地的名字，第二个参数是分支名称，push是要输入对应用户的密码的。</p>
 <p>  因为没有配置ssh，所以只能通过命令行提交（而且每次都要输入密码，如果直接用vscode的“推送到”会报错“no permission”）</p>
 </li>
 <li><p>clone代码</p>
-<div class="hljs code-wrapper"><pre><code>  git clone luckgit@192.168.1.123:/home/git/git_learning.git</code></pre></div>
+<pre><code>  git clone luckgit@192.168.1.123:/home/git/git_learning.git</code></pre>
 <p>  以<code>luckgit</code>访问<code>192.168.1.123</code>服务器下的<code>/home/git/git_learning.git</code>并clone，但是这样子存到本地，这个远程仓库的名称是默认的<code>origin</code></p>
 </li>
 <li><p>pull代码</p>
 <p>  <strong>先切换到对应仓库的目录下</strong>，然后</p>
-<div class="hljs code-wrapper"><pre><code>  git pull origin master</code></pre></div>
+<pre><code>  git pull origin master</code></pre>
 <p>  从远程仓库<code>origin</code>的<code>master</code>分支拉取，因为从网站上clone下的项目也默认为<code>origin</code>的名字，所以pull其他项目也是这条命令</p>
 </li>
 </ul>
@@ -336,9 +336,9 @@ git --bare init</code></pre></div>
 <hr>
 <hr>
 <h2 id="1-4-其他"><a href="#1-4-其他" class="headerlink" title="1.4. 其他"></a>1.4. 其他</h2><h3 id="1-4-1-禁用休眠"><a href="#1-4-1-禁用休眠" class="headerlink" title="1.4.1. 禁用休眠"></a>1.4.1. 禁用休眠</h3><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/xiaoqianbook/p/11945271.html">一个很好的博客</a></p>
-<div class="hljs code-wrapper"><pre><code>sudo nano /etc/lightdm/lightdm.conf</code></pre></div>
+<pre><code>sudo nano /etc/lightdm/lightdm.conf</code></pre>
 <p>找到[Seat:*]这一项，在下面的‘#xserver-command=X’删除前面的注释符#，修改为以下</p>
-<div class="hljs code-wrapper"><pre><code>xserver-command=X -s 0-dpms</code></pre></div>
+<pre><code>xserver-command=X -s 0-dpms</code></pre>
 <p>其中，-s 参数：设置屏幕保护不启动，0 数字零，-dpms 参数：关闭电源节能管理。</p>
 <h1 id="2-树莓派gogs服务器"><a href="#2-树莓派gogs服务器" class="headerlink" title="2. 树莓派gogs服务器"></a>2. 树莓派gogs服务器</h1><h2 id="2-1-参考网址"><a href="#2-1-参考网址" class="headerlink" title="2.1. 参考网址"></a>2.1. 参考网址</h2><ul>
 <li><p>官网参考</p>
@@ -357,27 +357,27 @@ git --bare init</code></pre></div>
 <li><p>准备工作</p>
 <ol>
 <li><p>树莓派新建一个用户，注意名字一定是git，不需要禁止用户登录</p>
- <figure class="highlight mipsasm"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mipsasm">sudo <span class="hljs-keyword">adduser </span>git<br><span class="hljs-comment"># 有需要的话用下面的命令删除原有的用户</span><br>sudo userdel -r username<br></code></pre></div></td></tr></table></figure></li>
+ <figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs mipsasm">sudo <span class="hljs-keyword">adduser </span>git<br><span class="hljs-comment"># 有需要的话用下面的命令删除原有的用户</span><br>sudo userdel -r username<br></code></pre></td></tr></table></figure></li>
 <li><p>下载gogs的安装包</p>
 <p> <a target="_blank" rel="noopener" href="https://gogs.io/docs/installation/install_from_binary">下载页</a>，翻到下面选择树莓派的版本<br> <a target="_blank" rel="noopener" href="https://dl.gogs.io/0.11.91/gogs_0.11.91_raspi_armv7.zip">下载链接</a>，链接带版本号，应该是会更新的<br> 下载到电脑上，把文件名和路径改的简单一点<code>c:\gogs.zip</code>，然后通过pscp发到树莓派git用户的home上</p>
-<div class="hljs code-wrapper"><pre><code> pscp -P 22 c:\文件完整路径 pi@IP地址:/home/git/</code></pre></div>
+<pre><code> pscp -P 22 c:\文件完整路径 pi@IP地址:/home/git/</code></pre>
 <p> 上面的操作只是下载比较快，不然也可以在树莓派上切换到<code>/home/git/</code>，注意下载链接自己在网址上找新的</p>
-<div class="hljs code-wrapper"><pre><code> sudo wget https://dl.gogs.io/0.11.91/gogs_0.11.91_raspi_armv7.zip -O gogs.zip</code></pre></div>
+<pre><code> sudo wget https://dl.gogs.io/0.11.91/gogs_0.11.91_raspi_armv7.zip -O gogs.zip</code></pre>
 <p> 如果文件保存的路径不是<code>/home/git/</code>，把它复制到目标路径</p>
-<div class="hljs code-wrapper"><pre><code> sudo cp gogs.zip /home/git/</code></pre></div>
+<pre><code> sudo cp gogs.zip /home/git/</code></pre>
 </li>
 </ol>
 </li>
 <li><p>安装</p>
 <ol>
 <li><p>切换到<code>/home/git/</code>，解压gogs.zip</p>
-<div class="hljs code-wrapper"><pre><code> cd /home/git
+<pre><code> cd /home/git
  sudo unzip gogs.zip
  # 还可以顺便删掉原压缩包
- sudo rm gogs.zip</code></pre></div>
+ sudo rm gogs.zip</code></pre>
 </li>
 <li><p>使用命令 <code>cd</code> 进入到刚刚创建的目录</p>
-<div class="hljs code-wrapper"><pre><code> cd gogs</code></pre></div>
+<pre><code> cd gogs</code></pre>
 </li>
 <li><p>执行命令 <code>./gogs web</code></p>
 </li>
@@ -404,23 +404,23 @@ git --bare init</code></pre></div>
 <li><p>设置自启动</p>
 <ol>
 <li><p>把服务脚本复制到系统目录</p>
-<div class="hljs code-wrapper"><pre><code> sudo cp /home/git/gogs/scripts/systemd/gogs.service /etc/systemd/system</code></pre></div>
+<pre><code> sudo cp /home/git/gogs/scripts/systemd/gogs.service /etc/systemd/system</code></pre>
 <p> 如果复制失败的话，可以尝试把<code>/etc/systemd/system</code>下已有的<code>gogs.service</code>删除然后再操作</p>
 </li>
 <li><p>设置开机自启动gogs</p>
-<div class="hljs code-wrapper"><pre><code> sudo systemctl enable gogs</code></pre></div>
+<pre><code> sudo systemctl enable gogs</code></pre>
 </li>
 <li><p>立即启动gogs</p>
-<div class="hljs code-wrapper"><pre><code> sudo systemctl start gogs</code></pre></div>
+<pre><code> sudo systemctl start gogs</code></pre>
 </li>
 <li><p>查看实时日志输出</p>
-<div class="hljs code-wrapper"><pre><code> sudo systemctl status gogs</code></pre></div>
+<pre><code> sudo systemctl status gogs</code></pre>
 <p> 如果状态命令显示<code>Active：活动（运行中）</code>，则说明一切正常</p>
 </li>
 </ol>
 </li>
 <li><p>更改系统设置和配置</p>
-<div class="hljs code-wrapper"><pre><code>  sudo nano /home/git/gogs/custom/conf/app.ini</code></pre></div>
+<pre><code>  sudo nano /home/git/gogs/custom/conf/app.ini</code></pre>
 <p>  可以更改用，IP，域名，数据库类型，等等很多设置，改完之后再完整执行一次上面自启动的5点。</p>
 </li>
 </ul>
@@ -429,9 +429,9 @@ git --bare init</code></pre></div>
 </ul>
 <h2 id="2-4-本地的使用"><a href="#2-4-本地的使用" class="headerlink" title="2.4. 本地的使用"></a>2.4. 本地的使用</h2><ul>
 <li><p>添加ssh公钥到用户，首先查看ssh公钥，打开<code>git bash</code></p>
-<div class="hljs code-wrapper"><pre><code>  cd ~/.ssh
+<pre><code>  cd ~/.ssh
   ls
-  cat id_rsa.pub</code></pre></div>
+  cat id_rsa.pub</code></pre>
 </li>
 <li><p>  clone，push，pull的使用相同</p>
 </li>
@@ -439,24 +439,24 @@ git --bare init</code></pre></div>
 <h2 id="2-5-Ngnix代理"><a href="#2-5-Ngnix代理" class="headerlink" title="2.5. Ngnix代理"></a>2.5. Ngnix代理</h2><h3 id="2-5-1-官方指导"><a href="#2-5-1-官方指导" class="headerlink" title="2.5.1. 官方指导"></a>2.5.1. 官方指导</h3><p><a target="_blank" rel="noopener" href="https://gogs.io/docs/intro/faqs">官网说明</a></p>
 <ul>
 <li><p>如何使用 NGINX 的反向代理？<br>  在 <code>nginx.conf</code> 文件中，将下面的 <code>server</code> 部分增加至 <code>http</code> 分区内并重载配置：</p>
-<div class="hljs code-wrapper"><pre><code>  server &#123;
+<pre><code>  server &#123;
   listen 80;
   server_name git.crystalnetwork.us;
 
       location / &#123;
           proxy_pass http://localhost:3000;
       &#125;
-  &#125;</code></pre></div>
+  &#125;</code></pre>
 </li>
 <li><p>配置子路径<br>  如果您想要通过域名的子路径来访问 Gogs 实例，可以将 NGINX 的配置修改为以下形式（特别注意后缀 <code>/</code>）:</p>
-<div class="hljs code-wrapper"><pre><code>      server &#123;
+<pre><code>      server &#123;
       listen 80;
       server_name git.crystalnetwork.us;
 
       location /gogs/ &#123;
           proxy_pass http://localhost:3000/;
       &#125;
-  &#125;</code></pre></div>
+  &#125;</code></pre>
 <p>  然后在配置文件中设置<code>[server] EXTERNAL_URL = http://git.crystalnetwork.us/gogs/</code>。</p>
 </li>
 </ul>
@@ -504,6 +504,12 @@ git --bare init</code></pre></div>
                 <div class="post-prevnext">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2021/07/06/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0/git%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E5%92%8C%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">git基本使用和代码规范</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
