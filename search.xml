@@ -853,6 +853,7 @@ sudo raspi-config</code></pre>
 <li><a href="#21-stm32%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3">2.1. STM32官方文档</a></li>
 <li><a href="#22-hal_api">2.2. HAL_API</a></li>
 <li><a href="#23-ti-mcu">2.3. TI MCU</a></li>
+<li><a href="#24-ti-mcu-%E5%BC%95%E8%84%9A%E9%85%8D%E7%BD%AE">2.4 TI MCU 引脚配置</a></li>
 </ul>
 </li>
 </ul>
@@ -892,6 +893,9 @@ sudo raspi-config</code></pre>
 <h2 id="2-3-TI-MCU"><a href="#2-3-TI-MCU" class="headerlink" title="2.3. TI MCU"></a>2.3. TI MCU</h2><p><a href="https://www.ti.com.cn/product/cn/TM4C123GH6PM">TM4C123GH6PM</a><br>基于 Arm 的微控制器，ACFly Edu主控</p>
 <p><a href="https://www.ti.com.cn/product/cn/TMS320F28335">TMS320F28335</a></p>
 <p><a href="https://www.ti.com.cn/product/cn/MSP430F5529">MSP430F5529</a></p>
+<h2 id="2-4-TI-MCU-引脚配置"><a href="#2-4-TI-MCU-引脚配置" class="headerlink" title="2.4 TI MCU 引脚配置"></a>2.4 TI MCU 引脚配置</h2><p>就选定一款芯片，翻到下面找它的设计资源，软件相关的即可。</p>
+<p><a href="https://dev.ti.com/pinmux/app.html#/default">PinMux</a>，也可下载对应的软件（和网页版功能相同）。</p>
+<p>也可以在<code>TM4C123GH6PM</code>下面的<code>设计与开发</code>-&gt;<code>设计工作和仿真</code>-&gt; <code>Tiva™ C Series PinMux Utility</code>，同样可以图形化观察全部引脚。</p>
 ]]></content>
       <categories>
         <category>学习</category>
