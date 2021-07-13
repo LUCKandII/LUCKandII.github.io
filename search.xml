@@ -1020,6 +1020,7 @@ sudo raspi-config</code></pre>
 <li> IRead:<a href="http://www.iread.cf/">http://www.iread.cf/</a></li>
 <li> 淘链客：<a href="http://www.toplinks.cc/s/">http://www.toplinks.cc/s/</a></li>
 </ol>
+<p>全国图书馆参考咨询联盟: <a href="http://www.ucdrs.superlib.net/">http://www.ucdrs.superlib.net/</a></p>
 <h1 id="3-开发学习相关"><a href="#3-开发学习相关" class="headerlink" title="3. 开发学习相关"></a>3. 开发学习相关</h1><h2 id="3-1-软件"><a href="#3-1-软件" class="headerlink" title="3.1. 软件"></a>3.1. 软件</h2><p><a href="http://openocd.org/">OpenOCD（Open On-Chip Debugger）开源片上调试器</a>，<br><a href="https://zhuanlan.zhihu.com/p/41517198">跟我一起学OpenOCD(一)</a></p>
 <p><a href="https://www.vofa.plus/">VOFA+ 插件驱动的高自由度上位机</a></p>
 <h2 id="3-2-库、框架"><a href="#3-2-库、框架" class="headerlink" title="3.2. 库、框架"></a>3.2. 库、框架</h2><p><a href="http://wiki.ros.org/mavros">MAVROS – MAVLink extendable communication node for ROS with proxy for Ground Control Station.</a></p>
@@ -1027,12 +1028,16 @@ sudo raspi-config</code></pre>
 <p><a href="https://github.com/adafruit">Adafruit Industries ，开发CircuitPython的公司</a></p>
 <p><a href="https://circuitpython.org/">CircuitPython ：The easiest way to program microcontrollers，是从micropython演化而来的</a></p>
 <p><a href="http://wiringpi.com/">Wiring Pi : GPIO Interface library for the Raspberry Pi</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/388573380">Python 地图绘制神器 Folium</a></p>
 <h2 id="3-3-项目"><a href="#3-3-项目" class="headerlink" title="3.3. 项目"></a>3.3. 项目</h2><p><a href="https://github.com/search?q=drawbot">drawbot，应该有写字机器人的项目？？</a></p>
 <p><a href="https://github.com/golaced/Oldx_fly_controller">OLDX-开源多旋翼开发平台项目</a>，同一个人的github还有四足机器人项目</p>
 <h1 id="4-其他软件"><a href="#4-其他软件" class="headerlink" title="4. 其他软件"></a>4. 其他软件</h1><p><a href="https://lutris.net/">lutris : Play all your games on Linux</a></p>
 <p><a href="https://www.nomachine.com/">NoMachine : Go from your desktop to any NoMachine-enabled computer</a></p>
 <p><a href="https://www.grammarly.com/">Grammarly’s AI-powered writing assistant.</a></p>
+<p><a href="https://www.youxiaohou.com/">油小猴 一个汇聚了各种黑科技的小站</a>，<a href="https://github.com/syhyz1990">百度云网页相关的油猴脚本</a></p>
 <h1 id="5-算法-技术-学习"><a href="#5-算法-技术-学习" class="headerlink" title="5. 算法 技术 学习"></a>5. 算法 技术 学习</h1><p><a href="https://www.cnblogs.com/jins-note/p/10215511.html">KCF跟踪算法原理 入门详解</a></p>
+<p><a href="http://blog.sina.com.cn/s/blog_4dbdf51b0100w0u0.html">电赛准备之运放的带宽及压摆率的含义</a></p>
+<p><a href="http://www.elecfans.com/dianzichangshi/20171106575268.html">自举元件的选择</a></p>
 ]]></content>
       <categories>
         <category>学习</category>

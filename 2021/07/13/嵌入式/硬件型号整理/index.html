@@ -1,0 +1,576 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/cat_head.jpg">
+  <link rel="icon" href="/img/cat_head.jpg">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="Zhang Daming">
+  <meta name="keywords" content="">
+  
+  <title>硬件型号整理 - Ming</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"luckandii.github.io","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":" ","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":2},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+
+<body>
+  <header style="height: 60vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Ming</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/three_body_1.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.2)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="硬件型号整理">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-07-13 22:00" pubdate>
+        2021年7月13日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">硬件型号整理</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2021年7月13日 晚上
+                
+              </p>
+            
+            <div class="markdown-body">
+              <!-- TOC -->
+
+<ul>
+<li><a href="#1-%E6%8E%A7%E5%88%B6%E7%9B%B8%E5%85%B3">1. 控制相关</a></li>
+<li><a href="#2-%E4%B8%BB%E7%94%B5%E8%B7%AF%E5%85%83%E4%BB%B6%E9%80%89%E5%9E%8B">2. 主电路元件选型</a><ul>
+<li><a href="#21-%E5%8A%9F%E7%8E%87%E7%AE%A1%E5%AD%90%E5%92%8C%E9%A9%B1%E5%8A%A8">2.1. 功率（管子和驱动）</a></li>
+<li><a href="#22-%E9%87%87%E6%A0%B7">2.2. 采样</a></li>
+<li><a href="#23-%E6%97%A0%E6%BA%90%E5%99%A8%E4%BB%B6%E9%98%BB%E5%AE%B9%E6%84%9F">2.3. 无源器件（阻容感）</a></li>
+</ul>
+</li>
+<li><a href="#3-%E7%94%B5%E6%BA%90%E8%8A%AF%E7%89%87%E9%80%89%E5%9E%8B">3. 电源芯片选型</a><ul>
+<li><a href="#31-%E5%8D%87%E5%8E%8B%E7%94%B5%E6%BA%90%E8%8A%AF%E7%89%87">3.1. 升压电源芯片</a></li>
+<li><a href="#32-%E9%99%8D%E5%8E%8B%E7%94%B5%E6%BA%90%E8%8A%AF%E7%89%87">3.2. 降压电源芯片</a></li>
+<li><a href="#33-%E7%94%B5%E6%BA%90%E8%8A%AF%E7%89%87">3.3. 电源芯片</a></li>
+</ul>
+</li>
+<li><a href="#4-%E5%85%B6%E4%BB%96">4. 其他</a><ul>
+<li><a href="#41-%E8%BF%90%E6%94%BE">4.1. 运放</a></li>
+<li><a href="#42-%E9%A9%B1%E5%8A%A8%E7%9B%B8%E5%85%B3">4.2. 驱动相关</a></li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+
+<p><strong>与<code>C:\Files\Workspace\2021ElectronicDesign\5_Docs\选型购物\购物清单.md</code>相同</strong></p>
+<h1 id="1-控制相关"><a href="#1-控制相关" class="headerlink" title="1. 控制相关"></a>1. 控制相关</h1><ul>
+<li><p>  <a target="_blank" rel="noopener" href="https://www.ti.com.cn/tool/cn/EK-TM4C1294XL?keyMatch=EK-TM4C1294XL&tisearch=Search-CN-Everything">EK-TM4C1294XL LaunchPad 开发板</a></p>
+</li>
+<li><p>  <a target="_blank" rel="noopener" href="https://www.ti.com.cn/product/cn/TM4C1294NCPDT">TM4C1294XL 芯片本身</a>，与上述开发板同款</p>
+</li>
+<li><p>  <a target="_blank" rel="noopener" href="https://www.ti.com.cn/tool/cn/EK-TM4C123GXL">EK-TM4C123GXL 开发板</a></p>
+</li>
+<li><p>  <a target="_blank" rel="noopener" href="https://www.ti.com.cn/product/cn/TM4C123GH6PM?keyMatch=TM4C123GH6PM&tisearch=search-everything&usecase=GPN#product-details">TM4C123GH6PM 芯片本身</a>，与上述开发板同款</p>
+</li>
+<li><p>  <a target="_blank" rel="noopener" href="https://www.ti.com.cn/product/cn/MSP430F5529">MSPF5529芯片本身</a></p>
+</li>
+</ul>
+<h1 id="2-主电路元件选型"><a href="#2-主电路元件选型" class="headerlink" title="2. 主电路元件选型"></a>2. 主电路元件选型</h1><h2 id="2-1-功率（管子和驱动）"><a href="#2-1-功率（管子和驱动）" class="headerlink" title="2.1. 功率（管子和驱动）"></a>2.1. 功率（管子和驱动）</h2><ul>
+<li><p>  IR2104或者IR2104S，半桥驱动，SOP8的封装</p>
+</li>
+<li><p>  IR2103，半桥驱动，但是上下管信号分开，SOIC-8封装</p>
+</li>
+<li><p>  FR107二极管，快恢复（1A，1000V）</p>
+</li>
+<li><p>  AOD482 100V 32A，NCE30H10K 30V 100A,FR13N20D 13A/200V</p>
+</li>
+<li><p>  IRF3205，IRFP460，IRF250，250N，</p>
+</li>
+<li><p>  单个管子的驱动IXDN609SI</p>
+</li>
+</ul>
+<hr>
+<p>mos来三种型号，低压大电流，中压大电流，高压较小电流，封装一致<br>D2PAK的封装，或者QFN的封装</p>
+<hr>
+<h2 id="2-2-采样"><a href="#2-2-采样" class="headerlink" title="2.2. 采样"></a>2.2. 采样</h2><ul>
+<li><p>  光耦HCPL-2631，PC817C，TLP281-4，TLP155</p>
+</li>
+<li><p>  LM358双路运放，LM321单路运放</p>
+</li>
+<li><p>  ACS712电流采样  </p>
+</li>
+<li><p>  其他的使用<code>LEM莱姆</code>的大蓝色盒子，需要搭配运放进行滤波</p>
+</li>
+</ul>
+<h2 id="2-3-无源器件（阻容感）"><a href="#2-3-无源器件（阻容感）" class="headerlink" title="2.3. 无源器件（阻容感）"></a>2.3. 无源器件（阻容感）</h2><ul>
+<li>  储备一些较大的标准电感</li>
+</ul>
+<h1 id="3-电源芯片选型"><a href="#3-电源芯片选型" class="headerlink" title="3. 电源芯片选型"></a>3. 电源芯片选型</h1><p><a target="_blank" rel="noopener" href="https://wenku.baidu.com/view/08997214eefdc8d376ee32d8.html"><strong>电源芯片选型</strong></a></p>
+<h2 id="3-1-升压电源芯片"><a href="#3-1-升压电源芯片" class="headerlink" title="3.1. 升压电源芯片"></a>3.1. 升压电源芯片</h2><p>看同目录下的excel</p>
+<ul>
+<li><p>  ME2108A50M3G SOT23-3 丝印D4 ME2108A<br><a target="_blank" rel="noopener" href="https://detail.tmall.com/item.htm?spm=a230r.1.14.25.76506352WAgREg&id=607247272079&ns=1&abbucket=19">ME2108A50M3G SOT23-3</a><br>要电感</p>
+</li>
+<li><p>  SX1308 SOT23-6 丝印B628 升压芯片<br><a target="_blank" rel="noopener" href="https://item.taobao.com/item.htm?spm=a1z10.3-c-s.w4002-21223910208.12.602d6a4bVLLET1&id=533811849647">SX1308 SOT23-6</a><br>要配合适的电阻（73K2）</p>
+</li>
+<li><p>  SGM6603 SOT-23-6 DC-DC升压转换器<br><a target="_blank" rel="noopener" href="https://www.semiee.com/file/SGMICRO/SGMICRO-SGM6603.pdf">SGM6603 SOT-23-6</a><br>有许多细分型号，有典型的型号恒定转3.3V或者5V的，只需要电感</p>
+</li>
+</ul>
+<ul>
+<li><p>  SGM6601 SOT-23-5 DC-DC升压转换器<br><a target="_blank" rel="noopener" href="https://www.semiee.com/file/SGMICRO/SGMICRO-SGM6601.pdf">SGM6601 SOT-23-5</a><br>需要配电阻，适合较高输出电压的场合</p>
+</li>
+<li><p>  TPS61220DCKR SC-70-6 低输入电压 0.7V升压转换器<br>TI的一款升压芯片，TI应该还有大量型号，都是TPS系列。</p>
+</li>
+<li><p>  TPS61222DCKR SOT-363 5V输出电压 低输入电压升压<br><a target="_blank" rel="noopener" href="https://item.taobao.com/item.htm?spm=a1z0k.7386009.0.d4919233.1df06ffeW4koWD&id=604304266278&_u=t2dmg8j26111">TPS61222DCKR SOT-363</a><br>TI芯片</p>
+</li>
+</ul>
+<h2 id="3-2-降压电源芯片"><a href="#3-2-降压电源芯片" class="headerlink" title="3.2. 降压电源芯片"></a>3.2. 降压电源芯片</h2><ul>
+<li><p>  XC6206 SOT-23 系列，有许多稳压的型号<br>XC6206P332MR SOT-23 (662K) 3.3V 300MA 稳压芯片</p>
+</li>
+<li><p>  TPS563201DDCR SOT-23-6 同步降压转换器<br><a target="_blank" rel="noopener" href="https://item.taobao.com/item.htm?spm=a1z0k.7386009.0.d4919233.1df06ffeW4koWD&id=633977258360&_u=t2dmg8j26111">TPS563201DDCR SOT-23-6</a><br>TI芯片，输出要配电阻</p>
+</li>
+</ul>
+<h2 id="3-3-电源芯片"><a href="#3-3-电源芯片" class="headerlink" title="3.3. 电源芯片"></a>3.3. 电源芯片</h2><table>
+<thead>
+<tr>
+<th align="center">芯片型号</th>
+<th align="center">input</th>
+<th align="center">输出电流</th>
+<th align="center">封装</th>
+<th align="center">需要的特殊电阻</th>
+<th align="center">资料链接</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">MP1470</td>
+<td align="center">4.7V-to-16V</td>
+<td align="center">2A</td>
+<td align="center">TSOT-23</td>
+<td align="center">40.2K,13K,75K</td>
+<td align="center"><a target="_blank" rel="noopener" href="https://www.semiee.com/file/MPS/MPS-MP1470.pdf">资料</a></td>
+</tr>
+<tr>
+<td align="center">MP2303</td>
+<td align="center">4.75V to 28V</td>
+<td align="center">3A</td>
+<td align="center">SOIC8 QFN10</td>
+<td align="center">52.3K,6.98K</td>
+<td align="center"><a target="_blank" rel="noopener" href="https://www.semiee.com/file/MPS/MPS-MP2303.pdf">资料</a></td>
+</tr>
+<tr>
+<td align="center">MP38892</td>
+<td align="center">4.5V to 42V</td>
+<td align="center">6A</td>
+<td align="center">SOIC8</td>
+<td align="center">40.2K,13K</td>
+<td align="center"><a target="_blank" rel="noopener" href="https://www.semiee.com/file/MPS/MPS-MP38892.pdf">资料</a></td>
+</tr>
+<tr>
+<td align="center">MP1584</td>
+<td align="center">4.5V to 28V</td>
+<td align="center">3A</td>
+<td align="center">SOIC8</td>
+<td align="center">24.9K,68.1K,40.2K</td>
+<td align="center"><a target="_blank" rel="noopener" href="https://www.semiee.com/file/MPS/MPS-MP1584.pdf">资料</a></td>
+</tr>
+</tbody></table>
+<h1 id="4-其他"><a href="#4-其他" class="headerlink" title="4. 其他"></a>4. 其他</h1><h2 id="4-1-运放"><a href="#4-1-运放" class="headerlink" title="4.1. 运放"></a>4.1. 运放</h2><p>注意带宽（放大的是小信号），和压摆率（放大的是功率信号、大信号）</p>
+<p>LM358：1MHz带宽，0.4V/us，LM321类似，注意选择正确的信号（因为有很多细分型号）</p>
+<p>LF353：3MHz带宽，13V/us</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/120390350">运放选型速记指南</a></p>
+<h2 id="4-2-驱动相关"><a href="#4-2-驱动相关" class="headerlink" title="4.2. 驱动相关"></a>4.2. 驱动相关</h2><p><a target="_blank" rel="noopener" href="https://bbs.21dianyuan.com/forum.php?mod=viewthread&tid=23459">高压驱动IC 自举电容和二极管的选用 讨论贴</a></p>
+<ol>
+<li> 自举电容</li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://www.da-quan.net/so-qswqsdwbh.html">自举电容能用陶瓷贴片电容代替电解电容吗</a>，介绍了很多不同电容类型的特性。</p>
+<p>小容量的比如1uF以下的，用贴片陶瓷电容（通常叫做MLCC）是很不错的选择，而且好像只能用MLCC，小容量的铝电解比较少见。</p>
+<p>对于大容量的情况，同容量的MLCC从造价上可能要昂贵许多，但在高频段（100kHz以上）频率响应和ESR要优异得多，甚至于在数MHz以上的时候，电解电容已经失去了作为电容的意义，整个基本上全部呈现感性。所以这已经不是价格所能衡量的，也就是说MLCC在高频段也是唯一选择。</p>
+<p>需要补充说明的是，并不是所有的MLCC都能取代电解（不考虑价格因素），例如MLCC材质上是有区别的，像X8R/S、X7R/S、X5R/S这些是大容量MLCC比较好的选择，而Y5V、Z5U这些在要求不太高的场合可以应用，因为它的容量随温度的变化太大了。至于C0G、N0P这些材质是最稳定的MLCC，但其容量很难做大，基本上10nF（0.01uF）就已经到极限了。</p>
+<p>另外，有些在频率补偿方面有要求的，也不是说MLCC就肯定好过于电解，所谓“成也萧何，败也萧何”，正因其毫欧级的极低ESR，会导致放大器的振荡或者振铃（RING）现象，此时用铝电解或钽电容加小容量MLCC是较好的方法。而且，目前就容量上来说，单片MLCC容量能做到100uF以上的好像就只有太阳诱电一家。当然，如果控制器或转换器的频率足够高的时候，对容量也没有过高的要求了。如果实在要求太高容量，那么只能多个电容并联一途，如此一来，MLCC的优势会有所降低。</p>
+<p>再补充一个个人浅见，在瞬间大电流冲击方面，由于电解电容的感性成分较高，所以电解电容被瞬间击坏的可能性要相较于钽电容和MLCC小一些，也就是“皮实”一些，当这些电容都并存于板上时，让电解电容离瞬间电流波动较大的位置近一些。</p>
+<ol start="2">
+<li> 自举电路的二极管</li>
+</ol>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+  <div class="col-lg-7 mx-auto nopadding-x-md">
+    <div class="container custom post-custom mx-auto">
+      <img src="/img/alipay.png" srcset="/img/loading.gif" lazyload class="rounded mx-auto d-block mt-5" style="width:150px; height:150px;"> <img src="/img/wechat.png" srcset="/img/loading.gif" lazyload class="rounded mx-auto d-block mt-5" style="width:150px; height:150px;">
+    </div>
+  </div>
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"superSample":2,"width":200,"height":400,"position":"right","hOffset":50,"vOffset":-40},"mobile":{"show":false,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false});</script></body>
+</html>
