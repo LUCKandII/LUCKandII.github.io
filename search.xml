@@ -858,7 +858,8 @@ sudo raspi-config</code></pre>
 </li>
 <li><a href="#esp32%E5%BC%80%E5%8F%91%E7%9B%B8%E5%85%B3">ESP32开发相关</a><ul>
 <li><a href="#guide">Guide</a></li>
-<li><a href="#%E8%B5%84%E6%BA%90%E4%B8%8B%E8%BD%BD">资源下载</a></li>
+<li><a href="#esp-idf%E7%9B%B8%E5%85%B3%E8%B5%84%E6%BA%90%E4%B8%8B%E8%BD%BD">ESP IDF相关资源下载</a></li>
+<li><a href="#__esp32-platformio%E4%BD%BF%E7%94%A8__"><strong>ESP32 PlatformIO使用</strong></a></li>
 </ul>
 </li>
 </ul>
@@ -901,10 +902,13 @@ sudo raspi-config</code></pre>
 <h2 id="2-4-TI-MCU-引脚配置"><a href="#2-4-TI-MCU-引脚配置" class="headerlink" title="2.4 TI MCU 引脚配置"></a>2.4 TI MCU 引脚配置</h2><p>就选定一款芯片，翻到下面找它的设计资源，软件相关的即可。</p>
 <p><a href="https://dev.ti.com/pinmux/app.html#/default">PinMux</a>，也可下载对应的软件（和网页版功能相同）。</p>
 <p>也可以在<code>TM4C123GH6PM</code>下面的<code>设计与开发</code>-&gt;<code>设计工作和仿真</code>-&gt; <code>Tiva™ C Series PinMux Utility</code>，同样可以图形化观察全部引脚。</p>
-<h1 id="ESP32开发相关"><a href="#ESP32开发相关" class="headerlink" title="ESP32开发相关"></a>ESP32开发相关</h1><h2 id="Guide"><a href="#Guide" class="headerlink" title="Guide"></a>Guide</h2><p><a href="https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/get-started/">乐鑫官网 快速入门指南</a></p>
-<p><a href="https://github.com/espressif/vscode-esp-idf-extension">ESP-IDF VS Code Extension</a></p>
-<p><a href="https://blog.csdn.net/Mark_md/article/details/113517263">ESP32开发 0.windows Vscode开发环境搭建</a></p>
-<h2 id="资源下载"><a href="#资源下载" class="headerlink" title="资源下载"></a>资源下载</h2><ol>
+<h1 id="ESP32开发相关"><a href="#ESP32开发相关" class="headerlink" title="ESP32开发相关"></a>ESP32开发相关</h1><h2 id="Guide"><a href="#Guide" class="headerlink" title="Guide"></a>Guide</h2><p><a href="https://www.espressif.com/zh-hans">乐鑫官网</a></p>
+<p><a href="https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/get-started/">乐鑫官网 快速入门指南</a></p>
+<p><a href="https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/resources.html">乐鑫官网 PlatformIO的指引</a></p>
+<p><a href="https://docs.platformio.org/en/latest/platforms/espressif32.html">PlatformIO官网里关于ESP32的文档</a></p>
+<p><a href="https://github.com/espressif/vscode-esp-idf-extension"><del>ESP-IDF VS Code Extension</del></a></p>
+<p><a href="https://blog.csdn.net/Mark_md/article/details/113517263"><del>ESP32开发 0.windows Vscode开发环境搭建</del></a></p>
+<h2 id="ESP-IDF相关资源下载"><a href="#ESP-IDF相关资源下载" class="headerlink" title="ESP IDF相关资源下载"></a>ESP IDF相关资源下载</h2><ol>
 <li><p>先决条件：</p>
 <p> <a href="https://code.visualstudio.com/#alt-downloads">VSCODE</a>，下载<code>System Installer</code>，登录github账号同步。</p>
 <p> <a href="https://git-scm.com/downloads">Git</a></p>
@@ -930,6 +934,22 @@ sudo raspi-config</code></pre>
 </ol>
 <ol start="4">
 <li> 插件配置的最后是下载python虚拟环境，不需要挂梯子，最好把梯子关掉。</li>
+</ol>
+<h2 id="ESP32-PlatformIO使用"><a href="#ESP32-PlatformIO使用" class="headerlink" title="ESP32 PlatformIO使用"></a><strong>ESP32 PlatformIO使用</strong></h2><p>开发ESP32使用PlatformIO最方便，而且编译速度比<code>ESP-IDE</code>快很多。</p>
+<ol>
+<li><p>提前安装：<code>python</code>，并且更新pip和安装<code>platformio</code>，这个package是为了烧录程序。</p>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">python -m pip install --upgrade pip<br>pip install platformio<br></code></pre></td></tr></table></figure></li>
+<li><p> 安装vscode，然后安装<code>platformio</code>插件。创建新工程即可。特别简单。第一次使用时比较慢，因为要下载的东西比较多，大概一个多G左右。</p>
+</li>
+<li><p>工程里面的<code>platformio.ini</code>可以管理调试的配置。普通的esp32选择<code>board = esp32dev</code></p>
+ <figure class="highlight ini"><table><tr><td class="code"><pre><code class="hljs ini"><span class="hljs-section">[env:esp32dev]</span><br><span class="hljs-attr">platform</span> = espressif32<br><span class="hljs-attr">framework</span> = espidf<br><span class="hljs-attr">board</span> = esp32dev<br><span class="hljs-attr">monitor_speed</span> = <span class="hljs-number">115200</span><br></code></pre></td></tr></table></figure></li>
+<li><p>一些例子一方面可以看</p>
+<p> <a href="https://github.com/espressif/esp-idf">github:espressif/esp-idf</a>，下载里面的examples，或者<br> <a href="https://www.espressif.com/zh-hans/support/download/sdks-demos">ESP-IDF官网，下载压缩包，解压得到examples</a></p>
+</li>
+<li><p>工程移植和学习的方式：</p>
+<p> 创建一个模板工程，要多线程就用<code>Espressif IOT Development Framework</code>，如果有依赖<code>arduino</code>的库就用<code>arduino</code>的模板。</p>
+<p> 然后把<code>example</code>里面的需要参考的工程的主函数复制或者移植部分过去。platformIO创建的工程没有路径问题。工程内需要的其他文件也可以按需要复制过去。有文件夹的则整个复制过去，并且查看<code>CMakeLists.txt</code>添加需要的文件名。</p>
+</li>
 </ol>
 ]]></content>
       <categories>
@@ -1226,8 +1246,15 @@ sudo raspi-config</code></pre>
 <p> <a href="https://code.visualstudio.com/#alt-downloads">VSCODE</a>，下载<code>System Installer</code>，登录github账号同步。</p>
 <p> <a href="https://git-scm.com/downloads">Git</a></p>
 <p> <a href="https://www.python.org/downloads/">Python</a></p>
+<p> <a href="https://sourceforge.net/projects/mingw-w64/files/">mingw下载</a>，下载<code>x86_64-posix-seh</code>即可，应该是第二个。然后配置环境变量，在Path环境变量里面添加一条，指向MinGW的bin文件夹。在命令窗口中输入下面的命令验证安装是否成功：<br> <code>gcc -v</code></p>
+<p> <a href="https://cmake.org/download/">cmake下载</a>，下载<code>.msi</code>后缀的，直接安装即可。</p>
+</li>
+<li><p>其他开发配置</p>
+<p> <a href="https://zhuanlan.zhihu.com/p/355146595">vscode 用cmake傻瓜式搭建C++编译调试环境</a></p>
+<p> 如果一个工程里面有多个文件，就看：<a href="https://zhuanlan.zhihu.com/p/267803605">Cmake 语法与实战入门</a></p>
 </li>
 </ol>
+<pre><code>[配置CLion用于STM32开发【优雅の嵌入式开发】](https://www.bilibili.com/read/cv6308000/) </code></pre>
 ]]></content>
       <categories>
         <category>学习</category>
