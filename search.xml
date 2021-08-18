@@ -853,13 +853,13 @@ sudo raspi-config</code></pre>
 <li><a href="#21-stm32%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3">2.1. STM32官方文档</a></li>
 <li><a href="#22-hal_api">2.2. HAL_API</a></li>
 <li><a href="#23-ti-mcu">2.3. TI MCU</a></li>
-<li><a href="#24-ti-mcu-%E5%BC%95%E8%84%9A%E9%85%8D%E7%BD%AE">2.4 TI MCU 引脚配置</a></li>
+<li><a href="#24-ti-mcu-%E5%BC%95%E8%84%9A%E9%85%8D%E7%BD%AE">2.4. TI MCU 引脚配置</a></li>
 </ul>
 </li>
-<li><a href="#esp32%E5%BC%80%E5%8F%91%E7%9B%B8%E5%85%B3">ESP32开发相关</a><ul>
-<li><a href="#guide">Guide</a></li>
-<li><a href="#esp-idf%E7%9B%B8%E5%85%B3%E8%B5%84%E6%BA%90%E4%B8%8B%E8%BD%BD">ESP IDF相关资源下载</a></li>
-<li><a href="#__esp32-platformio%E4%BD%BF%E7%94%A8__"><strong>ESP32 PlatformIO使用</strong></a></li>
+<li><a href="#3-esp32%E5%BC%80%E5%8F%91%E7%9B%B8%E5%85%B3">3. ESP32开发相关</a><ul>
+<li><a href="#31-guide">3.1. Guide</a></li>
+<li><a href="#32-esp-idf%E7%9B%B8%E5%85%B3%E8%B5%84%E6%BA%90%E4%B8%8B%E8%BD%BD">3.2. ESP IDF相关资源下载</a></li>
+<li><a href="#33-__esp32-platformio%E4%BD%BF%E7%94%A8__">3.3. <strong>ESP32 PlatformIO使用</strong></a></li>
 </ul>
 </li>
 </ul>
@@ -899,16 +899,16 @@ sudo raspi-config</code></pre>
 <h2 id="2-3-TI-MCU"><a href="#2-3-TI-MCU" class="headerlink" title="2.3. TI MCU"></a>2.3. TI MCU</h2><p><a href="https://www.ti.com.cn/product/cn/TM4C123GH6PM">TM4C123GH6PM</a><br>基于 Arm 的微控制器，ACFly Edu主控</p>
 <p><a href="https://www.ti.com.cn/product/cn/TMS320F28335">TMS320F28335</a></p>
 <p><a href="https://www.ti.com.cn/product/cn/MSP430F5529">MSP430F5529</a></p>
-<h2 id="2-4-TI-MCU-引脚配置"><a href="#2-4-TI-MCU-引脚配置" class="headerlink" title="2.4 TI MCU 引脚配置"></a>2.4 TI MCU 引脚配置</h2><p>就选定一款芯片，翻到下面找它的设计资源，软件相关的即可。</p>
+<h2 id="2-4-TI-MCU-引脚配置"><a href="#2-4-TI-MCU-引脚配置" class="headerlink" title="2.4. TI MCU 引脚配置"></a>2.4. TI MCU 引脚配置</h2><p>就选定一款芯片，翻到下面找它的设计资源，软件相关的即可。</p>
 <p><a href="https://dev.ti.com/pinmux/app.html#/default">PinMux</a>，也可下载对应的软件（和网页版功能相同）。</p>
 <p>也可以在<code>TM4C123GH6PM</code>下面的<code>设计与开发</code>-&gt;<code>设计工作和仿真</code>-&gt; <code>Tiva™ C Series PinMux Utility</code>，同样可以图形化观察全部引脚。</p>
-<h1 id="ESP32开发相关"><a href="#ESP32开发相关" class="headerlink" title="ESP32开发相关"></a>ESP32开发相关</h1><h2 id="Guide"><a href="#Guide" class="headerlink" title="Guide"></a>Guide</h2><p><a href="https://www.espressif.com/zh-hans">乐鑫官网</a></p>
+<h1 id="3-ESP32开发相关"><a href="#3-ESP32开发相关" class="headerlink" title="3. ESP32开发相关"></a>3. ESP32开发相关</h1><h2 id="3-1-Guide"><a href="#3-1-Guide" class="headerlink" title="3.1. Guide"></a>3.1. Guide</h2><p><a href="https://www.espressif.com/zh-hans">乐鑫官网</a></p>
 <p><a href="https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/get-started/">乐鑫官网 快速入门指南</a></p>
 <p><a href="https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32/resources.html">乐鑫官网 PlatformIO的指引</a></p>
 <p><a href="https://docs.platformio.org/en/latest/platforms/espressif32.html">PlatformIO官网里关于ESP32的文档</a></p>
 <p><a href="https://github.com/espressif/vscode-esp-idf-extension"><del>ESP-IDF VS Code Extension</del></a></p>
 <p><a href="https://blog.csdn.net/Mark_md/article/details/113517263"><del>ESP32开发 0.windows Vscode开发环境搭建</del></a></p>
-<h2 id="ESP-IDF相关资源下载"><a href="#ESP-IDF相关资源下载" class="headerlink" title="ESP IDF相关资源下载"></a>ESP IDF相关资源下载</h2><ol>
+<h2 id="3-2-ESP-IDF相关资源下载"><a href="#3-2-ESP-IDF相关资源下载" class="headerlink" title="3.2. ESP IDF相关资源下载"></a>3.2. ESP IDF相关资源下载</h2><ol>
 <li><p>先决条件：</p>
 <p> <a href="https://code.visualstudio.com/#alt-downloads">VSCODE</a>，下载<code>System Installer</code>，登录github账号同步。</p>
 <p> <a href="https://git-scm.com/downloads">Git</a></p>
@@ -935,7 +935,7 @@ sudo raspi-config</code></pre>
 <ol start="4">
 <li> 插件配置的最后是下载python虚拟环境，不需要挂梯子，最好把梯子关掉。</li>
 </ol>
-<h2 id="ESP32-PlatformIO使用"><a href="#ESP32-PlatformIO使用" class="headerlink" title="ESP32 PlatformIO使用"></a><strong>ESP32 PlatformIO使用</strong></h2><p>开发ESP32使用PlatformIO最方便，而且编译速度比<code>ESP-IDE</code>快很多。</p>
+<h2 id="3-3-ESP32-PlatformIO使用"><a href="#3-3-ESP32-PlatformIO使用" class="headerlink" title="3.3. ESP32 PlatformIO使用"></a>3.3. <strong>ESP32 PlatformIO使用</strong></h2><p>开发ESP32使用PlatformIO最方便，而且编译速度比<code>ESP-IDE</code>快很多。</p>
 <ol>
 <li><p>提前安装：<code>python</code>，并且更新pip和安装<code>platformio</code>，这个package是为了烧录程序。</p>
  <figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">python -m pip install --upgrade pip<br>pip install platformio<br></code></pre></td></tr></table></figure></li>
