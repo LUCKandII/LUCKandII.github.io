@@ -226,7 +226,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2021年8月22日 晚上
+                  本文最后更新于：2021年8月23日 晚上
                 
               </p>
             
@@ -256,6 +256,11 @@
 <li><a href="#7-esp32%E7%A1%AC%E4%BB%B6%E5%BC%80%E5%8F%91">7. ESP32硬件开发</a><ul>
 <li><a href="#71-gpio-matrix%E8%BF%98%E6%B2%A1%E7%9C%9F%E6%AD%A3%E4%BD%BF%E7%94%A8">7.1. GPIO Matrix（还没真正使用）</a></li>
 <li><a href="#72-%E5%85%B3%E4%BA%8Eesp32espi%E5%92%8Cst7735%E7%A1%AC%E4%BB%B6%E8%AE%BE%E8%AE%A1">7.2. 关于ESP32<code>eSPI</code>和<code>ST7735</code>硬件设计</a></li>
+<li><a href="#73-esp32-cam%E8%AE%BE%E8%AE%A1">7.3. ESP32 CAM设计</a><ul>
+<li><a href="#731-%E6%8E%A8%E8%8D%90%E8%AE%BE%E8%AE%A1">7.3.1. 推荐设计</a></li>
+<li><a href="#732-%E5%85%B6%E4%BB%96">7.3.2. 其他</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#8-bug%E8%AE%B0%E5%BD%95">8. Bug记录</a></li>
@@ -394,7 +399,74 @@
 <p>一方面是引脚可映射到任意IO，另一方面，这些参考的引脚配置来自ESP32的硬件手册。</p>
 <img src="/2021/08/22/%E5%B5%8C%E5%85%A5%E5%BC%8F/ESP32%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/ESP32开发笔记_2021-08-22-19-59-26.png" srcset="/img/loading.gif" lazyload width="100%">
 
+<h2 id="7-3-ESP32-CAM设计"><a href="#7-3-ESP32-CAM设计" class="headerlink" title="7.3. ESP32 CAM设计"></a>7.3. ESP32 CAM设计</h2><img src="/2021/08/22/%E5%B5%8C%E5%85%A5%E5%BC%8F/ESP32%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/ESP32开发笔记_2021-08-23-21-56-15.png" srcset="/img/loading.gif" lazyload width="70%">
 
+<table>
+<thead>
+<tr>
+<th>管脚名称</th>
+<th>管脚类型</th>
+<th>管脚描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SIO_C</td>
+<td>输入</td>
+<td>SCCB总线的时钟线，可类比I2C的SCL</td>
+</tr>
+<tr>
+<td>SIO_D</td>
+<td>I/O</td>
+<td>SCCB总线的数据线，可类比I2C的SDA</td>
+</tr>
+<tr>
+<td>RESETB</td>
+<td>输入</td>
+<td>系统复位管脚，低电平有效</td>
+</tr>
+<tr>
+<td>PWDN</td>
+<td>输入</td>
+<td>掉电/省电模式，高电平有效</td>
+</tr>
+<tr>
+<td>HREF</td>
+<td>输出</td>
+<td>行同步信号</td>
+</tr>
+<tr>
+<td>VSYNC</td>
+<td>输出</td>
+<td>帧同步信号</td>
+</tr>
+<tr>
+<td>PCLK</td>
+<td>输出</td>
+<td>像素同步时钟输出信号</td>
+</tr>
+<tr>
+<td>XCLK</td>
+<td>输入</td>
+<td>外部时钟输入端口，可接外部晶振</td>
+</tr>
+<tr>
+<td>Y0…Y9</td>
+<td>输出</td>
+<td>像素数据输出端口</td>
+</tr>
+</tbody></table>
+<img src="/2021/08/22/%E5%B5%8C%E5%85%A5%E5%BC%8F/ESP32%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/ESP32开发笔记_2021-08-23-21-56-37.png" srcset="/img/loading.gif" lazyload width="70%">
+
+<p>下图的电路参考的是<code>Weact</code>的<code>STM32H7XX</code>开发板（<a target="_blank" rel="noopener" href="https://github.com/WeActTC/MiniSTM32H7xx">github</a>或者<a target="_blank" rel="noopener" href="https://gitee.com/WeAct-TC/MiniSTM32H7xx">gitee</a>），非常冗余和设计完善，但是后来发现这太过冗余了。</p>
+<img src="/2021/08/22/%E5%B5%8C%E5%85%A5%E5%BC%8F/ESP32%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/ESP32开发笔记_2021-08-23-21-57-56.png" srcset="/img/loading.gif" lazyload width="70%">
+
+<h3 id="7-3-1-推荐设计"><a href="#7-3-1-推荐设计" class="headerlink" title="7.3.1. 推荐设计"></a>7.3.1. 推荐设计</h3><p><a target="_blank" rel="noopener" href="https://docs.ai-thinker.com/esp32-cam"><strong>安信可科技 ESP32-CAM摄像头开发板</strong></a></p>
+<img src="/2021/08/22/%E5%B5%8C%E5%85%A5%E5%BC%8F/ESP32%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/ESP32开发笔记_2021-08-23-22-14-41.png" srcset="/img/loading.gif" lazyload width="100%">
+
+<p>量产并且大量应用的，然而引脚和<code>platformIO</code>的推荐不一样，D0~D7这种数据引脚有几个交错和不同，其他的仅<code>XCLK(MCLK)</code>不同，<code>PWDN</code>和<code>RESET</code>的连接方式参考安信可的即可。看来引脚设计确实非常灵活。。。没什么好顾虑的，那种和时钟相关的高速的不动它就行。</p>
+<p>ov2640相关的文档在上面的<a target="_blank" rel="noopener" href="https://docs.ai-thinker.com/esp32-cam"><strong>安信可科技 ESP32-CAM摄像头开发板</strong></a><br>文末即可下载。需要其他相关资源从weact STM32H7xx Core Board 的<a target="_blank" rel="noopener" href="https://github.com/WeActTC/MiniSTM32H7xx">github</a>或者<a target="_blank" rel="noopener" href="https://gitee.com/WeAct-TC/MiniSTM32H7xx">gitee</a>下载</p>
+<h3 id="7-3-2-其他"><a href="#7-3-2-其他" class="headerlink" title="7.3.2. 其他"></a>7.3.2. 其他</h3><p><a target="_blank" rel="noopener" href="https://github.com/1zlab/1ZLAB_ESP32_Wifi_Camera">1ZLAB_ESP32_Wifi_Camera</a>，设计精美，有原理图。</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/m5stack/esp32-cam-demo">m5stack/esp32-cam-demo</a></p>
 <h1 id="8-Bug记录"><a href="#8-Bug记录" class="headerlink" title="8. Bug记录"></a>8. Bug记录</h1><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/gtsup/p/9559770.html">关于启动模式的问题</a>，<br><a target="_blank" rel="noopener" href="https://github.com/espressif/esptool/wiki/ESP32-Boot-Mode-Selection">ESP32启动模式和时序官方文档</a>，<br>本来怀疑新焊接的一块ESP32是不是需要通过特殊的方法才能烧录程序，答案是不需要，因为本身芯片EN引脚配置的阻容就能实现正确的上电时序了。只有焊接问题会导致无法烧录程序。</p>
 <p>另外，CP2102不需要连接ESP32也应该要被电脑正常识别。</p>
 <h1 id="9-Code-Reference"><a href="#9-Code-Reference" class="headerlink" title="9. Code Reference"></a>9. Code Reference</h1><h2 id="9-1-Arduino-FreeRTOS"><a href="#9-1-Arduino-FreeRTOS" class="headerlink" title="9.1. Arduino + FreeRTOS"></a>9.1. Arduino + FreeRTOS</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br></pre></td><td class="code"><pre><code class="hljs CPP"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;Arduino.h&gt;</span></span><br><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> LED_PIN 27</span><br><span class="hljs-keyword">bool</span> led_state = <span class="hljs-literal">true</span>;<br><br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> STACK_SIZE 500</span><br>StackType_t xStack[STACK_SIZE];<br>StaticTask_t xTaskBuffer;<br><br><span class="hljs-keyword">static</span> StaticTimer_t xTimerBuffer;<br>UBaseType_t uxVariableToIncrement = <span class="hljs-number">0</span>;<br><br>SemaphoreHandle_t xSemaphore = <span class="hljs-literal">NULL</span>;<br><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">vFunc1TimerCallback</span><span class="hljs-params">(TimerHandle_t pxTimer)</span></span><br><span class="hljs-function"></span>&#123;<br>    Serial.println(<span class="hljs-string">&quot;vFunc1TimerCallback running...\n&quot;</span>);<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">vTaskCode1</span><span class="hljs-params">(<span class="hljs-keyword">void</span> *pvParameters)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">for</span> (;;)<br>    &#123;<br>        <span class="hljs-comment">// led_state = !led_state;</span><br>        <span class="hljs-comment">// digitalWrite(LED_PIN, led_state);</span><br>        <span class="hljs-comment">// Serial.println(&quot;vTaskCode1 running...&quot;);</span><br>        <span class="hljs-comment">// vTaskDelay(1000 / portTICK_PERIOD_MS);</span><br><br>        xSemaphoreTake( xSemaphore, portMAX_DELAY );<br>        led_state = !led_state;<br>        digitalWrite(LED_PIN, led_state);<br>        Serial.println(<span class="hljs-string">&quot;vTaskCode1 receive Semaphore running...\n&quot;</span>);<br>        <span class="hljs-comment">// vTaskDelay(1000 / portTICK_PERIOD_MS);</span><br>    &#125;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">vTaskCode2</span><span class="hljs-params">(<span class="hljs-keyword">void</span> *pvParameters)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">for</span> (;;)<br>    &#123;<br>        Serial.println(<span class="hljs-string">&quot;vTaskCode2 running...\n&quot;</span>);<br>        vTaskDelay(<span class="hljs-number">1000</span> / portTICK_PERIOD_MS);<br><br>        <span class="hljs-comment">// static BaseType_t pxTaskWoken = pdFALSE;</span><br>        <span class="hljs-comment">// BaseType_t send;</span><br>        <span class="hljs-comment">// send = xSemaphoreGive( xSemaphore);</span><br>        <span class="hljs-comment">// if(send == pdPASS)Serial.println(&quot;xSemaphore send ok...&quot;);</span><br>        <span class="hljs-comment">// else Serial.println(&quot;xSemaphore send wrong...&quot;);</span><br>    &#125;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span> </span>&#123;<br>    pinMode(LED_PIN, OUTPUT);<br>    Serial.begin(<span class="hljs-number">115200</span>);<br>    Serial.println(<span class="hljs-string">&quot;Initializing System...&quot;</span>);<br><br>    xSemaphore = xSemaphoreCreateBinary();<br>    <span class="hljs-comment">// xSemaphore = xSemaphoreCreateMutex();</span><br>    <span class="hljs-comment">// xSemaphore = xSemaphoreCreateCounting(100, 0);</span><br>    <span class="hljs-keyword">if</span>( xSemaphore != <span class="hljs-literal">NULL</span> )<br>    &#123;<br>        Serial.println(<span class="hljs-string">&quot;xSemaphore create ok...&quot;</span>);<span class="hljs-comment">// The semaphore was created successfully. The semaphore can now be used.</span><br>    &#125;<br><br>    <span class="hljs-comment">// // 软件定时器xTimerCreate，先创建定时器然后再创建task</span><br>    TimerHandle_t xFunc1Timer = <span class="hljs-literal">NULL</span>;<br>    xFunc1Timer = xTimerCreate(<span class="hljs-string">&quot;Func1Timer&quot;</span>,            <span class="hljs-comment">// Just a text name, not used by the kernel.</span><br>                                (<span class="hljs-number">3000</span> / portTICK_PERIOD_MS), <span class="hljs-comment">// The timer period in ticks.</span><br>                                pdTRUE,                     <span class="hljs-comment">// pdFalse means a one-shot timer. pdTRUE means an auto-reload timer</span><br>                                <span class="hljs-number">0</span>,                           <span class="hljs-comment">// The id is not used by the callback so can take any value.</span><br>                                vFunc1TimerCallback);      <span class="hljs-comment">// The callback function that switches the LCD back-light off.</span><br>    <span class="hljs-keyword">if</span> (xFunc1Timer == <span class="hljs-literal">NULL</span>)<br>        Serial.println(<span class="hljs-string">&quot;The timer was not created...&quot;</span>);<br>    <span class="hljs-keyword">else</span><br>    &#123;<br>        <span class="hljs-keyword">if</span> (xTimerStart(xFunc1Timer, <span class="hljs-number">0</span>) != pdPASS)  <span class="hljs-comment">// This line of code also start the timer. Or use xTimerStart( xFuncxTimer, 0 );</span><br>            Serial.println(<span class="hljs-string">&quot;The timer could not be set into the Active state....&quot;</span>);<br>    &#125;<br><br>    <span class="hljs-keyword">static</span> <span class="hljs-keyword">uint8_t</span> ucParameterToPass1;<br>    TaskHandle_t xTask1Handle = <span class="hljs-literal">NULL</span>;<br>    <span class="hljs-comment">// 线程函数名，任务名（无用），栈大小，创建时要使用的一个变量，优先级（tskIDLE_PRIORITY是默认，为0），任务的handle</span><br>    xTaskCreate(vTaskCode1, <span class="hljs-string">&quot;TASK1&quot;</span>, <span class="hljs-number">4096</span>, &amp;ucParameterToPass1, <span class="hljs-number">0</span>, &amp;xTask1Handle);<br><br>    <span class="hljs-keyword">static</span> <span class="hljs-keyword">uint8_t</span> ucParameterToPass2;<br>    TaskHandle_t xTask2Handle = <span class="hljs-literal">NULL</span>;<br>    <span class="hljs-comment">// 线程函数名，任务名（无用），栈大小，创建时要使用的一个变量，优先级（tskIDLE_PRIORITY是默认，为0），任务的handle</span><br>    xTaskCreate(vTaskCode2, <span class="hljs-string">&quot;TASK2&quot;</span>, <span class="hljs-number">4096</span>, &amp;ucParameterToPass2, <span class="hljs-number">0</span>, &amp;xTask2Handle);<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span> </span>&#123;<br>    Serial.println(<span class="hljs-string">&quot;Runing...&quot;</span>);<br>    vTaskDelay(<span class="hljs-number">1500</span> / portTICK_PERIOD_MS);<br><br>    <span class="hljs-keyword">static</span> BaseType_t pxTaskWoken = pdFALSE;<br>    BaseType_t send;<br>    send = xSemaphoreGive( xSemaphore);<br>    <span class="hljs-keyword">if</span>(send == pdPASS)Serial.println(<span class="hljs-string">&quot;xSemaphore send ok...&quot;</span>);<br>    <span class="hljs-keyword">else</span> Serial.println(<span class="hljs-string">&quot;xSemaphore send wrong...&quot;</span>);<br>&#125;<br><br></code></pre></td></tr></table></figure>
