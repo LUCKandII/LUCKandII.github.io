@@ -1,0 +1,503 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/cat_head.jpg">
+  <link rel="icon" href="/img/cat_head.jpg">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="Zhang Daming">
+  <meta name="keywords" content="">
+  
+  <title>刷机指南 - Ming</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"luckandii.github.io","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":" ","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":2},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+
+<body>
+  <header style="height: 60vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Ming</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/%E5%88%B7%E6%9C%BA%E6%8C%87%E5%8D%972.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.2)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="刷机指南">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-01-21 12:00" pubdate>
+        2022年1月21日 中午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">刷机指南</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2022年1月21日 下午
+                
+              </p>
+            
+            <div class="markdown-body">
+              <h1 id="资料准备"><a href="#资料准备" class="headerlink" title="资料准备"></a>资料准备</h1><ol>
+<li><p> <a target="_blank" rel="noopener" href="https://adbdownload.info/">ADB Driver</a>，<a target="_blank" rel="noopener" href="https://www.baidu.com/s?wd=adb%20driver%20download">百度的搜索：adb driver download</a>。驱动，让电脑能识别adb设备。</p>
+</li>
+<li><p> <a target="_blank" rel="noopener" href="https://developer.android.com/studio/releases/platform-tools">ADB platform tools</a>，<a target="_blank" rel="noopener" href="https://cn.bing.com/search?q=ADB+platform+tools">必应的搜索：adb platform tools</a>。命令行工具，下载之后解压，把文件夹存到合适的位置，然后把路径添加到环境变量，确保在cmd中输入<code>adb</code>能得到正确的反应。</p>
+</li>
+</ol>
+<img src="/2022/01/21/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0/%E5%88%B7%E6%9C%BA%E6%8C%87%E5%8D%97/刷机指南_2022-01-21-13-22-15.png" srcset="/img/loading.gif" lazyload width="70%">
+<img src="/2022/01/21/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0/%E5%88%B7%E6%9C%BA%E6%8C%87%E5%8D%97/刷机指南_2022-01-21-13-23-12.png" srcset="/img/loading.gif" lazyload width="70%">
+
+<ol start="3">
+<li><p> 第三方rec，<a target="_blank" rel="noopener" href="https://twrp.me/Devices/">TWRP官网设备列表</a>，接下来以我的<code>红米4高配版(Markw)</code>举例：<a target="_blank" rel="noopener" href="https://download.mokeedev.com/?device=markw">魔趣ROM设备页的TWRP链接</a>，<a target="_blank" rel="noopener" href="https://forum.xda-developers.com/t/recovery-unofficial-markw-twrp-3-4-0-1.4030421/">XDA论坛对应设备的TWRP REC</a>，以及<a target="_blank" rel="noopener" href="https://github.com/redispade/device_xiaomi_markw_twrp/releases/tag/twrp-3.4.0-1-markw">附带的github下载页</a>。这是最直接的下载方式，还有一些开发者制作了一键刷入脚本，汉化的，都可以。</p>
+</li>
+<li><p> 第三方ROM，<a target="_blank" rel="noopener" href="https://download.mokeedev.com/">魔趣Mokee</a>，<a target="_blank" rel="noopener" href="https://lineageos.org/">Lineage os</a>，<a target="_blank" rel="noopener" href="https://wiki.pixelexperience.org/devices/">Pixel Experience</a>，等等。MIUI和Flyme开放给其他厂商机型下载的页面可能挂了，建议还是在<a target="_blank" rel="noopener" href="https://forum.xda-developers.com/">XDA</a>找。</p>
+</li>
+<li><p> 权限管理工具，<a target="_blank" rel="noopener" href="https://magiskcn.com/">Magisk中文网</a>，<a target="_blank" rel="noopener" href="https://github.com/topjohnwu/Magisk">Magisk的Github</a>。</p>
+</li>
+<li><p> <a target="_blank" rel="noopener" href="https://opengapps.org/">Open Gapp Project</a>，手头上的安卓手机基本都是ARM64，<a target="_blank" rel="noopener" href="https://marasati.com/2019/06/10/gapps.html">The Open GApps 各版本详细介绍</a>，或搜索<a target="_blank" rel="noopener" href="https://cn.bing.com/search?q=open+gapp%E7%89%88%E6%9C%AC%E5%8C%BA%E5%88%AB">open gapp版本区别</a>，选择nano即可（micro还多出Gmail）</p>
+</li>
+</ol>
+<h1 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h1><h2 id="手机解锁（解bootloader锁）"><a href="#手机解锁（解bootloader锁）" class="headerlink" title="手机解锁（解bootloader锁）"></a>手机解锁（解bootloader锁）</h2><p><a target="_blank" rel="noopener" href="https://www.miui.com/unlock/index.html">小米设备申请解锁网页和工具下载</a></p>
+<p>首次解锁，设备先绑定小米账号（手机登录账号，打开开发者模式-&gt;设备解锁状态按提示操作），然后电脑上下载好上述工具，登录小米账号（小米账号要有设备解锁资格），按提示操作。（手机进入fastboot状态，驱动也装好）</p>
+<p>近年各大手机厂商设备解锁功能收紧，不知道这些设备解锁操作有无新的阻碍。反正我的红米4很早之前解锁过又上锁了，但是重新解锁完全没有阻碍。不知道近年来的新设备如何。</p>
+<h2 id="刷入第三方rec"><a href="#刷入第三方rec" class="headerlink" title="刷入第三方rec"></a>刷入第三方rec</h2><ol>
+<li><p> 手机进入fastboot：关机，按住减音量键和开机键即可。</p>
+</li>
+<li><p> 在cmd确定可以运行adb，驱动正常。</p>
+</li>
+<li><p>连接adb设备，刷入rec</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">fastboot devices <span class="hljs-comment">#确定能识别到设备</span><br>fastboot flash recovery c:/.../twrp.img     <span class="hljs-comment">#路径看实际情况，等待进度完成</span><br>fastboot boot c:/.../twrp.img     <span class="hljs-comment">#路径看实际情况，等待进度完成，手机就会重启进入twrp界面</span><br><span class="hljs-comment"># 不太确定刷完第三方rec之后还能不能直接进入原系统，我的好像会卡米，所以还是刷完第三方rec之后就刷机</span><br></code></pre></td></tr></table></figure></li>
+<li><p>在设备为twrp界面下刷机。</p>
+<p> 如果此前手机内存里面还没有下载好ROM（仅fastboot刷入rec不会清除手机内存的文件），有几种方法：手机USB连接OTG设备，在twrp下把ROM复制到本机；进入twrp模式下可以通过连接数据线，使用adb命令，把文件发送到手机内存：</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">adb push C:\...\MK10.0-markw.zip sdcard     <span class="hljs-comment">#发送到根目录，本地文件的路径在属性里面复制即可</span><br>adb push C:\...\MK10.0-markw.zip /storage/emulated/0/DCIM     <span class="hljs-comment">#发送到相册目录</span><br>adb push C:\...\MK10.0-markw.zip /storage/emulated/0/Files     <span class="hljs-comment">#发送到其他目录，要先确保这个目录存在，数据线连接时，不显示复制的进度</span><br></code></pre></td></tr></table></figure>
+<p> 有ROM情况下，最好同时再准备好open gapp和magisk：</p>
+<ol>
+<li><p> 双清（恢复出厂设置，清除Data、Cache，清除软件啥的，不会清除自己另外的文件），选择Wipe-&gt;划过进度条。</p>
+</li>
+<li><p> 返回主页，选择安装，找到自己的ROM，滑动以安装。</p>
+</li>
+<li><p> 紧接着刷入open gapp</p>
+</li>
+<li><p> 安装完之后格式化data分区（所有文件就清掉了），Wipe-&gt;格式化data，按提示输入yes</p>
+</li>
+<li><p> 刷入了open gapp之后进入系统，联网之后设备验证会很久（网络原因），可以之后再联网。</p>
+</li>
+<li><p> 接着刷入magisk？，也可以之后连接电脑之后使用adb刷，或者之后再卡刷（就不需要双清或者更多的清除了）。</p>
+</li>
+<li><p> 进入系统之后还想进入rec：打开开发者模式-&gt;高级重启选项打开，然后手机重启时有重起至rec的选项。</p>
+</li>
+</ol>
+</li>
+</ol>
+<h1 id="手机开始使用"><a href="#手机开始使用" class="headerlink" title="手机开始使用"></a>手机开始使用</h1><ol>
+<li><p> 类原生系统，第一次开机时不要插入SIM卡。</p>
+</li>
+<li><p>软件洁癖，使用adb命令在手机电脑之间传文件</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">adb connect 192.168.X.X<br>adb pull /storage/emulated/0/Download/XXX ‪C:\Users\LUCK\Desktop<br>adb push C:\...\MK10.0-markw.zip /storage/emulated/0/Files<br><span class="hljs-comment">#网络ADB调试有时会显示进度</span><br></code></pre></td></tr></table></figure></li>
+<li><p> 必备软件：<a target="_blank" rel="noopener" href="https://github.com/2dust/v2rayNG/releases">V2rayNG</a>，<a target="_blank" rel="noopener" href="https://www.videolan.org/vlc/download-android.html">VLC Player</a>，<a target="_blank" rel="noopener" href="https://www.52pojie.cn/thread-1299678-1-1.html">ADM</a>，</p>
+</li>
+</ol>
+<h1 id="其他参考"><a href="#其他参考" class="headerlink" title="其他参考"></a>其他参考</h1><p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/news/473261">手机刷机双清、三清、四清等详细介绍</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/read/cv12472212">小米8解锁BootLoader，进入TWRP流程</a></p>
+<p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/Ufj8fkANXYcEI_V0tFGZ0Q">安卓手机刷机教程；解锁BL；刷入REC；获取ROOT权限；更换系统；刷机玩机资源教程攻略</a></p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/08/22/%E5%B5%8C%E5%85%A5%E5%BC%8F/ESP32%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/">
+                        <span class="hidden-mobile">ESP32开发笔记</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+  <div class="col-lg-7 mx-auto nopadding-x-md">
+    <div class="container custom post-custom mx-auto">
+      <img src="/img/alipay.png" srcset="/img/loading.gif" lazyload class="rounded mx-auto d-block mt-5" style="width:150px; height:150px;"> <img src="/img/wechat.png" srcset="/img/loading.gif" lazyload class="rounded mx-auto d-block mt-5" style="width:150px; height:150px;">
+    </div>
+  </div>
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"superSample":2,"width":200,"height":400,"position":"right","hOffset":50,"vOffset":-40},"mobile":{"show":false,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false});</script></body>
+</html>
