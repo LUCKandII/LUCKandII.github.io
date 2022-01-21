@@ -238,6 +238,7 @@
 <li><a href="#2-%E6%AD%A5%E9%AA%A4">2. 步骤</a><ul>
 <li><a href="#21-%E6%89%8B%E6%9C%BA%E8%A7%A3%E9%94%81%E8%A7%A3bootloader%E9%94%81">2.1. 手机解锁（解bootloader锁）</a></li>
 <li><a href="#22-%E5%88%B7%E5%85%A5%E7%AC%AC%E4%B8%89%E6%96%B9rec">2.2. 刷入第三方rec</a></li>
+<li><a href="#23-%E5%9C%A8%E8%AE%BE%E5%A4%87%E4%B8%BAtwrp%E7%95%8C%E9%9D%A2%E4%B8%8B%E5%88%B7%E6%9C%BA">2.3. 在设备为twrp界面下刷机</a></li>
 </ul>
 </li>
 <li><a href="#3-%E6%89%8B%E6%9C%BA%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8">3. 手机开始使用</a></li>
@@ -273,11 +274,12 @@
 <li><p> 在cmd确定可以运行adb，驱动正常。</p>
 </li>
 <li><p>连接adb设备，刷入rec</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">fastboot devices <span class="hljs-comment">#确定能识别到设备</span><br>fastboot flash recovery c:/.../twrp.img     <span class="hljs-comment">#路径看实际情况，等待进度完成</span><br>fastboot boot c:/.../twrp.img     <span class="hljs-comment">#路径看实际情况，等待进度完成，手机就会重启进入twrp界面</span><br><span class="hljs-comment"># 不太确定刷完第三方rec之后还能不能直接进入原系统，我的好像会卡米，所以还是刷完第三方rec之后就刷机</span><br></code></pre></td></tr></table></figure></li>
-<li><p>在设备为twrp界面下刷机。</p>
-<p> 如果此前手机内存里面还没有下载好ROM（仅fastboot刷入rec不会清除手机内存的文件），有几种方法：手机USB连接OTG设备，在twrp下把ROM复制到本机；进入twrp模式下可以通过连接数据线，使用adb命令，把文件发送到手机内存：</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">adb push C:\...\MK10.0-markw.zip sdcard     <span class="hljs-comment">#发送到根目录，本地文件的路径在属性里面复制即可</span><br>adb push C:\...\MK10.0-markw.zip /storage/emulated/0/DCIM     <span class="hljs-comment">#发送到相册目录</span><br>adb push C:\...\MK10.0-markw.zip /storage/emulated/0/Files     <span class="hljs-comment">#发送到其他目录，要先确保这个目录存在，数据线连接时，不显示复制的进度</span><br></code></pre></td></tr></table></figure>
-<p> 有ROM情况下，最好同时再准备好open gapp和magisk：</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">fastboot devices <span class="hljs-comment">#确定能识别到设备</span><br>fastboot flash recovery c:/.../twrp.img     <span class="hljs-comment">#路径看实际情况，等待进度完成</span><br>fastboot boot c:/.../twrp.img     <span class="hljs-comment">#路径看实际情况，等待进度完成，手机就会重启进入twrp界面</span><br><span class="hljs-comment"># 不太确定刷完第三方rec之后还能不能直接进入原系统，我的好像会卡米，所以还是刷完第三方rec之后就刷机</span><br></code></pre></td></tr></table></figure>
+<h2 id="2-3-在设备为twrp界面下刷机"><a href="#2-3-在设备为twrp界面下刷机" class="headerlink" title="2.3. 在设备为twrp界面下刷机"></a>2.3. 在设备为twrp界面下刷机</h2></li>
+</ol>
+<p>如果此前手机内存里面还没有下载好ROM（仅fastboot刷入rec不会清除手机内存的文件），有几种方法：手机USB连接OTG设备，在twrp下把ROM复制到本机；进入twrp模式下可以通过连接数据线，使用adb命令，把文件发送到手机内存：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">adb push C:\...\MK10.0-markw.zip sdcard     <span class="hljs-comment">#发送到根目录，本地文件的路径在属性里面复制即可</span><br>adb push C:\...\MK10.0-markw.zip /storage/emulated/0/DCIM     <span class="hljs-comment">#发送到相册目录</span><br>adb push C:\...\MK10.0-markw.zip /storage/emulated/0/Files     <span class="hljs-comment">#发送到其他目录，要先确保这个目录存在，数据线连接时，不显示复制的进度</span><br></code></pre></td></tr></table></figure>
+<p>有ROM情况下，最好同时再准备好open gapp和magisk：</p>
 <ol>
 <li><p> 双清（恢复出厂设置，清除Data、Cache，清除软件啥的，不会清除自己另外的文件），选择Wipe-&gt;划过进度条。</p>
 </li>
@@ -292,8 +294,6 @@
 <li><p> 接着刷入magisk？，也可以之后连接电脑之后使用adb刷，或者之后再卡刷（就不需要双清或者更多的清除了）。</p>
 </li>
 <li><p> 进入系统之后还想进入rec：打开开发者模式-&gt;高级重启选项打开，然后手机重启时有重起至rec的选项。</p>
-</li>
-</ol>
 </li>
 </ol>
 <h1 id="3-手机开始使用"><a href="#3-手机开始使用" class="headerlink" title="3. 手机开始使用"></a>3. 手机开始使用</h1><ol>
