@@ -231,7 +231,21 @@
               </p>
             
             <div class="markdown-body">
-              <h1 id="资料准备"><a href="#资料准备" class="headerlink" title="资料准备"></a>资料准备</h1><ol>
+              <!-- TOC -->
+
+<ul>
+<li><a href="#1-%E8%B5%84%E6%96%99%E5%87%86%E5%A4%87">1. 资料准备</a></li>
+<li><a href="#2-%E6%AD%A5%E9%AA%A4">2. 步骤</a><ul>
+<li><a href="#21-%E6%89%8B%E6%9C%BA%E8%A7%A3%E9%94%81%E8%A7%A3bootloader%E9%94%81">2.1. 手机解锁（解bootloader锁）</a></li>
+<li><a href="#22-%E5%88%B7%E5%85%A5%E7%AC%AC%E4%B8%89%E6%96%B9rec">2.2. 刷入第三方rec</a></li>
+</ul>
+</li>
+<li><a href="#3-%E6%89%8B%E6%9C%BA%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8">3. 手机开始使用</a></li>
+<li><a href="#4-%E5%85%B6%E4%BB%96%E5%8F%82%E8%80%83">4. 其他参考</a></li>
+</ul>
+<!-- /TOC -->
+
+<h1 id="1-资料准备"><a href="#1-资料准备" class="headerlink" title="1. 资料准备"></a>1. 资料准备</h1><ol>
 <li><p> <a target="_blank" rel="noopener" href="https://adbdownload.info/">ADB Driver</a>，<a target="_blank" rel="noopener" href="https://www.baidu.com/s?wd=adb%20driver%20download">百度的搜索：adb driver download</a>。驱动，让电脑能识别adb设备。</p>
 </li>
 <li><p> <a target="_blank" rel="noopener" href="https://developer.android.com/studio/releases/platform-tools">ADB platform tools</a>，<a target="_blank" rel="noopener" href="https://cn.bing.com/search?q=ADB+platform+tools">必应的搜索：adb platform tools</a>。命令行工具，下载之后解压，把文件夹存到合适的位置，然后把路径添加到环境变量，确保在cmd中输入<code>adb</code>能得到正确的反应。</p>
@@ -250,10 +264,10 @@
 <li><p> <a target="_blank" rel="noopener" href="https://opengapps.org/">Open Gapp Project</a>，手头上的安卓手机基本都是ARM64，<a target="_blank" rel="noopener" href="https://marasati.com/2019/06/10/gapps.html">The Open GApps 各版本详细介绍</a>，或搜索<a target="_blank" rel="noopener" href="https://cn.bing.com/search?q=open+gapp%E7%89%88%E6%9C%AC%E5%8C%BA%E5%88%AB">open gapp版本区别</a>，选择nano即可（micro还多出Gmail）</p>
 </li>
 </ol>
-<h1 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h1><h2 id="手机解锁（解bootloader锁）"><a href="#手机解锁（解bootloader锁）" class="headerlink" title="手机解锁（解bootloader锁）"></a>手机解锁（解bootloader锁）</h2><p><a target="_blank" rel="noopener" href="https://www.miui.com/unlock/index.html">小米设备申请解锁网页和工具下载</a></p>
+<h1 id="2-步骤"><a href="#2-步骤" class="headerlink" title="2. 步骤"></a>2. 步骤</h1><h2 id="2-1-手机解锁（解bootloader锁）"><a href="#2-1-手机解锁（解bootloader锁）" class="headerlink" title="2.1. 手机解锁（解bootloader锁）"></a>2.1. 手机解锁（解bootloader锁）</h2><p><a target="_blank" rel="noopener" href="https://www.miui.com/unlock/index.html">小米设备申请解锁网页和工具下载</a></p>
 <p>首次解锁，设备先绑定小米账号（手机登录账号，打开开发者模式-&gt;设备解锁状态按提示操作），然后电脑上下载好上述工具，登录小米账号（小米账号要有设备解锁资格），按提示操作。（手机进入fastboot状态，驱动也装好）</p>
 <p>近年各大手机厂商设备解锁功能收紧，不知道这些设备解锁操作有无新的阻碍。反正我的红米4很早之前解锁过又上锁了，但是重新解锁完全没有阻碍。不知道近年来的新设备如何。</p>
-<h2 id="刷入第三方rec"><a href="#刷入第三方rec" class="headerlink" title="刷入第三方rec"></a>刷入第三方rec</h2><ol>
+<h2 id="2-2-刷入第三方rec"><a href="#2-2-刷入第三方rec" class="headerlink" title="2.2. 刷入第三方rec"></a>2.2. 刷入第三方rec</h2><ol>
 <li><p> 手机进入fastboot：关机，按住减音量键和开机键即可。</p>
 </li>
 <li><p> 在cmd确定可以运行adb，驱动正常。</p>
@@ -282,7 +296,7 @@
 </ol>
 </li>
 </ol>
-<h1 id="手机开始使用"><a href="#手机开始使用" class="headerlink" title="手机开始使用"></a>手机开始使用</h1><ol>
+<h1 id="3-手机开始使用"><a href="#3-手机开始使用" class="headerlink" title="3. 手机开始使用"></a>3. 手机开始使用</h1><ol>
 <li><p> 类原生系统，第一次开机时不要插入SIM卡。</p>
 </li>
 <li><p>软件洁癖，使用adb命令在手机电脑之间传文件</p>
@@ -290,7 +304,7 @@
 <li><p> 必备软件：<a target="_blank" rel="noopener" href="https://github.com/2dust/v2rayNG/releases">V2rayNG</a>，<a target="_blank" rel="noopener" href="https://www.videolan.org/vlc/download-android.html">VLC Player</a>，<a target="_blank" rel="noopener" href="https://www.52pojie.cn/thread-1299678-1-1.html">ADM</a>，</p>
 </li>
 </ol>
-<h1 id="其他参考"><a href="#其他参考" class="headerlink" title="其他参考"></a>其他参考</h1><p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/news/473261">手机刷机双清、三清、四清等详细介绍</a></p>
+<h1 id="4-其他参考"><a href="#4-其他参考" class="headerlink" title="4. 其他参考"></a>4. 其他参考</h1><p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/news/473261">手机刷机双清、三清、四清等详细介绍</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.bilibili.com/read/cv12472212">小米8解锁BootLoader，进入TWRP流程</a></p>
 <p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/Ufj8fkANXYcEI_V0tFGZ0Q">安卓手机刷机教程；解锁BL；刷入REC；获取ROOT权限；更换系统；刷机玩机资源教程攻略</a></p>
 
