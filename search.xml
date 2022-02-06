@@ -1179,6 +1179,13 @@ sudo raspi-config</code></pre>
 </li>
 <li><a href="#3-ubuntu%E4%BD%BF%E7%94%A8tips">3. ubuntu使用tips</a></li>
 <li><a href="#4-windows%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE">4. windows软件配置</a></li>
+<li><a href="#5-%E6%96%87%E4%BB%B6%E7%BB%84%E7%BB%87%E6%96%B9%E5%BC%8F">5. 文件组织方式</a><ul>
+<li><a href="#51-files">5.1. Files</a></li>
+<li><a href="#52-c-disk">5.2. C disk</a></li>
+<li><a href="#53-filesync">5.3. FileSync</a></li>
+<li><a href="#54-%E5%85%B6%E4%BB%96">5.4. 其他</a></li>
+</ul>
+</li>
 </ul>
 <!-- /TOC -->
 
@@ -1282,7 +1289,7 @@ sudo raspi-config</code></pre>
 </li>
 <li><p>常用的大型生产力软件</p>
 <p> <a href="http://www.zhanshaoyi.com/15504.html">MATLAB 2020b安装教程，我爱分享网</a></p>
-<p> <a href="https://cn.bing.com/search?q=solidworks+2018+sp5%E6%95%99%E7%A8%8B&qs=n&form=QBRE&sp=-1&pq=solidworks+2018+sp5%E6%95%99%E7%A8%8B&sc=0-21&sk=&cvid=ABFB0BFF75AB42369438CE234A39D46F">Solidworks 2018 sp5</a></p>
+<p> <a href="https://cn.bing.com/search?q=solidworks+2018+sp5%E6%95%99%E7%A8%8B&qs=n&form=QBRE&sp=-1&pq=solidworks+2018+sp5%E6%95%99%E7%A8%8B&sc=0-21&sk=&cvid=ABFB0BFF75AB42369438CE234A39D46F">Solidworks 2018 sp5</a>，windows11安装solidworks2018要使用SW2020的激活方式，<a href="http://www.ee123.net/post/88.html">参考：windows11安装激活solidworks2018教程，有激活工具下载</a>，<a href="https://zhuanlan.zhihu.com/p/357370405">补充参考：知乎-SolidWorks2020详细步骤安装教程</a></p>
 <p> <a href="https://www.mr-wu.cn/altium-designer-ad-21-free-download/">Altium Designer AD 21 吴川斌</a>，<a href="http://www.zhanshaoyi.com/15892.html">Altium Designer AD 21 我爱分享网</a>，其他相关配置看：</p>
  <a href="/2021/07/08/%E5%B5%8C%E5%85%A5%E5%BC%8F/EDA%E8%BD%AF%E4%BB%B6%E8%B5%84%E6%BA%90%E6%95%B4%E7%90%86/" title="EDA软件资源整理">EDA软件资源整理</a>
 
@@ -1299,6 +1306,85 @@ sudo raspi-config</code></pre>
 <p> <a href="https://zhuanlan.zhihu.com/p/355146595">vscode 用cmake傻瓜式搭建C++编译调试环境</a></p>
 <p> 如果一个工程里面有多个文件，就看：<a href="https://zhuanlan.zhihu.com/p/267803605">Cmake 语法与实战入门</a></p>
 <p> <a href="https://www.bilibili.com/read/cv6308000/">配置CLion用于STM32开发【优雅の嵌入式开发】</a> </p>
+</li>
+</ol>
+<h1 id="5-文件组织方式"><a href="#5-文件组织方式" class="headerlink" title="5. 文件组织方式"></a>5. 文件组织方式</h1><h2 id="5-1-Files"><a href="#5-1-Files" class="headerlink" title="5.1. Files"></a>5.1. Files</h2><ol>
+<li><p>Archive</p>
+<p> 202009_XXX内容，完全结束再归档，否则放在Working</p>
+</li>
+<li><p>ArchihveProject</p>
+<p> 2020_XXX内容，之后的项目进行和归档都按如下方式：</p>
+<ol>
+<li> <code>1_Simulation</code></li>
+<li> <code>2_Hardware</code>，主要是PCB</li>
+<li> <code>3_Software</code>，各类软件，嵌入式，代码等</li>
+<li> <code>4_Mechanical</code></li>
+<li> <code>5_Docs</code>，进行过程的文档，进度管理、总结、报告等</li>
+<li> <code>6_Reference</code>，参考文献，Github资料</li>
+</ol>
+</li>
+<li><p>HITSZ</p>
+<p> 2020大二下，2020大三上，之后按课程分。实验课单独。</p>
+</li>
+<li><p>MobilePhone</p>
+<ol>
+<li> <code>DCIM</code>，Camera的挑选出<code>风景</code>照和<code>活动</code>照归档，剩下的经常用<code>Photoczip</code>压缩。Screenshots，ScreenRecorder，Creative保持。</li>
+<li> <code>Movies</code>，QQ和微信的经常导出保存，不然最后看不来。</li>
+<li> <code>Pictures</code>，同上</li>
+<li> <code>QQ or Wechat</code>，聊天过程产生的文件也要及时归档</li>
+</ol>
+</li>
+<li><p>Software</p>
+<p> 仅工作使用的PC有，存放要用的软件，如Dism++，everything，SpaceSniffer等（这些免安装或者绿色破解的）</p>
+</li>
+<li><p>SoftwareDaily</p>
+<p> 用于备份上述软件的压缩包或安装文件</p>
+</li>
+<li><p>SoftwareProfessional</p>
+<p> 大型生产力</p>
+</li>
+<li><p>WorkRef</p>
+<ol>
+<li> 系统学习某个知识的论文，如<code>ADRC</code>，数学建模</li>
+<li> 开发参考手册，如STM32相关的参考手册</li>
+<li> 电子书</li>
+<li> 其他资源，如办公、美化，有趣的网上开源文件文档</li>
+</ol>
+</li>
+</ol>
+<h2 id="5-2-C-disk"><a href="#5-2-C-disk" class="headerlink" title="5.2. C disk"></a>5.2. C disk</h2><ol>
+<li><p>Prog</p>
+<ol>
+<li> 安装自己下载压缩包再添加PATH的软件，如<code>mingw64</code>，<code>openocd</code>，<code>gcc-arm-none-eabi</code></li>
+<li> 安装一些在安装时自己尝试安装到C盘根目录的软件，如<code>Keil</code></li>
+</ol>
+</li>
+<li><p>ProgData</p>
+<ol>
+<li> 软件要求的，本来使用用户文档文件夹但是能够更改的，如AltiumDesigner的临时文档，Ansys的临时文档，STM32CubeMX的固件库。</li>
+<li> ProgData/Arm</li>
+<li> QQ，微信等能够改动的</li>
+</ol>
+</li>
+</ol>
+<h2 id="5-3-FileSync"><a href="#5-3-FileSync" class="headerlink" title="5.3. FileSync"></a>5.3. FileSync</h2><ol>
+<li><p> OneDrive</p>
+</li>
+<li><p> 坚果云</p>
+</li>
+</ol>
+<h2 id="5-4-其他"><a href="#5-4-其他" class="headerlink" title="5.4. 其他"></a>5.4. 其他</h2><ol>
+<li><p>Media</p>
+<p> 指剪辑视频的PR工程之类的东西。</p>
+</li>
+<li><p> Movies</p>
+</li>
+<li><p> Music</p>
+</li>
+<li><p> Pictures</p>
+</li>
+<li><p>临时</p>
+<p> 临时备份一下电脑Working（未完成的项目，博客），云盘（坚果云），用户文档（主要指用户的图片、文档），其他东西归档完毕之后可以直接复制到上述的目录，框架是统一标准化的。</p>
 </li>
 </ol>
 ]]></content>
