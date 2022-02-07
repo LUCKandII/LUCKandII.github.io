@@ -871,6 +871,10 @@ sudo raspi-config</code></pre>
 <li><a href="#34-__esp32-platformio%E4%BD%BF%E7%94%A8__">3.4. <strong>ESP32 PlatformIO使用</strong></a></li>
 </ul>
 </li>
+<li><a href="#4-%E8%BD%AF%E4%BB%B6%E7%9A%84%E6%AD%A3%E7%A1%AE%E9%85%8D%E7%BD%AE">4. 软件的正确配置</a><ul>
+<li><a href="#41-vscode%E6%AD%A3%E7%A1%AEinclude-path">4.1. VsCode正确#include path</a></li>
+</ul>
+</li>
 </ul>
 <!-- /TOC -->
 
@@ -999,6 +1003,11 @@ sudo raspi-config</code></pre>
 <p> 然后把<code>example</code>里面的需要参考的工程的主函数复制或者移植部分过去。platformIO创建的工程没有路径问题。工程内需要的其他文件也可以按需要复制过去。有文件夹的则整个复制过去，并且查看<code>CMakeLists.txt</code>添加需要的文件名。</p>
 </li>
 </ol>
+<h1 id="4-软件的正确配置"><a href="#4-软件的正确配置" class="headerlink" title="4. 软件的正确配置"></a>4. 软件的正确配置</h1><h2 id="4-1-VsCode正确-include-path"><a href="#4-1-VsCode正确-include-path" class="headerlink" title="4.1. VsCode正确#include path"></a>4.1. VsCode正确#include path</h2><p>一些Cube生成的头文件，函数，变量等会爆红，这是包含路径不正确的原因。在设置中搜索<code>include path</code>，找到<code>C/C++</code>的<code>System include path</code>，这是全局的（上面那个<code>Default: include path</code>是仅当没有本地的<code>.vscode</code>文件夹才生效的）。添加如下内容。之后嵌入式相关的函数就能正常跳转了。</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><code class="hljs awk"><span class="hljs-variable">$&#123;workspaceFolder&#125;</span>/**<br><span class="hljs-variable">$&#123;workspaceFolder&#125;</span><span class="hljs-regexp">/Drivers/</span>**<br></code></pre></td></tr></table></figure>
+<img src="/2021/07/08/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E5%B5%8C%E5%85%A5%E5%BC%8F%E6%8E%A7%E5%88%B6%E7%BD%91%E7%AB%99%E6%95%B4%E7%90%86/嵌入式控制网站整理_2022-02-07-14-59-55.png" width="100%">
+
+<p><strong>注：目前还会出现<code>stddef.h</code>找不到的情况，但是不影响使用。</strong></p>
 ]]></content>
       <categories>
         <category>学习</category>
